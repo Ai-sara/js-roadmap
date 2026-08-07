@@ -1,0 +1,65 @@
+{
+  "id": "let",
+  "parentId": "variables",
+  "title": "let",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>let</strong> — это современный способ объявления переменных в JavaScript. Переменные, объявленные с помощью <strong>let</strong>, имеют <strong>блочную область видимости</strong>."
+    },
+    {
+      "type": "note",
+      "content": "Подробнее: см. тему <a href=\\\"#topic/\\\">«Область видимости (Scope)».</a>"
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function test() {\n    if (true) {\n        let age = 25;\n    }\n\n    console.log(age); // ❌ ReferenceError\n}"
+    },
+    {
+      "type": "text",
+      "content": "Переменная <strong>age</strong> существует только внутри блока <strong>if</strong> и недоступна за его пределами."
+    },
+    {
+      "type": "heading",
+      "content": "Область видимости"
+    },
+    {
+      "type": "scheme",
+      "content": "function test() {\n│\n├── if {\n│     let age\n│   }\n│\n└── age недоступна здесь"
+    },
+    {
+      "type": "note",
+      "content": "<strong>Важно:</strong> переменная, объявленная через <strong>let</strong>, существует только внутри ближайшего блока <strong>{}</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Особенности let"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Область видимости</strong> — блок {}.",
+        "<strong>Можно переназначать</strong> значение.",
+        "<strong>Нельзя</strong> повторно объявить переменную в одной области видимости.",
+        "<strong>Подвержена поднятию (Hoisting)</strong>, но до объявления находится в <strong>Temporal Dead Zone (TDZ)</strong>."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "text",
+      "content": "Используйте <strong>let</strong>, если значение переменной <strong>будет изменяться</strong> в процессе выполнения программы."
+    },
+    {
+      "type": "note",
+      "content": "Если значение <strong>не будет изменяться</strong>, предпочтительнее использовать <strong>const</strong>."
+    }
+  ]
+}

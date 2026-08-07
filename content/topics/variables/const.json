@@ -1,0 +1,84 @@
+{
+  "id": "const",
+  "parentId": "variables",
+  "title": "const",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>const</strong> — это современный способ объявления переменных в JavaScript. Переменные, объявленные с помощью <strong>const</strong>, имеют <strong>блочную область видимости</strong>, как и <strong>let</strong>."
+    },
+    {
+      "type": "text",
+      "content": "После инициализации переменную, объявленную через <strong>const</strong>, нельзя переназначить."
+    },
+    {
+      "type": "note",
+      "content": "Подробнее: см. тему <a href=\\\"#topic/\\\">«Область видимости (Scope)».</a>"
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const PI = 3.14;"
+    },
+    {
+      "type": "heading",
+      "content": "Область видимости"
+    },
+    {
+      "type": "scheme",
+      "content": "function test() {\n│\n├── if {\n│     const PI = 3.14\n│   }\n│\n└── PI недоступна здесь"
+    },
+    {
+      "type": "note",
+      "content": "<strong>Важно:</strong> переменная, объявленная через <strong>const</strong>, существует только внутри ближайшего блока <strong>{}</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Объекты и массивы"
+    },
+    {
+      "type": "text",
+      "content": "Если <strong>const</strong> хранит объект или массив, можно изменять <strong>их содержимое</strong>, но нельзя заменить сам объект или массив."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = {\n    name: \"Lara\"\n};\n\nuser.name = \"Sarah\"; // ✅"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "user = {}; // ❌ TypeError"
+    },
+    {
+      "type": "note",
+      "content": "<strong>const</strong> защищает от переназначения переменной, а не от изменения содержимого объекта или массива."
+    },
+    {
+      "type": "heading",
+      "content": "Особенности const"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Область видимости</strong> — блок {}.",
+        "<strong>Нельзя переназначить</strong> значение после инициализации.",
+        "<strong>Нельзя</strong> повторно объявить переменную в одной области видимости.",
+        "<strong>Подвержена поднятию (Hoisting)</strong>, но до объявления находится в <strong>Temporal Dead Zone (TDZ)</strong>.",
+        "<strong>Можно изменять содержимое</strong> объектов и массивов."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "text",
+      "content": "Используйте <strong>const</strong> <strong>по умолчанию</strong>. Если позже потребуется изменять значение переменной, замените <strong>const</strong> на <strong>let</strong>."
+    }
+  ]
+}

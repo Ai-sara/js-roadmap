@@ -1,0 +1,84 @@
+{
+  "id": "logical-operators",
+  "parentId": "operators",
+  "title": "Логические операторы",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Логические операторы</strong> используются для объединения, инвертирования и проверки логических выражений."
+    },
+    {
+      "type": "heading",
+      "content": "Основные логические операторы"
+    },
+    {
+      "type": "scheme",
+      "content": "&&  Логическое И (AND)\n||  Логическое ИЛИ (OR)\n!   Логическое НЕ (NOT)"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Логическое И (&&)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>&&</strong> возвращает <strong>true</strong>, только если <strong>оба операнда истинны</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(true && true);   // true\nconsole.log(true && false);  // false"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Логическое ИЛИ (||)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>||</strong> возвращает <strong>true</strong>, если <strong>хотя бы один операнд истинен</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(true || false);  // true\nconsole.log(false || false); // false"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Логическое НЕ (!)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>!</strong> изменяет логическое значение на противоположное."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(!true);  // false\nconsole.log(!false); // true"
+    },
+    {
+      "type": "heading",
+      "content": "Использование в условиях"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 20;\nlet hasPassport = true;\n\nif (age >= 18 && hasPassport) {\n    console.log(\"Доступ разрешен\");\n}"
+    },
+    {
+      "type": "note",
+      "content": "Логические операторы работают не только с <strong>true</strong> и <strong>false</strong>. Они могут возвращать сами операнды. Эта особенность будет подробно рассмотрена в теме <strong>Truthy и Falsy</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>&&</strong> возвращает <strong>true</strong>, если оба операнда истинны.",
+        "<strong>||</strong> возвращает <strong>true</strong>, если хотя бы один операнд истинен.",
+        "<strong>!</strong> меняет логическое значение на противоположное.",
+        "Логические операторы часто используются в условных конструкциях."
+      ]
+    }
+  ]
+}

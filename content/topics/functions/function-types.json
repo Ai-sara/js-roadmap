@@ -1,0 +1,10 @@
+{
+  "id": "function-types",
+  "parentId": "functions",
+  "title": "Виды функций",
+  "children": [
+    "function-expression",
+    "arrow-functions",
+    "iife"
+  ]
+}

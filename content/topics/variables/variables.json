@@ -1,0 +1,13 @@
+{
+  "id": "variables",
+  "parentId": null,
+  "title": "Переменные",
+  "children": [
+    "what-is-variable",
+    "var",
+    "let",
+    "const",
+    "var-let-const-comparison",
+    "hoisting",
+    "naming-rules"]
+}

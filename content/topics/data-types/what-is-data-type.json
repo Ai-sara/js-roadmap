@@ -1,0 +1,52 @@
+{
+  "id": "what-is-data-type",
+  "parentId": "data-types",
+  "title": "Что такое тип данных?",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Тип данных (Data Type)</strong> определяет, <strong>какие данные</strong> хранит переменная и <strong>какие операции</strong> можно с ними выполнять."
+    },
+    {
+      "type": "text",
+      "content": "Например, числа можно складывать, строки — объединять, а логические значения использовать в условиях."
+    },
+    {
+      "type": "heading",
+      "content": "Зачем нужны типы данных?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Определяют, какие значения может хранить переменная.",
+        "Определяют, какие операции можно выполнять над значением.",
+        "Помогают JavaScript правильно обрабатывать данные."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Примеры типов данных"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let name = \"Sarah\";     // String\nlet age = 25;            // Number\nlet isStudent = true;    // Boolean"
+    },
+    {
+      "type": "heading",
+      "content": "Какие типы данных существуют?"
+    },
+    {
+      "type": "text",
+      "content": "В JavaScript все типы данных делятся на <strong>две большие группы</strong>: <strong>примитивные</strong> и <strong>ссылочный</strong>."
+    },
+    {
+      "type": "scheme",
+      "content": "Типы данных\n│\n├── Примитивные\n│   ├── String\n│   ├── Number\n│   ├── BigInt\n│   ├── Boolean\n│   ├── Undefined\n│   ├── Null\n│   └── Symbol\n│\n└── Ссылочный\n    └── Object"
+    },
+    {
+      "type": "note",
+      "content": "Подробно различия между <strong>примитивными</strong> и <strong>ссылочными</strong> типами будут рассмотрены в следующей теме."
+    }
+  ]
+}

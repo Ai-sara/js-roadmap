@@ -1,0 +1,85 @@
+{
+  "id": "primitive-vs-reference",
+  "parentId": "data-types",
+  "title": "Примитивные и ссылочные типы",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Все типы данных в JavaScript делятся на <strong>две группы</strong>: <strong>примитивные</strong> и <strong>ссылочный тип (Object)</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Примитивные типы"
+    },
+    {
+      "type": "text",
+      "content": "Примитивные типы хранят <strong>само значение</strong>. При копировании переменной создается <strong>независимая копия</strong> значения."
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>String</strong>",
+        "<strong>Number</strong>",
+        "<strong>BigInt</strong>",
+        "<strong>Boolean</strong>",
+        "<strong>Undefined</strong>",
+        "<strong>Null</strong>",
+        "<strong>Symbol</strong>"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Ссылочный тип"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Object</strong> — единственный ссылочный тип данных в JavaScript. Переменная хранит <strong>не сам объект</strong>, а <strong>ссылку на него</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает копирование?"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Примитивные типы"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let a = 10;\nlet b = a;\n\nb = 20;\n\nconsole.log(a); // 10\nconsole.log(b); // 20"
+    },
+    {
+      "type": "scheme",
+      "content": "a ───► 10\n        │\n        └── копирование\n             │\nb ───► 10\n\nb = 20\n\na ───► 10\nb ───► 20"
+    },
+    {
+      "type": "note",
+      "content": "После копирования каждая переменная хранит <strong>собственное значение</strong>. Изменение одной переменной <strong>не влияет</strong> на другую."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Ссылочный тип (Object)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user1 = {\n    name: \"Lara\"\n};\n\nconst user2 = user1;\n\nuser2.name = \"Sarah\";\n\nconsole.log(user1.name); // \"Sarah\""
+    },
+    {
+      "type": "scheme",
+      "content": "user1 ─┐\n       │\n       ▼\n   { name: \"Lara\" }\n       ▲\n       │\nuser2 ─┘\n\nuser2.name = \"Sarah\"\n\nuser1 ─┐\n       │\n       ▼\n{ name: \"Sarah\" }\n       ▲\n       │\nuser2 ─┘"
+    },
+    {
+      "type": "note",
+      "content": "<strong>user1</strong> и <strong>user2</strong> указывают на <strong>один и тот же объект</strong>, поэтому изменение через одну переменную видно через другую."
+    },
+    {
+      "type": "heading",
+      "content": "Главное отличие"
+    },
+    {
+      "type": "scheme",
+      "content": "Примитивные типы\n│\n├── Хранят само значение\n├── При копировании создается новая копия\n└── Изменения независимы\n\nObject\n│\n├── Хранится ссылка на объект\n├── При копировании копируется ссылка\n└── Изменения видны через все ссылки"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "what-is-implicit-conversion",
+  "parentId": "implicit-type-conversion",
+  "title": "Что такое неявное преобразование?",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Неявное преобразование типов (Implicit Type Conversion)</strong> — это преобразование значения из одного типа данных в другой, которое JavaScript выполняет автоматически во время выполнения программы."
+    },
+    {
+      "type": "heading",
+      "content": "Когда происходит?"
+    },
+    {
+      "type": "text",
+      "content": "Неявное преобразование происходит, когда JavaScript необходимо выполнить операцию над значениями разных типов."
+    },
+    {
+      "type": "list",
+      "items": [
+        "математические операции;",
+        "сравнения;",
+        "логические операции;",
+        "проверка условий (<code>if</code>, <code>while</code>, <code>for</code> и др.)."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Как работает?"
+    },
+    {
+      "type": "text",
+      "content": "Перед выполнением операции JavaScript анализирует типы данных. Если типы не подходят для выполнения операции, JavaScript автоматически преобразует их к нужному типу."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример 1"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"5\" * 2"
+    },
+    {
+      "type": "scheme",
+      "content": "\"5\"\n↓\n5\n↓\n5 * 2\n↓\n10"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript автоматически преобразует строку <strong>\"5\"</strong> в число."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример 2"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "if (1) {\n    console.log(\"Hello\");\n}"
+    },
+    {
+      "type": "text",
+      "content": "Перед проверкой условия JavaScript автоматически преобразует число <strong>1</strong> в <strong>true</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Операция\n↓\nJavaScript анализирует типы\n↓\nТипы подходят?\n│\n├── Да → Выполнить операцию\n└── Нет → Автоматически преобразовать значения\n           ↓\n      Выполнить операцию"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Неявное преобразование выполняется JavaScript автоматически.",
+        "Оно происходит только тогда, когда это необходимо для выполнения операции.",
+        "Для неявного преобразования не используются функции <strong>String()</strong>, <strong>Number()</strong>, <strong>Boolean()</strong> и <strong>BigInt()</strong>.",
+        "Используются те же правила преобразования, что и при явном преобразовании.",
+        "Подробные правила работы операторов будут рассмотрены в следующих темах."
+      ]
+    }
+  ]
+}

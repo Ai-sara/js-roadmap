@@ -1,0 +1,34 @@
+{
+  "id": "what-is-js",
+  "parentId": "javascript-intro",
+  "title": "Что такое JavaScript?",
+  "blocks": [
+    { "type": "text", "content": "JavaScript (JS) — это высокоуровневый язык программирования, который добавляет логику и интерактивность веб-страницам." },
+    { "type": "heading", "content": "Где используется JavaScript?" },
+    { "type": "list", "items": [
+      "🌐 Frontend (браузер)",
+      "🖥️ Backend (Node.js)",
+      "📱 Мобильные приложения",
+      "💻 Desktop-приложения",
+      "☁️ Серверы",
+      "🎮 Игры",
+      "🤖 Скрипты автоматизации"
+    ]},
+    { "type": "heading", "content": "Что умеет JavaScript в браузере?" },
+    { "type": "text", "content": "JavaScript может:" },
+    { "type": "list", "items": [
+      "реагировать на нажатия кнопок",
+      "изменять HTML и CSS",
+      "отправлять запросы на сервер",
+      "получать данные",
+      "проверять формы",
+      "создавать анимации"
+    ]},
+    { "type": "heading", "content": "Где выполняется JavaScript?" },
+    { "type": "text", "content": "JavaScript может выполняться:" },
+    { "type": "list", "items": [
+      "🌍 В браузере (Chrome, Firefox, Edge, Safari и др.)",
+      "🖥️ Вне браузера — с помощью Node.js"
+    ]}
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "for-in",
+  "parentId": "loops",
+  "title": "Цикл for...in",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Цикл <strong>for...in</strong> используется для перебора перечисляемых свойств объекта. При работе с массивами он перебирает не значения, а индексы элементов."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "for (const key in object) {\n    // тело цикла\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Перебор объекта"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"Almaty\"\n};\n\nfor (const key in user) {\n    console.log(key, user[key]);\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\nname Alex\nage 25\ncity Almaty"
+    },
+    {
+      "type": "heading",
+      "content": "Перебор массива"
+    },
+    {
+      "type": "text",
+      "content": "При переборе массива цикл <strong>for...in</strong> возвращает индексы элементов."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const numbers = [10, 20, 30];\n\nfor (const index in numbers) {\n    console.log(index, numbers[index]);\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\n0 10\n1 20\n2 30"
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Объект\n↓\nПолучить следующее свойство\n↓\nЗаписать имя свойства в переменную\n↓\nВыполнить тело цикла\n↓\nЕсть еще свойства?\n│\n├── Да → следующая итерация\n└── Нет → завершить цикл"
+    },
+    {
+      "type": "heading",
+      "content": "for...in и for...of"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>for...in</strong> перебирает имена свойств (ключи).",
+        "<strong>for...of</strong> перебирает значения элементов."
+      ]
+    },
+    {
+      "type": "note",
+      "content": "Для перебора массивов обычно рекомендуется использовать <strong>for...of</strong>, а <strong>for...in</strong> — для объектов."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "для перебора свойств объектов;",
+        "когда нужны именно имена свойств (ключи)."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>for...in</strong> перебирает ключи объекта.",
+        "Для получения значения используется запись <strong>object[key]</strong>.",
+        "При переборе массива возвращаются индексы, а не значения.",
+        "Для массивов обычно используют <strong>for...of</strong>, а <strong>for...in</strong> — для объектов."
+      ]
+    }
+  ]
+}

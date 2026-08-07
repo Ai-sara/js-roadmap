@@ -1,0 +1,76 @@
+{
+  "id": "default-parameters",
+  "parentId": "parameters-and-return",
+  "title": "Параметры по умолчанию",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Параметрам можно задать значение по умолчанию. Оно будет использоваться, если при вызове функции аргумент не передан или равен undefined."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function greet(name = \"Гость\") {\n    console.log(`Привет, ${name}!`);\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Вызов функции"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "greet();\ngreet(\"Анна\");"
+    },
+    {
+      "type": "result",
+      "content": "Привет, Гость!\nПривет, Анна!"
+    },
+    {
+      "type": "heading",
+      "content": "Передача undefined"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "greet(undefined);"
+    },
+    {
+      "type": "result",
+      "content": "Привет, Гость!"
+    },
+    {
+      "type": "text",
+      "content": "Если передать undefined, будет использовано значение по умолчанию."
+    },
+    {
+      "type": "heading",
+      "content": "Передача null"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "greet(null);"
+    },
+    {
+      "type": "result",
+      "content": "Привет, null!"
+    },
+    {
+      "type": "note",
+      "content": "Значение по умолчанию используется только при отсутствии аргумента или при передаче undefined. Значение null считается обычным аргументом и не заменяется значением по умолчанию."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Значение по умолчанию задается через оператор =.",
+        "Оно используется, если аргумент не передан.",
+        "Передача undefined также приводит к использованию значения по умолчанию.",
+        "Передача null не использует значение по умолчанию."
+      ]
+    }
+  ]
+}

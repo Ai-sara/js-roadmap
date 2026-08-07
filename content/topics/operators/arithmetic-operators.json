@@ -1,0 +1,9 @@
+{
+  "id": "arithmetic-operators",
+  "parentId": "operators",
+  "title": "Арифметические операторы",
+  "children": [
+    "arithmetic-basics",
+    "operator-precedence"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "operator-precedence",
+  "parentId": "arithmetic-operators",
+  "title": "Приоритет операторов",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Если в выражении используется несколько операторов, JavaScript выполняет их в порядке <strong>приоритета</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Операторы с более высоким приоритетом выполняются раньше операторов с более низким приоритетом."
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let result = 2 + 3 * 4;\n\nconsole.log(result); // 14"
+    },
+    {
+      "type": "scheme",
+      "content": "2 + 3 * 4\n    │\n    ▼\n  3 * 4 = 12\n    │\n    ▼\n2 + 12 = 14"
+    },
+    {
+      "type": "heading",
+      "content": "Скобки"
+    },
+    {
+      "type": "text",
+      "content": "Круглые скобки <strong>()</strong> имеют самый высокий приоритет и позволяют изменить порядок выполнения операций."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let result = (2 + 3) * 4;\n\nconsole.log(result); // 20"
+    },
+    {
+      "type": "scheme",
+      "content": "(2 + 3) * 4\n │\n ▼\n2 + 3 = 5\n │\n ▼\n5 * 4 = 20"
+    },
+    {
+      "type": "heading",
+      "content": "Основной порядок приоритета"
+    },
+    {
+      "type": "scheme",
+      "content": "()\n│\n▼\n**\n│\n▼\n*   /   %\n│\n▼\n+   -"
+    },
+    {
+      "type": "note",
+      "content": "Если трудно определить порядок вычислений, лучше использовать <strong>скобки</strong>. Это делает код понятнее и помогает избежать ошибок."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "JavaScript выполняет операции согласно их <strong>приоритету</strong>.",
+        "<strong>()</strong> имеют самый высокий приоритет.",
+        "<strong>**</strong> выполняется раньше <strong>*</strong>, <strong>/</strong> и <strong>%</strong>.",
+        "<strong>*</strong>, <strong>/</strong> и <strong>%</strong> выполняются раньше <strong>+</strong> и <strong>-</strong>.",
+        "Используйте <strong>скобки</strong>, если хотите явно указать порядок вычислений."
+      ]
+    }
+  ]
+}

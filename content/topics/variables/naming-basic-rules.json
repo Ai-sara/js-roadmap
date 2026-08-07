@@ -1,0 +1,18 @@
+{
+  "id": "naming-basic-rules",
+  "parentId": "naming-rules",
+  "title": "Основные правила",
+  "blocks": [
+    { "type": "heading", "content": "✅ Можно использовать" },
+    { "type": "list", "items": ["буквы (a-z, A-Z)", "цифры (0-9), но не в начале имени", "знак доллара ($)", "нижнее подчеркивание (_)"] },
+    { "type": "text", "content": "Примеры:" },
+    { "type": "code", "content": "let userName;\nlet age1;\nlet $price;\nlet _count;" },
+    { "type": "heading", "content": "❌ Нельзя" },
+    { "type": "text", "content": "Использовать ключевые слова JavaScript" },
+    { "type": "code", "content": "let let;\nlet const;\nlet function;\nlet if;" },
+    { "type": "text", "content": "Начинать имя с цифры" },
+    { "type": "code", "content": "let 1name; // ❌" },
+    { "type": "text", "content": "Использовать пробелы" },
+    { "type": "code", "content": "let user name; // ❌" }
+  ]
+}

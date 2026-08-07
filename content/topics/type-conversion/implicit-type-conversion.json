@@ -1,0 +1,14 @@
+{
+  "id": "implicit-type-conversion",
+  "parentId": "type-conversion",
+  "title": "Неявное преобразование типов",
+  "children": [
+    "what-is-implicit-conversion",
+    "implicit-plus",
+    "implicit-math-operators",
+    "implicit-logical-operators",
+    "implicit-comparison",
+    "implicit-equality",
+    "strict-comparison"
+  ]
+}

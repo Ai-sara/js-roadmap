@@ -1,0 +1,97 @@
+{
+  "id": "break-continue",
+  "parentId": "loops",
+  "title": "break и continue",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Операторы <strong>break</strong> и <strong>continue</strong> используются для управления выполнением циклов."
+    },
+    {
+      "type": "heading",
+      "content": "Оператор break"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>break</strong> полностью завершает выполнение цикла. После его выполнения программа продолжает работу с первой инструкции после цикла."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "for (let i = 1; i <= 10; i++) {\n    if (i === 5) {\n        break;\n    }\n\n    console.log(i);\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\n1\n2\n3\n4"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Итерация\n↓\nПроверка условия\n↓\nbreak?\n│\n├── Да → завершить цикл\n│\n└── Нет → выполнить оставшийся код"
+    },
+    {
+      "type": "heading",
+      "content": "Оператор continue"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>continue</strong> пропускает оставшуюся часть текущей итерации и сразу переходит к следующей."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "for (let i = 1; i <= 5; i++) {\n    if (i === 3) {\n        continue;\n    }\n\n    console.log(i);\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\n1\n2\n4\n5"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Итерация\n↓\nПроверка условия\n↓\ncontinue?\n│\n├── Да → перейти к следующей итерации\n│\n└── Нет → выполнить оставшийся код"
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение break и continue"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>break</strong> полностью завершает цикл.",
+        "<strong>continue</strong> завершает только текущую итерацию и переходит к следующей."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>break</strong> — когда нужно досрочно завершить цикл.",
+        "<strong>continue</strong> — когда нужно пропустить отдельные итерации."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>break</strong> полностью завершает цикл.",
+        "<strong>continue</strong> пропускает только текущую итерацию.",
+        "Оба оператора работают во всех основных циклах: <strong>while</strong>, <strong>do...while</strong> и <strong>for</strong>."
+      ]
+    }
+  ]
+}

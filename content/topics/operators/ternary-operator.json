@@ -1,0 +1,72 @@
+{
+  "id": "ternary-operator",
+  "parentId": "operators",
+  "title": "Тернарный оператор",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Тернарный оператор</strong> — это сокращенная форма записи условного оператора <strong>if...else</strong>, которая возвращает одно из двух значений в зависимости от условия."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "условие ? значение1 : значение2;"
+    },
+    {
+      "type": "scheme",
+      "content": "Условие\n│\n├── true  → значение1\n└── false → значение2"
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 20;\n\nlet message = age >= 18\n    ? \"Совершеннолетний\"\n    : \"Несовершеннолетний\";\n\nconsole.log(message);"
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение с if...else"
+    },
+    {
+      "type": "heading_sm",
+      "content": "if...else"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let message;\n\nif (age >= 18) {\n    message = \"Совершеннолетний\";\n} else {\n    message = \"Несовершеннолетний\";\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Тернарный оператор"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let message = age >= 18\n    ? \"Совершеннолетний\"\n    : \"Несовершеннолетний\";"
+    },
+    {
+      "type": "note",
+      "content": "Тернарный оператор удобен для <strong>простых условий</strong>. Если логика становится сложной, лучше использовать <strong>if...else</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Тернарный оператор является сокращенной записью <strong>if...else</strong>.",
+        "Имеет вид <strong>условие ? значение1 : значение2</strong>.",
+        "Возвращает одно из двух значений в зависимости от результата условия.",
+        "Лучше использовать только для простых условий."
+      ]
+    }
+  ]
+}

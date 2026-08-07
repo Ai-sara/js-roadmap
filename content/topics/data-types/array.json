@@ -1,0 +1,151 @@
+{
+  "id": "array",
+  "parentId": "data-types",
+  "title": "Array",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Array (массив) — это объект, предназначенный для хранения упорядоченной коллекции значений."
+    },
+    {
+      "type": "text",
+      "content": "Каждый элемент массива имеет свой индекс. Индексация начинается с 0."
+    },
+    {
+      "type": "heading",
+      "content": "Создание массива"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];"
+    },
+    {
+      "type": "heading",
+      "content": "Структура массива"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "fruits\n│\n├── [0] → \"Apple\"\n├── [1] → \"Banana\"\n└── [2] → \"Orange\""
+    },
+    {
+      "type": "heading",
+      "content": "Получение элемента массива"
+    },
+    {
+      "type": "text",
+      "content": "Доступ к элементам массива осуществляется по индексу."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(fruits[0]);\nconsole.log(fruits[2]);"
+    },
+    {
+      "type": "result",
+      "content": "Apple\nOrange"
+    },
+    {
+      "type": "heading",
+      "content": "Индексы массива"
+    },
+    {
+      "type": "text",
+      "content": "Первый элемент всегда имеет индекс 0."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const numbers = [10, 20, 30];\n\nconsole.log(numbers[0]);\nconsole.log(numbers[1]);\nconsole.log(numbers[2]);"
+    },
+    {
+      "type": "result",
+      "content": "10\n20\n30"
+    },
+    {
+      "type": "text",
+      "content": "Если обратиться к несуществующему индексу, JavaScript вернет undefined."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const numbers = [10, 20];\n\nconsole.log(numbers[5]);"
+    },
+    {
+      "type": "result",
+      "content": "undefined"
+    },
+    {
+      "type": "heading",
+      "content": "Что может хранить массив?"
+    },
+    {
+      "type": "text",
+      "content": "Массив может хранить значения любых типов данных."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const data = [\n    \"Hello\",\n    100,\n    true,\n    null,\n    {\n        name: \"Alex\"\n    }\n];"
+    },
+
+    {
+      "type": "heading",
+      "content": "Object и Array"
+    },
+    {
+      "type": "text",
+      "content": "Массив (Array) также является объектом."
+    },
+    {
+      "type": "text",
+      "content": "Главное отличие:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Object хранит данные в виде пар ключ: значение.",
+        "Array хранит упорядоченную коллекцию элементов, к которым обращаются по индексу."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Пример объекта:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = {\n    name: \"Sarah\",\n    age: 25\n};"
+    },
+    {
+      "type": "text",
+      "content": "Пример массива:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];"
+    },
+    {
+      "type": "text",
+      "content": "Объекты и массивы относятся к ссылочным типам данных, но предназначены для разных задач."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Array — объект, предназначенный для хранения упорядоченной коллекции значений.",
+        "Массив (Array) также является объектом.",
+        "Элементы массива имеют индексы, начиная с 0.",
+        "Доступ к элементам осуществляется через квадратные скобки [].",
+        "Если индекс не существует, возвращается undefined.",
+        "Массив может хранить значения любых типов данных.",
+        "Подробнее о работе с массивами будет рассказано в разделе «Массивы»."
+      ]
+    }
+  ]
+}

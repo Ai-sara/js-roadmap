@@ -1,0 +1,58 @@
+{
+  "id": "function-call",
+  "parentId": "introduction",
+  "title": "Вызов функции",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "После объявления функция не выполняется автоматически."
+    },
+    {
+      "type": "text",
+      "content": "Чтобы выполнить код внутри функции, ее нужно вызвать."
+    },
+    {
+      "type": "text",
+      "content": "Для вызова используется имя функции и круглые скобки."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "greet();"
+    },
+    {
+      "type": "result",
+      "content": "Hello!"
+    },
+    {
+      "type": "heading",
+      "content": "Функция может вызываться много раз"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function greet() {\n    console.log(\"Hello!\");\n}\n\ngreet();\ngreet();\ngreet();"
+    },
+    {
+      "type": "result",
+      "content": "Hello!\nHello!\nHello!"
+    },
+    {
+      "type": "text",
+      "content": "Одну функцию можно использовать любое количество раз."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "После объявления функция автоматически не выполняется.",
+        "Чтобы выполнить функцию, необходимо вызвать ее по имени.",
+        "Для вызова используются круглые скобки: имяФункции().",
+        "Одну и ту же функцию можно вызывать любое количество раз."
+      ]
+    }
+  ]
+}

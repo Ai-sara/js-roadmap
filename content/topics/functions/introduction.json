@@ -1,0 +1,12 @@
+{
+  "id": "introduction",
+  "parentId": "functions",
+  "title": "Введение",
+  "children": [
+    "what-is-function",
+    "function-declaration",
+    "function-call",
+    "empty-function",
+    "function-naming"
+  ]
+}

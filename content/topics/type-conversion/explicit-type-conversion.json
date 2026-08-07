@@ -1,0 +1,11 @@
+{
+  "id": "explicit-type-conversion",
+  "parentId": "type-conversion",
+  "title": "Явное преобразование типов",
+  "children": [
+    "what-is-explicit-conversion",
+    "string-conversion",
+    "number-conversion",
+    "boolean-conversion"
+  ]
+}

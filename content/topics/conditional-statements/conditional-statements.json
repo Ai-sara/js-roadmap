@@ -1,0 +1,10 @@
+{
+  "id": "conditional-statements",
+  "parentId": null,
+  "title": "Условные операторы",
+  "children": [
+    "if-else",
+    "ternary-operator",
+    "switch"
+  ]
+}

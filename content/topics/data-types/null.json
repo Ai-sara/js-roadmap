@@ -1,0 +1,83 @@
+{
+  "id": "null",
+  "parentId": "data-types",
+  "title": "Null",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Null</strong> — это примитивный тип данных, который означает <strong>намеренное отсутствие значения</strong>."
+    },
+    {
+      "type": "text",
+      "content": "В отличие от <strong>undefined</strong>, значение <strong>null</strong> обычно присваивает <strong>сам разработчик</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Когда используется null?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Когда значение пока неизвестно.",
+        "Когда необходимо явно показать, что значения нет.",
+        "Когда нужно очистить значение переменной."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Примеры"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Отсутствие значения"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let selectedUser = null;"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Очистка значения"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let currentUser = {\n    name: \"Sarah\"\n};\n\ncurrentUser = null;"
+    },
+    {
+      "type": "note",
+      "content": "<strong>null</strong> обычно используется тогда, когда необходимо <strong>явно указать</strong>, что значения нет."
+    },
+    {
+      "type": "heading",
+      "content": "Особенность typeof"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(typeof null); // \"object\""
+    },
+    {
+      "type": "text",
+      "content": "Несмотря на результат <strong>\"object\"</strong>, <strong>null</strong> <strong>не является объектом</strong>. Это историческая особенность JavaScript."
+    },
+    {
+      "type": "note",
+      "content": "Почему <strong>typeof null</strong> возвращает <strong>\"object\"</strong>, будет подробно рассмотрено в теме <strong>typeof</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Null</strong> означает намеренное отсутствие значения.",
+        "<strong>null</strong> обычно присваивает сам разработчик.",
+        "<strong>null</strong> и <strong>undefined</strong> — разные значения.",
+        "<strong>typeof null</strong> возвращает <strong>\"object\"</strong>, хотя <strong>null</strong> не является объектом."
+      ]
+    }
+  ]
+}

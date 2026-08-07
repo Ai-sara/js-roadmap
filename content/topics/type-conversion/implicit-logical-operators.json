@@ -1,0 +1,155 @@
+{
+  "id": "implicit-logical-operators",
+  "parentId": "implicit-type-conversion",
+  "title": "Неявное преобразование в логических операторах",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Логические операторы могут работать не только со значениями типа <strong>Boolean</strong>, но и с любыми другими типами данных."
+    },
+    {
+      "type": "text",
+      "content": "Перед проверкой условия JavaScript автоматически приводит значение к типу <strong>Boolean</strong>, чтобы определить, является оно <strong>truthy</strong> или <strong>falsy</strong>."
+    },
+    {
+      "type": "note",
+      "content": "<strong>&&</strong> и <strong>||</strong> используют преобразование к <strong>Boolean</strong> только для проверки условия, но возвращают одно из исходных значений."
+    },
+    {
+      "type": "heading",
+      "content": "Оператор ! (NOT)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>!</strong> всегда преобразует значение к <strong>Boolean</strong>, а затем меняет его на противоположное."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "!true // false\n!false // true\n\n!0          // true\n!1          // false\n!\"\"         // true\n!\"Hello\"    // false\n!null       // true\n!undefined  // true"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Значение\n↓\nПреобразование в Boolean\n↓\nИнверсия значения\n↓\ntrue → false\nfalse → true"
+    },
+    {
+      "type": "heading",
+      "content": "Оператор && (AND, И)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>&&</strong> проверяет значения слева направо."
+    },
+    {
+      "type": "text",
+      "content": "Он возвращает:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "первое значение, которое является <strong>falsy</strong>;",
+        "если все значения <strong>truthy</strong> — возвращает последнее значение."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "true && \"JS\" // \"JS\"\n\n0 && \"JS\" // 0\n\n\"Hello\" && 100 // 100"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Левый операнд\n↓\nПреобразование в Boolean\n↓\nFalsy?\n├── Да → вернуть левый операнд\n└── Нет → проверить следующий\n            ↓\n      вернуть его значение"
+    },
+    {
+      "type": "heading",
+      "content": "Оператор || (OR, ИЛИ)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>||</strong> проверяет значения слева направо."
+    },
+    {
+      "type": "text",
+      "content": "Он возвращает:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "первое значение, которое является <strong>truthy</strong>;",
+        "если все значения <strong>falsy</strong> — возвращает последнее значение."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"Hello\" || \"World\" // \"Hello\"\n\ntrue || \"JS\" // true\n\n0 || 100 // 100"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Левый операнд\n↓\nПреобразование в Boolean\n↓\nTruthy?\n├── Да → вернуть левый операнд\n└── Нет → проверить следующий\n            ↓\n      вернуть его значение"
+    },
+    {
+      "type": "heading",
+      "content": "Оператор ?? (Nullish Coalescing)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>??</strong> отличается от <strong>&&</strong> и <strong>||</strong>. Он <strong>не выполняет преобразование в Boolean</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Он проверяет только два значения:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>null</strong>;",
+        "<strong>undefined</strong>."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Если левый операнд равен <strong>null</strong> или <strong>undefined</strong>, возвращается правый операнд. Во всех остальных случаях возвращается левый операнд."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "null ?? \"Guest\"      // \"Guest\"\nundefined ?? \"Guest\" // \"Guest\"\n0 ?? 100              // 0\nfalse ?? true         // false"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Левый операнд\n↓\nnull или undefined?\n├── Да → вернуть правый операнд\n└── Нет → вернуть левый операнд"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>!</strong> всегда преобразует значение в <strong>Boolean</strong> и инвертирует его.",
+        "<strong>&&</strong> и <strong>||</strong> используют преобразование к <strong>Boolean</strong> только для проверки.",
+        "<strong>&&</strong> возвращает первое <strong>falsy</strong> значение или последнее значение.",
+        "<strong>||</strong> возвращает первое <strong>truthy</strong> значение или последнее значение.",
+        "<strong>??</strong> не использует Boolean-преобразование.",
+        "<strong>??</strong> проверяет только <strong>null</strong> и <strong>undefined</strong>."
+      ]
+    }
+  ]
+}

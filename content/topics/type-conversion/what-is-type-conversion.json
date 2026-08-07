@@ -1,0 +1,70 @@
+{
+  "id": "what-is-type-conversion",
+  "parentId": "type-conversion",
+  "title": "Что такое преобразование типов?",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Преобразование типов (Type Conversion)</strong> — это процесс изменения одного типа данных в другой."
+    },
+    {
+      "type": "heading",
+      "content": "Примеры"
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"123\" → 123",
+        "123 → \"123\"",
+        "true → 1"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Виды преобразования типов"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Неявное преобразование (Implicit Type Conversion)"
+    },
+    {
+      "type": "text",
+      "content": "Неявное преобразование типов происходит, когда JavaScript <strong>автоматически</strong> преобразует значение в нужный тип во время выполнения программы."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"5\" * 2 // 10"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Явное преобразование (Explicit Type Conversion)"
+    },
+    {
+      "type": "text",
+      "content": "Явное преобразование типов происходит, когда <strong>программист самостоятельно</strong> преобразует значение в нужный тип с помощью специальных функций."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(\"5\");\nString(100);\nBoolean(1);"
+    },
+    {
+      "type": "scheme",
+      "content": "Преобразование типов\n│\n├── Неявное (Implicit)\n│   └── JavaScript выполняет автоматически\n│\n└── Явное (Explicit)\n    └── Выполняет программист"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Преобразование типов — это изменение одного типа данных в другой.",
+        "Существует два вида преобразования: <strong>явное</strong> и <strong>неявное</strong>.",
+        "При явном преобразовании программист сам вызывает функцию преобразования.",
+        "При неявном преобразовании JavaScript самостоятельно приводит значение к нужному типу."
+      ]
+    }
+  ]
+}

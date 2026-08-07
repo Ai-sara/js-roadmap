@@ -1,0 +1,193 @@
+{
+  "id": "number-conversion",
+  "parentId": "explicit-type-conversion",
+  "title": "Преобразование в Number",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Преобразование в Number</strong> — это процесс преобразования значения в число."
+    },
+    {
+      "type": "text",
+      "content": "Для явного преобразования используется функция:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(value)"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает Number(value)?"
+    },
+    {
+      "type": "heading_sm",
+      "content": "String → Number"
+    },
+    {
+      "type": "text",
+      "content": "Перед преобразованием JavaScript автоматически удаляет пробелы по краям строки (<strong>trim()</strong>). После этого возможны три варианта."
+    },
+    {
+      "type": "heading_sm",
+      "content": "1. Пустая строка"
+    },
+    {
+      "type": "text",
+      "content": "Если после удаления пробелов строка пустая, результатом будет <strong>0</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(\"\")      // 0\nNumber(\" \")     // 0\nNumber(\"    \")  // 0"
+    },
+    {
+      "type": "heading_sm",
+      "content": "2. Корректное число"
+    },
+    {
+      "type": "text",
+      "content": "Если строка содержит корректно записанное число, она преобразуется в <strong>Number</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(\"123\")      // 123\nNumber(\"3.14\")     // 3.14\nNumber(\"-15\")      // -15\nNumber(\" 123 \")    // 123"
+    },
+    {
+      "type": "note",
+      "content": "Дробная часть записывается через точку (<strong>.</strong>)."
+    },
+    {
+      "type": "heading_sm",
+      "content": "3. Некорректное число"
+    },
+    {
+      "type": "text",
+      "content": "Если строка не является корректным числом, результат — <strong>NaN</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(\"abc\")      // NaN\nNumber(\"123abc\")   // NaN\nNumber(\"3,14\")     // NaN\nNumber(\"$100\")     // NaN"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Boolean → Number"
+    },
+    {
+      "type": "text",
+      "content": "Логические значения преобразуются по простому правилу:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(true)   // 1\nNumber(false)  // 0"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Null → Number"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(null) // 0"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Undefined → Number"
+    },
+    {
+      "type": "text",
+      "content": "<strong>undefined</strong> нельзя преобразовать в корректное число."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(undefined) // NaN"
+    },
+    {
+      "type": "heading_sm",
+      "content": "BigInt → Number"
+    },
+    {
+      "type": "text",
+      "content": "<strong>BigInt</strong> преобразуется в обычное число."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(123n) // 123"
+    },
+    {
+      "type": "note",
+      "content": "Если значение слишком большое, возможна потеря точности."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Symbol → Number"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Symbol</strong> нельзя преобразовать в число."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number(Symbol())\n\n// ❌ TypeError"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Object → Number"
+    },
+    {
+      "type": "text",
+      "content": "Для объектов JavaScript сначала пытается получить примитивное значение, а затем преобразовать его в число."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number({}) // NaN"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Array → Number"
+    },
+    {
+      "type": "text",
+      "content": "Массив сначала преобразуется в строку, а затем в число."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Number([])        // 0\nNumber([123])     // 123\nNumber([1, 2])    // NaN"
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Number(value)\n│\n├── String\n│   │\n│   ├── убрать пробелы (trim)\n│   │\n│   ├── пустая строка    → 0\n│   ├── корректное число → Number\n│   └── иначе            → NaN\n│\n├── Boolean\n│   ├── true  → 1\n│   └── false → 0\n│\n├── null      → 0\n├── undefined → NaN\n├── BigInt    → Number\n├── Symbol    → TypeError\n└── Object\n    ├── удалось получить число → Number\n    └── иначе                  → NaN"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Для преобразования в число используется <strong>Number()</strong>.",
+        "У строк автоматически удаляются пробелы по краям.",
+        "Пустая строка (<strong>\"\"</strong>) и строка из пробелов преобразуются в <strong>0</strong>.",
+        "Корректно записанное число преобразуется в <strong>Number</strong>.",
+        "Некорректная запись числа приводит к <strong>NaN</strong>.",
+        "<strong>true → 1</strong>, <strong>false → 0</strong>.",
+        "<strong>null → 0</strong>.",
+        "<strong>undefined → NaN</strong>.",
+        "<strong>BigInt → Number</strong> (возможна потеря точности).",
+        "<strong>Symbol → TypeError</strong>."
+      ]
+    }
+  ]
+}

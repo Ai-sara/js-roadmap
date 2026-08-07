@@ -1,0 +1,79 @@
+{
+  "id": "iife",
+  "parentId": "function-types",
+  "title": "IIFE (Immediately Invoked Function Expression)",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "IIFE — это функция, которая создается и сразу же вызывается."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "(function () {\n    console.log(\"Функция выполнена!\");\n})();"
+    },
+    {
+      "type": "result",
+      "content": "Функция выполнена!"
+    },
+    {
+      "type": "text",
+      "content": "Функция заключается в круглые скобки, превращаясь в Function Expression, после чего сразу вызывается с помощью второй пары круглых скобок."
+    },
+    {
+      "type": "heading",
+      "content": "IIFE со стрелочной функцией"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "(() => {\n    console.log(\"Hello!\");\n})();"
+    },
+    {
+      "type": "result",
+      "content": "Hello!"
+    },
+    {
+      "type": "heading",
+      "content": "Зачем используется IIFE"
+    },
+    {
+      "type": "list",
+      "items": [
+        "создать собственную область видимости;",
+        "избежать попадания переменных в глобальную область видимости;",
+        "выполнить код только один раз."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "(function () {\n    const message = \"Hello\";\n    console.log(message);\n})();\n\nconsole.log(message);"
+    },
+    {
+      "type": "result",
+      "content": "Hello!\nReferenceError: message is not defined"
+    },
+    {
+      "type": "note",
+      "content": "До появления модулей ES Modules IIFE часто использовались для изоляции кода. Сегодня они встречаются значительно реже, но все еще могут использоваться в существующих проектах."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "IIFE — это функция, которая вызывается сразу после создания.",
+        "IIFE является разновидностью Function Expression.",
+        "Часто используется для создания собственной области видимости.",
+        "В современном JavaScript применяется реже благодаря ES Modules."
+      ]
+    }
+  ]
+}

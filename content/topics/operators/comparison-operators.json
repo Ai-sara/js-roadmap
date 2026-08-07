@@ -1,0 +1,101 @@
+{
+  "id": "comparison-operators",
+  "parentId": "operators",
+  "title": "Операторы сравнения",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Операторы сравнения</strong> сравнивают два значения и всегда возвращают логическое значение: <strong>true</strong> или <strong>false</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Основные операторы сравнения"
+    },
+    {
+      "type": "scheme",
+      "content": "==   Равно\n===  Строго равно\n!=   Не равно\n!==  Строго не равно\n>    Больше\n<    Меньше\n>=   Больше или равно\n<=   Меньше или равно"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Равно (==)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>==</strong> сравнивает значения <strong>с приведением типов</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(5 == \"5\"); // true"
+    },
+    {
+      "type": "note",
+      "content": "Перед сравнением оператор <strong>==</strong> может автоматически преобразовывать типы данных."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Строго равно (===)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>===</strong> сравнивает <strong>и значение, и тип данных</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(5 === \"5\"); // false\nconsole.log(5 === 5);   // true"
+    },
+    {
+      "type": "note",
+      "content": "В большинстве случаев рекомендуется использовать <strong>===</strong>, так как он не выполняет неявное преобразование типов."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Не равно (!=)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(5 != \"5\"); // false"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Строго не равно (!==)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(5 !== \"5\"); // true"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Больше и меньше"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(10 > 5);   // true\nconsole.log(10 < 5);   // false\nconsole.log(10 >= 10); // true\nconsole.log(10 <= 9);  // false"
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращают операторы сравнения?"
+    },
+    {
+      "type": "scheme",
+      "content": "Сравнение\n│\n▼\ntrue\nили\nfalse"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Результатом любого сравнения является <strong>true</strong> или <strong>false</strong>.",
+        "<strong>==</strong> выполняет неявное преобразование типов.",
+        "<strong>===</strong> сравнивает и значение, и тип данных.",
+        "В большинстве случаев рекомендуется использовать <strong>===</strong> и <strong>!==</strong>."
+      ]
+    }
+  ]
+}

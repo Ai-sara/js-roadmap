@@ -1,0 +1,82 @@
+{
+  "id": "null-vs-undefined",
+  "parentId": "data-types",
+  "title": "Null и Undefined",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>null</strong> и <strong>undefined</strong> оба означают отсутствие значения, но используются в разных ситуациях."
+    },
+    {
+      "type": "heading",
+      "content": "Главное отличие"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>undefined</strong> — значение отсутствует автоматически.",
+        "<strong>null</strong> — отсутствие значения указано разработчиком."
+      ]
+    },
+    {
+      "type": "scheme",
+      "content": "Значения нет\n│\n├── JavaScript присвоил автоматически\n│      │\n│      └── undefined\n│\n└── Разработчик присвоил сам\n       │\n       └── null"
+    },
+    {
+      "type": "heading",
+      "content": "Примеры"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Undefined"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age;\n\nconsole.log(age); // undefined"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Null"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = null;\n\nconsole.log(age); // null"
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение"
+    },
+    {
+      "type": "scheme",
+      "content": "┌──────────────────────────────┬─────────────┬──────────┐\n│                              │ undefined   │ null     │\n├──────────────────────────────┼─────────────┼──────────┤\n│ Кто присваивает              │ JavaScript  │ Разработчик │\n│ Значение отсутствует         │ ✅          │ ✅       │\n│ Примитивный тип              │ ✅          │ ✅       │\n└──────────────────────────────┴─────────────┴──────────┘"
+    },
+    {
+      "type": "heading",
+      "content": "Проверка равенства"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(null == undefined);  // true\nconsole.log(null === undefined); // false"
+    },
+    {
+      "type": "note",
+      "content": "<strong>==</strong> считает <strong>null</strong> и <strong>undefined</strong> равными, а <strong>===</strong> учитывает их типы, поэтому результат будет <strong>false</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>undefined</strong> обычно появляется автоматически.",
+        "<strong>null</strong> обычно присваивает разработчик.",
+        "Оба значения означают отсутствие данных, но используются в разных ситуациях.",
+        "При сравнении <strong>===</strong> значения <strong>null</strong> и <strong>undefined</strong> не равны."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "bigint",
+  "parentId": "data-types",
+  "title": "BigInt",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>BigInt</strong> — это тип данных, предназначенный для хранения <strong>очень больших целых чисел</strong>, которые выходят за пределы безопасного диапазона типа <strong>Number</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Зачем нужен BigInt?"
+    },
+    {
+      "type": "text",
+      "content": "Тип <strong>Number</strong> может безопасно хранить только целые числа в диапазоне от <strong>-(2<sup>53</sup> - 1)</strong> до <strong>2<sup>53</sup> - 1</strong>. Для работы с более крупными числами используется <strong>BigInt</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Создание BigInt"
+    },
+    {
+      "type": "text",
+      "content": "Создать значение типа <strong>BigInt</strong> можно двумя способами."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const bigNumber = 123456789012345678901234567890n;\n\nconst anotherBigNumber = BigInt(\"123456789012345678901234567890\");"
+    },
+    {
+      "type": "note",
+      "content": "При записи литерала <strong>BigInt</strong> в конце числа используется суффикс <strong>n</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Арифметические операции"
+    },
+    {
+      "type": "text",
+      "content": "С объектами типа <strong>BigInt</strong> можно выполнять обычные арифметические операции."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const a = 100n;\nconst b = 20n;\n\nconsole.log(a + b); // 120n\nconsole.log(a - b); // 80n\nconsole.log(a * b); // 2000n\nconsole.log(a / b); // 5n"
+    },
+    {
+      "type": "heading",
+      "content": "Ограничения"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Number</strong> и <strong>BigInt</strong> нельзя смешивать в одной арифметической операции."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(10n + 5); // ❌ TypeError"
+    },
+    {
+      "type": "note",
+      "content": "Перед вычислением оба значения должны иметь <strong>один и тот же тип</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>BigInt</strong> предназначен для очень больших целых чисел.",
+        "Литерал <strong>BigInt</strong> заканчивается символом <strong>n</strong>.",
+        "<strong>BigInt</strong> нельзя смешивать с <strong>Number</strong> в арифметических операциях.",
+        "Для обычных вычислений чаще используется <strong>Number</strong>."
+      ]
+    }
+  ]
+}

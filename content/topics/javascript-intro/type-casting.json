@@ -1,0 +1,24 @@
+{
+  "id": "type-casting",
+  "parentId": "javascript-intro",
+  "title": "Приведение типов (Type Casting)",
+  "blocks": [
+    { "type": "heading", "content": "Неявное приведение типов (Implicit Type Conversion)" },
+    { "type": "text", "content": "JavaScript сам автоматически преобразует значение в нужный тип во время выполнения программы."},
+    { "type": "note", "content": "\uD83E\uDD16 JavaScript делает сам."},
+    { "type": "heading", "content": "Явное приведение типов (Explicit Type Conversion)" },
+    { "type": "text", "content": "Программист сам намеренно преобразует значение в нужный тип, используя функции или методы."},
+    { "type": "text", "content": "Например:"},
+    { "type": "list", "items": [
+      "Number()",
+      "String()",
+      "Boolean()",
+      "parseInt()",
+      "parseFloat()"
+    ]},
+    { "type": "note", "content": "\uD83D\uDC64 Программист делает сам."}
+
+  ]
+}
+
+

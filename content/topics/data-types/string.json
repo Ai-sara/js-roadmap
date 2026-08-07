@@ -1,0 +1,101 @@
+{
+  "id": "string",
+  "parentId": "data-types",
+  "title": "String",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>String</strong> — это тип данных, предназначенный для хранения <strong>текста</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Строка может содержать буквы, цифры, символы, пробелы и любые другие символы."
+    },
+    {
+      "type": "heading",
+      "content": "Создание строк"
+    },
+    {
+      "type": "text",
+      "content": "Строки можно записывать тремя способами."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let firstName = \"Sarah\";\nlet lastName = 'Zhexembaeva';\nlet message = `Hello!`;"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Двойные кавычки</strong> (<strong>\" \"</strong>).",
+        "<strong>Одинарные кавычки</strong> (<strong>' '</strong>).",
+        "<strong>Обратные кавычки</strong> (<strong>` `</strong>) — позволяют использовать интерполяцию и многострочный текст."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Неизменяемость строк"
+    },
+    {
+      "type": "text",
+      "content": "Строки в JavaScript являются <strong>неизменяемыми (immutable)</strong>. После создания нельзя изменить отдельный символ строки."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let text = \"Hello\";\n\ntext[0] = \"J\";\n\nconsole.log(text); // \"Hello\""
+    },
+    {
+      "type": "note",
+      "content": "При изменении строки JavaScript создает <strong>новую строку</strong>, а не изменяет существующую."
+    },
+    {
+      "type": "heading",
+      "content": "Объединение строк"
+    },
+    {
+      "type": "text",
+      "content": "Для объединения строк используется оператор <strong>+</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let firstName = \"Sarah\";\nlet lastName = \"Zhexembaeva\";\n\nlet fullName = firstName + \" \" + lastName;"
+    },
+    {
+      "type": "heading",
+      "content": "Интерполяция строк"
+    },
+    {
+      "type": "text",
+      "content": "Интерполяция позволяет вставлять значения переменных внутрь строки с помощью <strong>${...}</strong>. Работает только с <strong>обратными кавычками</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let name = \"Sarah\";\nlet age = 25;\n\nconsole.log(`Меня зовут ${name}. Мне ${age} лет.`);"
+    },
+    {
+      "type": "heading",
+      "content": "Полезные свойства и методы"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>length</strong> — длина строки.",
+        "<strong>toUpperCase()</strong> — переводит строку в верхний регистр.",
+        "<strong>toLowerCase()</strong> — переводит строку в нижний регистр.",
+        "<strong>trim()</strong> — удаляет пробелы в начале и конце строки."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let text = \"  JavaScript  \";\n\nconsole.log(text.length);\nconsole.log(text.toUpperCase());\nconsole.log(text.toLowerCase());\nconsole.log(text.trim());"
+    },
+    {
+      "type": "note",
+      "content": "Методы строк <strong>не изменяют исходную строку</strong>. Они возвращают <strong>новую строку</strong>."
+    }
+  ]
+}

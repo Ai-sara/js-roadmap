@@ -1,0 +1,89 @@
+{
+  "id": "ternary-operator",
+  "parentId": "conditional-statements",
+  "title": "Тернарный оператор (?:)",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Тернарный оператор — это сокращенная запись простого <strong>if...else</strong>. Он возвращает одно из двух значений в зависимости от результата условия."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "условие ? значение1 : значение2"
+    },
+    {
+      "type": "text",
+      "content": "Если условие истинно (<strong>true</strong>) — возвращается <strong>значение1</strong>. Если условие ложно (<strong>false</strong>) — возвращается <strong>значение2</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение с if...else"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Обычная запись"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 20;\n\nif (age >= 18) {\n    console.log(\"Совершеннолетний\");\n} else {\n    console.log(\"Несовершеннолетний\");\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Тернарный оператор"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 20;\n\nconsole.log(age >= 18 ? \"Совершеннолетний\" : \"Несовершеннолетний\");"
+    },
+    {
+      "type": "heading",
+      "content": "Присваивание значения"
+    },
+    {
+      "type": "text",
+      "content": "Тернарный оператор часто используется для присваивания значения переменной."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 20;\n\nlet status = age >= 18 ? \"Взрослый\" : \"Ребенок\";"
+    },
+    {
+      "type": "heading",
+      "content": "Вложенные тернарные операторы"
+    },
+    {
+      "type": "text",
+      "content": "Можно использовать несколько тернарных операторов подряд."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let score = 85;\n\nlet grade =\n    score >= 90 ? \"A\" :\n    score >= 70 ? \"B\" :\n    \"C\";"
+    },
+    {
+      "type": "note",
+      "content": "Большое количество вложенных тернарных операторов ухудшает читаемость кода. В таких случаях лучше использовать <strong>if...else if</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Тернарный оператор — сокращенная запись простого <strong>if...else</strong>.",
+        "Тернарный оператор всегда возвращает одно из двух значений.",
+        "Его удобно использовать при присваивании значения переменной.",
+        "Не рекомендуется использовать большое количество вложенных тернарных операторов — код становится сложнее читать."
+      ]
+    }
+  ]
+}

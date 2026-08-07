@@ -1,0 +1,66 @@
+{
+  "id": "function-declaration",
+  "parentId": "introduction",
+  "title": "Объявление функции",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Для создания функции используется ключевое слово function."
+    },
+    {
+      "type": "heading",
+      "content": "Function Declaration"
+    },
+    {
+      "type": "text",
+      "content": "Функция, объявленная с помощью конструкции:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function имяФункции() {\n    // код функции\n}"
+    },
+    {
+      "type": "text",
+      "content": "называется Function Declaration (объявление функции)."
+    },
+    {
+      "type": "text",
+      "content": "Это классический способ создания функций в JavaScript."
+    },
+    {
+      "type": "text",
+      "content": "Позже будут рассмотрены и другие способы создания функций, такие как Function Expression и Arrow Function."
+    },
+    {
+      "type": "text",
+      "content": "В этом примере:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "function — ключевое слово для объявления функции.",
+        "greet — имя функции.",
+        "{} — тело функции, внутри которого находится код."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function greet() {\n    console.log(\"Hello!\");\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Для объявления функции используется ключевое слово function.",
+        "Такой способ создания функции называется Function Declaration.",
+        "Function Declaration — классический способ создания функций в JavaScript.",
+        "Функция состоит из имени, списка параметров и тела функции."
+      ]
+    }
+  ]
+}

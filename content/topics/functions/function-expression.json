@@ -1,0 +1,81 @@
+{
+  "id": "function-expression",
+  "parentId": "function-types",
+  "title": "Function Expression",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Function Expression — это способ создания функции путем присваивания ее переменной."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const greet = function () {\n    console.log(\"Hello!\");\n};"
+    },
+    {
+      "type": "text",
+      "content": "Функция создается как значение и сохраняется в переменной greet."
+    },
+    {
+      "type": "heading",
+      "content": "Вызов функции"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "greet();"
+    },
+    {
+      "type": "result",
+      "content": "Hello!"
+    },
+    {
+      "type": "heading",
+      "content": "Именованная Function Expression"
+    },
+    {
+      "type": "text",
+      "content": "Function Expression может быть как анонимной, так и именованной."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const greet = function sayHello() {\n    console.log(\"Hello!\");\n};"
+    },
+    {
+      "type": "text",
+      "content": "Имя sayHello доступно только внутри самой функции. Снаружи функция вызывается через переменную greet."
+    },
+    {
+      "type": "heading",
+      "content": "Function Declaration и Function Expression"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Function Declaration\nfunction greet() {\n    console.log(\"Hello!\");\n}\n\n// Function Expression\nconst sayHello = function () {\n    console.log(\"Hello!\");\n};"
+    },
+    {
+      "type": "text",
+      "content": "Главное отличие заключается в том, что Function Declaration объявляется отдельно, а Function Expression является значением, которое присваивается переменной."
+    },
+    {
+      "type": "note",
+      "content": "Function Expression не поднимается полностью (hoisting) как Function Declaration. До момента инициализации переменной вызвать такую функцию нельзя."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Function Expression — это функция, присвоенная переменной.",
+        "Function Expression может быть анонимной или именованной.",
+        "Вызывается через имя переменной.",
+        "Function Expression и Function Declaration создаются по-разному.",
+        "Function Expression не поднимается так же, как Function Declaration."
+      ]
+    }
+  ]
+}

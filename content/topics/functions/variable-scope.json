@@ -1,0 +1,79 @@
+{
+  "id": "variable-scope",
+  "parentId": "scope",
+  "title": "Область видимости переменных",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Область видимости (Scope) определяет, где переменная доступна для использования."
+    },
+    {
+      "type": "heading",
+      "content": "Глобальная область видимости"
+    },
+    {
+      "type": "text",
+      "content": "Переменная, объявленная вне функций и блоков, находится в глобальной области видимости."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const siteName = \"JS Roadmap\";\n\nfunction showName() {\n    console.log(siteName);\n}\n\nshowName();"
+    },
+    {
+      "type": "result",
+      "content": "JS Roadmap"
+    },
+    {
+      "type": "heading",
+      "content": "Локальная область видимости функции"
+    },
+    {
+      "type": "text",
+      "content": "Переменные, объявленные внутри функции, доступны только внутри этой функции."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function test() {\n    const message = \"Hello\";\n    console.log(message);\n}\n\ntest();\nconsole.log(message);"
+    },
+    {
+      "type": "result",
+      "content": "Hello\nReferenceError: message is not defined"
+    },
+    {
+      "type": "heading",
+      "content": "Блочная область видимости"
+    },
+    {
+      "type": "text",
+      "content": "Переменные, объявленные с помощью let и const внутри блока, доступны только внутри этого блока."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "if (true) {\n    const age = 20;\n    let name = \"Anna\";\n}\n\nconsole.log(age);\nconsole.log(name);"
+    },
+    {
+      "type": "result",
+      "content": "ReferenceError\nReferenceError"
+    },
+    {
+      "type": "note",
+      "content": "Подробнее о глобальной, функциональной и блочной области видимости, а также об особенностях var, let и const рассказывается в отдельных темах справочника."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Scope определяет, где доступна переменная.",
+        "Глобальные переменные доступны почти везде.",
+        "Локальные переменные функции существуют только внутри функции.",
+        "let и const создают блочную область видимости."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "logical-assignment",
+  "parentId": "operators",
+  "title": "Логические операторы присваивания",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Логические операторы присваивания</strong> объединяют логическую проверку и присваивание значения."
+    },
+    {
+      "type": "text",
+      "content": "Они позволяют записывать код короче и избегать повторного использования одной и той же переменной."
+    },
+    {
+      "type": "heading",
+      "content": "Основные операторы"
+    },
+    {
+      "type": "scheme",
+      "content": "&&=  Логическое И с присваиванием\n||=  Логическое ИЛИ с присваиванием\n??=  Nullish Coalescing с присваиванием"
+    },
+    {
+      "type": "heading_sm",
+      "content": "&&="
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>&&=</strong> присваивает новое значение только тогда, когда текущее значение является <strong>truthy</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let user = \"Sarah\";\n\nuser &&= \"Lara\";\n\nconsole.log(user); // \"Lara\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "||="
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>||=</strong> присваивает новое значение только тогда, когда текущее значение является <strong>falsy</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let user = \"\";\n\nuser ||= \"Гость\";\n\nconsole.log(user); // \"Гость\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "??="
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>??=</strong> присваивает новое значение только тогда, когда переменная содержит <strong>null</strong> или <strong>undefined</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age;\n\nage ??= 18;\n\nconsole.log(age); // 18"
+    },
+    {
+      "type": "note",
+      "content": "<strong>&&=</strong>, <strong>||=</strong> и <strong>??=</strong> являются сокращенной формой записи и работают на основе операторов <strong>&&</strong>, <strong>||</strong> и <strong>??</strong>, которые были рассмотрены ранее."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>&&=</strong> выполняет присваивание только для <strong>truthy</strong>-значений.",
+        "<strong>||=</strong> выполняет присваивание только для <strong>falsy</strong>-значений.",
+        "<strong>??=</strong> выполняет присваивание только для <strong>null</strong> и <strong>undefined</strong>.",
+        "Логические операторы присваивания помогают сделать код короче и избежать повторений."
+      ]
+    }
+  ]
+}

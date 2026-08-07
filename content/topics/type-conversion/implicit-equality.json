@@ -1,0 +1,195 @@
+{
+  "id": "implicit-equality",
+  "parentId": "implicit-type-conversion",
+  "title": "Неявное преобразование при операторе ==",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Оператор <strong>==</strong> сравнивает два значения. Если типы данных одинаковые, JavaScript сравнивает значения напрямую. Если типы разные, JavaScript пытается привести значения к одному типу по определенным правилам, после чего выполняет сравнение."
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм работы"
+    },
+    {
+      "type": "heading_sm",
+      "content": "1. Если типы одинаковые"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript сравнивает значения напрямую без преобразования типов."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "5 == 5              // true\n\"Hello\" == \"Hello\" // true\ntrue == true        // true\n\nNaN == NaN          // false"
+    },
+    {
+      "type": "note",
+      "content": "<strong>NaN</strong> никогда не равен самому себе."
+    },
+    {
+      "type": "heading_sm",
+      "content": "2. Если сравниваются null и undefined"
+    },
+    {
+      "type": "text",
+      "content": "<strong>null</strong> и <strong>undefined</strong> равны только друг другу."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "null == undefined // true\n\nnull == 0        // false\nundefined == 0   // false"
+    },
+    {
+      "type": "heading_sm",
+      "content": "3. Если один из операндов имеет тип Boolean"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Boolean</strong> всегда преобразуется в <strong>Number</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "true == 1  // true\nfalse == 0 // true"
+    },
+    {
+      "type": "scheme",
+      "content": "true == \"1\"\n↓\ntrue → Number → 1\n\"1\" → Number → 1\n↓\n1 == 1\n↓\ntrue"
+    },
+    {
+      "type": "heading_sm",
+      "content": "4. Если один операнд String, а другой Number"
+    },
+    {
+      "type": "text",
+      "content": "Строка преобразуется в <strong>Number</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"5\" == 5       // true\n\"hello\" == 5   // false"
+    },
+    {
+      "type": "scheme",
+      "content": "\"5\" → Number → 5\n↓\n5 == 5\n↓\ntrue"
+    },
+    {
+      "type": "heading_sm",
+      "content": "5. Если участвует BigInt"
+    },
+    {
+      "type": "text",
+      "content": "При сравнении через <strong>==</strong> BigInt сравнивается по числовому значению."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "10n == 10     // true\n10n == \"10\"  // true\n10n == \"10n\" // false"
+    },
+    {
+      "type": "heading_sm",
+      "content": "6. Если участвует Object"
+    },
+    {
+      "type": "text",
+      "content": "Объект сначала преобразуется в примитивное значение, после чего сравнение продолжается по обычным правилам."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "[] == 0"
+    },
+    {
+      "type": "note",
+      "content": "Подробное преобразование объектов будет рассмотрено после темы <strong>«Объекты»</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "a == b\n│\n▼\nТипы одинаковые?\n│\n├── Да → Сравнить значения\n│\n└── Нет\n    │\n    ├── null / undefined?\n    │   ├── Да → true только для null == undefined\n    │   └── Нет\n    │\n    ├── Есть Object?\n    │   └── Object → Primitive\n    │\n    ├── Есть Boolean?\n    │   └── Boolean → Number\n    │\n    ├── String + Number?\n    │   └── String → Number\n    │\n    ├── Есть BigInt?\n    │   └── Сравнение по числовому значению\n    │\n    └── Сравнить результат"
+    },
+    {
+      "type": "heading",
+      "content": "Практика работы =="
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример 1"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "[] == false // true"
+    },
+    {
+      "type": "scheme",
+      "content": "[] == false\n↓\nObject → Primitive\n↓\n\"\" == false\n↓\nfalse → 0\n↓\n\"\" → 0\n↓\n0 == 0\n↓\ntrue"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример 2"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"\" == 0 // true"
+    },
+    {
+      "type": "scheme",
+      "content": "\"\" → Number → 0\n↓\n0 == 0\n↓\ntrue"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример 3"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"0\" == false // true"
+    },
+    {
+      "type": "scheme",
+      "content": "false → Number → 0\n↓\n\"0\" → Number → 0\n↓\n0 == 0\n↓\ntrue"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример 4"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "null == 0 // false"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример 5"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "undefined == 0 // false"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>==</strong> выполняет неявное преобразование типов.",
+        "Если типы одинаковые — значения сравниваются напрямую.",
+        "<strong>null</strong> равен только <strong>undefined</strong>.",
+        "<strong>Boolean</strong> всегда преобразуется в <strong>Number</strong>.",
+        "<strong>String</strong> при сравнении с <strong>Number</strong> преобразуется в <strong>Number</strong>.",
+        "<strong>BigInt</strong> имеет специальные правила сравнения.",
+        "<strong>Object</strong> сначала преобразуется в примитив.",
+        "Не запоминай отдельные случаи — проходи алгоритм сверху вниз."
+      ]
+    }
+  ]
+}

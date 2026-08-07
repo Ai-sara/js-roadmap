@@ -1,0 +1,26 @@
+{
+  "id": "naming-recommendations",
+  "parentId": "naming-rules",
+  "title": "Рекомендации",
+  "blocks": [
+    { "type": "heading", "content": "Имя должно отражать смысл" },
+    { "type": "text", "content": "Плохие примеры:" },
+    { "type": "code", "content": "let a;\nlet x;\nlet temp;" },
+    { "type": "text", "content": "Хорошие примеры:" },
+    { "type": "code", "content": "let userName;\nlet userAge;\nlet totalPrice;\nlet isLoggedIn;" },
+    { "type": "text", "content": "По названию должно быть понятно, что хранится в переменной." },
+    { "type": "heading", "content": "Используй camelCase" },
+    { "type": "text", "content": "Для переменных и функций в JavaScript принято использовать camelCase. Первая буква — маленькая, каждое следующее слово начинается с большой." },
+    { "type": "code", "content": "let firstName;\nlet userAge;\nlet totalPrice;\nlet isLoggedIn;" },
+    { "type": "heading", "content": "Константы" },
+    { "type": "text", "content": "Если значение никогда не изменится и известно заранее, обычно используют UPPER_SNAKE_CASE." },
+    { "type": "code", "content": "const MAX_USERS = 100;\nconst API_URL = \"...\";\nconst USER_ID = 15;" },
+    { "type": "note", "content": "📌 Это рекомендация, а не правило языка. Если const хранит обычное значение, которое просто не будет переназначаться, многие разработчики используют обычный camelCase." },
+    { "type": "code", "content": "const user = {};\nconst colors = [];" },
+    { "type": "heading", "content": "Что не рекомендуется" },
+    { "type": "text", "content": "Не стоит использовать непонятные сокращения." },
+    { "type": "code", "content": "❌\nlet usr;\nlet nm;\nlet pr;" },
+    { "type": "code", "content": "✅\nlet user;\nlet name;\nlet price;" },
+    { "type": "text", "content": "Код читают чаще, чем пишут, поэтому лучше выбирать понятные имена." }
+  ]
+}

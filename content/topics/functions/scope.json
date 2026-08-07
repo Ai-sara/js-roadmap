@@ -1,0 +1,9 @@
+{
+  "id": "scope",
+  "parentId": "scope-and-closures",
+  "title": "Область видимости (Scope)",
+  "children": [
+    "variable-scope",
+    "nested-functions-and-scope"
+  ]
+}

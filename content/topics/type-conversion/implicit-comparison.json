@@ -1,0 +1,113 @@
+{
+  "id": "implicit-comparison",
+  "parentId": "implicit-type-conversion",
+  "title": "Неявное преобразование в операторах сравнения",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "При сравнении значений JavaScript может автоматически преобразовывать типы данных, чтобы выполнить сравнение."
+    },
+    {
+      "type": "heading",
+      "content": "От чего зависит преобразование?"
+    },
+    {
+      "type": "text",
+      "content": "Это зависит от используемого оператора."
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>==</strong> и <strong>!=</strong> — могут выполнять неявное преобразование типов.",
+        "<strong>===</strong> и <strong>!==</strong> — не выполняют преобразование типов."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Нестрогое равенство (==)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>==</strong> сравнивает значения после возможного преобразования типов."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "5 == \"5\" // true"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript преобразует строку <strong>\"5\"</strong> в число, после чего сравнивает значения."
+    },
+    {
+      "type": "scheme",
+      "content": "\"5\"\n↓\nNumber\n↓\n5\n↓\n5 == 5\n↓\ntrue"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "true == 1 // true"
+    },
+    {
+      "type": "scheme",
+      "content": "true\n↓\nNumber\n↓\n1\n↓\n1 == 1\n↓\ntrue"
+    },
+    {
+      "type": "heading",
+      "content": "Строгое равенство (===)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>===</strong> сравнивает значения <strong>без преобразования типов</strong>. Для равенства должны совпадать и тип данных, и значение."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "5 === \"5\" // false"
+    },
+    {
+      "type": "scheme",
+      "content": "5 → Number\n\"5\" → String\n↓\nТипы разные\n↓\nfalse"
+    },
+    {
+      "type": "heading",
+      "content": "Нестрогое неравенство (!=)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>!=</strong> проверяет, являются ли значения неравными после возможного преобразования типов."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "5 != \"10\" // true"
+    },
+    {
+      "type": "heading",
+      "content": "Строгое неравенство (!==)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>!==</strong> проверяет, отличаются ли значения или их типы."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "5 !== \"5\" // true"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>==</strong> и <strong>!=</strong> могут автоматически преобразовывать типы данных.",
+        "<strong>===</strong> и <strong>!==</strong> никогда не выполняют преобразование типов.",
+        "Для <strong>===</strong> должны совпадать и тип данных, и значение.",
+        "В современном JavaScript рекомендуется использовать <strong>===</strong> и <strong>!==</strong>, потому что их поведение более предсказуемо.",
+        "Подробный алгоритм работы <strong>==</strong> рассматривается отдельно."
+      ]
+    }
+  ]
+}

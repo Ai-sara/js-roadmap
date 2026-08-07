@@ -1,0 +1,90 @@
+{
+  "id": "hoisting",
+  "parentId": "variables",
+  "title": "Поднятие (Hoisting)",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Hoisting (поднятие)</strong> — это механизм JavaScript, при котором объявления переменных и функций обрабатываются <strong>до выполнения кода</strong>."
+    },
+    {
+      "type": "note",
+      "content": "<strong>Поднимается только объявление</strong>, а не инициализация (присвоение значения)."
+    },
+    {
+      "type": "heading",
+      "content": "Как это работает?"
+    },
+    {
+      "type": "text",
+      "content": "Перед выполнением программы JavaScript сначала анализирует код и создает все объявления переменных и функций, а затем начинает выполнять код сверху вниз."
+    },
+    {
+      "type": "scheme",
+      "content": "Код\n│\n▼\nАнализ кода\n│\n▼\nСоздание объявлений\n│\n▼\nВыполнение программы"
+    },
+    {
+      "type": "heading",
+      "content": "Hoisting для var"
+    },
+    {
+      "type": "text",
+      "content": "Для <strong>var</strong> память выделяется сразу. До первой инициализации переменная имеет значение <strong>undefined</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(name); // undefined\n\nvar name = \"Lara\";"
+    },
+    {
+      "type": "scheme",
+      "content": "Создание переменной\n│\n▼\nname = undefined\n│\n▼\nname = \"Lara\""
+    },
+    {
+      "type": "heading",
+      "content": "Hoisting для let"
+    },
+    {
+      "type": "text",
+      "content": "Для <strong>let</strong> память также выделяется заранее, но до момента объявления переменная находится в <strong>Temporal Dead Zone (TDZ)</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(age); // ❌ ReferenceError\n\nlet age = 20;"
+    },
+    {
+      "type": "scheme",
+      "content": "Создание переменной\n│\n▼\nTDZ\n│\n▼\nlet age = 20\n│\n▼\nМожно использовать"
+    },
+    {
+      "type": "heading",
+      "content": "Hoisting для const"
+    },
+    {
+      "type": "text",
+      "content": "<strong>const</strong> работает так же, как и <strong>let</strong>. До объявления переменная находится в <strong>Temporal Dead Zone (TDZ)</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(PI); // ❌ ReferenceError\n\nconst PI = 3.14;"
+    },
+    {
+      "type": "scheme",
+      "content": "Создание переменной\n│\n▼\nTDZ\n│\n▼\nconst PI = 3.14\n│\n▼\nМожно использовать"
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение"
+    },
+    {
+      "type": "scheme",
+      "content": "var\n│\n├── До объявления → undefined\n└── После объявления → значение\n\nlet / const\n│\n├── До объявления → TDZ (ReferenceError)\n└── После объявления → значение"
+    },
+    {
+      "type": "note",
+      "content": "<strong>Запомните:</strong> все три способа объявления (<strong>var</strong>, <strong>let</strong> и <strong>const</strong>) подвержены Hoisting. Разница в том, что <strong>var</strong> получает значение <strong>undefined</strong>, а <strong>let</strong> и <strong>const</strong> до объявления находятся в <strong>Temporal Dead Zone (TDZ)</strong>."
+    }
+  ]
+}

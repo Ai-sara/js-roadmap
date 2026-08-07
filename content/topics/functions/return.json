@@ -1,0 +1,80 @@
+{
+  "id": "return",
+  "parentId": "parameters-and-return",
+  "title": "Return",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Оператор return завершает выполнение функции и возвращает значение в место ее вызова."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function sum(a, b) {\n    return a + b;\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Использование возвращаемого значения"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const result = sum(5, 3);\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "8"
+    },
+    {
+      "type": "text",
+      "content": "После выполнения return функция сразу прекращает работу."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function example() {\n    console.log(\"До return\");\n\n    return;\n\n    console.log(\"После return\");\n}\n\nexample();"
+    },
+    {
+      "type": "result",
+      "content": "До return"
+    },
+    {
+      "type": "text",
+      "content": "Код после return никогда не выполняется."
+    },
+    {
+      "type": "heading",
+      "content": "Возврат без значения"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function test() {\n    return;\n}\n\nconsole.log(test());"
+    },
+    {
+      "type": "result",
+      "content": "undefined"
+    },
+    {
+      "type": "text",
+      "content": "Если значение после return не указано, функция возвращает undefined."
+    },
+    {
+      "type": "note",
+      "content": "Функция может содержать несколько операторов return, но выполнится только первый, до которого дойдет выполнение программы."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "return завершает выполнение функции.",
+        "return возвращает значение в место вызова функции.",
+        "Код после return не выполняется.",
+        "Если значение не указано, функция возвращает undefined."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "undefined",
+  "parentId": "data-types",
+  "title": "Undefined",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Undefined</strong> — это примитивный тип данных, который означает, что <strong>значение отсутствует</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Обычно значение <strong>undefined</strong> присваивается JavaScript автоматически."
+    },
+    {
+      "type": "heading",
+      "content": "Когда появляется undefined?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Переменная объявлена, но ей еще не присвоено значение.",
+        "Функция ничего не возвращает с помощью <strong>return</strong>.",
+        "Обращение к несуществующему свойству объекта."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Примеры"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Неинициализированная переменная"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age;\n\nconsole.log(age); // undefined"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Функция без return"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function sayHello() {\n    console.log(\"Hello\");\n}\n\nconsole.log(sayHello()); // undefined"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Несуществующее свойство"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = {\n    name: \"Sarah\"\n};\n\nconsole.log(user.age); // undefined"
+    },
+    {
+      "type": "note",
+      "content": "<strong>undefined</strong> чаще всего появляется автоматически. Обычно разработчики не присваивают это значение вручную."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Undefined</strong> означает отсутствие значения.",
+        "Чаще всего присваивается JavaScript автоматически.",
+        "Появляется у необъявленных значений, функций без <strong>return</strong> и несуществующих свойств объектов.",
+        "<strong>Undefined</strong> и <strong>null</strong> — разные значения. Их различия будут рассмотрены в отдельной теме."
+      ]
+    }
+  ]
+}

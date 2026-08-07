@@ -1,0 +1,11 @@
+{
+  "id": "parameters-and-return",
+  "parentId": "functions",
+  "title": "Параметры и возврат значения",
+  "children": [
+    "parameters-and-arguments",
+    "default-parameters",
+    "rest-parameters",
+    "return"
+  ]
+}

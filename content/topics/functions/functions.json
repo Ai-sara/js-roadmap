@@ -1,0 +1,12 @@
+{
+  "id": "functions",
+  "parentId": null,
+  "title": "Функции (Functions)",
+  "children": [
+    "introduction",
+    "parameters-and-return",
+    "function-types",
+    "scope-and-closures",
+    "function-behavior"
+  ]
+}

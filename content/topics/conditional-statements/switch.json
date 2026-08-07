@@ -1,0 +1,156 @@
+{
+  "id": "switch",
+  "parentId": "conditional-statements",
+  "title": "Оператор switch",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Оператор <strong>switch</strong> используется, когда нужно сравнить одно значение с несколькими возможными вариантами. Он позволяет заменить длинную цепочку <strong>if...else if</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "switch (выражение) {\n    case значение1:\n        // код\n        break;\n\n    case значение2:\n        // код\n        break;\n\n    default:\n        // код\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "JavaScript вычисляет выражение после <strong>switch</strong>.",
+        "Сравнивает результат с каждым <strong>case</strong> с помощью строгого сравнения (<strong>===</strong>).",
+        "Если найдено совпадение — выполняется соответствующий блок кода.",
+        "Если совпадений нет — выполняется блок <strong>default</strong> (если он есть)."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let day = 3;\n\nswitch (day) {\n    case 1:\n        console.log(\"Понедельник\");\n        break;\n\n    case 2:\n        console.log(\"Вторник\");\n        break;\n\n    case 3:\n        console.log(\"Среда\");\n        break;\n\n    default:\n        console.log(\"Неизвестный день\");\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\nСреда"
+    },
+    {
+      "type": "heading",
+      "content": "Оператор break"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>break</strong> завершает выполнение <strong>switch</strong>. Без него выполнение продолжится в следующем <strong>case</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let day = 2;\n\nswitch (day) {\n    case 1:\n        console.log(\"Понедельник\");\n\n    case 2:\n        console.log(\"Вторник\");\n\n    case 3:\n        console.log(\"Среда\");\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\nВторник\nСреда"
+    },
+    {
+      "type": "note",
+      "content": "После выполнения <strong>case 2</strong> JavaScript продолжил выполнять следующий <strong>case</strong>, потому что отсутствовал <strong>break</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Объединение нескольких case"
+    },
+    {
+      "type": "text",
+      "content": "Несколько вариантов могут выполнять один и тот же код."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let day = 6;\n\nswitch (day) {\n    case 6:\n    case 7:\n        console.log(\"Выходной\");\n        break;\n\n    default:\n        console.log(\"Рабочий день\");\n}"
+    },
+    {
+      "type": "heading",
+      "content": "default"
+    },
+    {
+      "type": "text",
+      "content": "Блок <strong>default</strong> выполняется, если ни один <strong>case</strong> не подошел."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let color = \"green\";\n\nswitch (color) {\n    case \"red\":\n        console.log(\"Красный\");\n        break;\n\n    case \"blue\":\n        console.log(\"Синий\");\n        break;\n\n    default:\n        console.log(\"Другой цвет\");\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Важная особенность"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>switch</strong> использует строгое сравнение (<strong>===</strong>)."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "switch (\"5\") {\n    case 5:\n        console.log(\"Совпало\");\n        break;\n\n    default:\n        console.log(\"Не совпало\");\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\nНе совпало"
+    },
+    {
+      "type": "text",
+      "content": "Потому что:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"5\" === 5 // false"
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать switch?"
+    },
+    {
+      "type": "text",
+      "content": "Используйте <strong>switch</strong>, если:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "сравнивается одно значение;",
+        "есть много возможных вариантов."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Если условия содержат сравнения (<strong>></strong>, <strong><</strong>, <strong>&&</strong>, <strong>||</strong> и т.д.), лучше использовать <strong>if...else</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>switch</strong> сравнивает одно значение с несколькими вариантами.",
+        "Для сравнения используется оператор <strong>===</strong>.",
+        "<strong>break</strong> завершает выполнение <strong>switch</strong>.",
+        "Без <strong>break</strong> выполнение продолжается в следующих <strong>case</strong>.",
+        "<strong>default</strong> выполняется, если совпадений нет.",
+        "<strong>switch</strong> удобно использовать вместо длинной цепочки <strong>if...else if</strong>, когда сравнивается одно и то же значение."
+      ]
+    }
+  ]
+}

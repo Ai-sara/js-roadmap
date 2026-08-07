@@ -1,0 +1,72 @@
+{
+  "id": "optional-chaining",
+  "parentId": "operators",
+  "title": "Optional Chaining (?.)",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Optional Chaining (?.)</strong> — это оператор, который позволяет безопасно обращаться к свойствам объектов и вызывать методы, если объект может быть <strong>null</strong> или <strong>undefined</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Зачем нужен Optional Chaining?"
+    },
+    {
+      "type": "text",
+      "content": "Без оператора <strong>?.</strong> попытка обратиться к свойству несуществующего объекта вызовет ошибку."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = null;\n\nconsole.log(user.name); // ❌ TypeError"
+    },
+    {
+      "type": "heading",
+      "content": "Использование Optional Chaining"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = null;\n\nconsole.log(user?.name); // undefined"
+    },
+    {
+      "type": "scheme",
+      "content": "user\n│\n├── null или undefined → undefined\n└── объект → обращение к свойству"
+    },
+    {
+      "type": "heading",
+      "content": "Доступ к вложенным свойствам"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = {\n    profile: {\n        name: \"Sarah\"\n    }\n};\n\nconsole.log(user?.profile?.name); // \"Sarah\""
+    },
+    {
+      "type": "heading",
+      "content": "Вызов методов"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = {\n    sayHello() {\n        return \"Hello\";\n    }\n};\n\nconsole.log(user.sayHello?.());"
+    },
+    {
+      "type": "note",
+      "content": "Оператор <strong>?.</strong> прекращает дальнейшее обращение к свойствам, если встречает <strong>null</strong> или <strong>undefined</strong>, и возвращает <strong>undefined</strong> вместо ошибки."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>?.</strong> используется для безопасного доступа к свойствам объектов.",
+        "Если объект равен <strong>null</strong> или <strong>undefined</strong>, результатом будет <strong>undefined</strong>.",
+        "Оператор помогает избежать ошибки <strong>TypeError</strong>.",
+        "<strong>?.</strong> можно использовать при обращении к свойствам, элементам массива и вызове методов."
+      ]
+    }
+  ]
+}

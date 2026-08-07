@@ -1,0 +1,10 @@
+{
+  "id": "function-behavior",
+  "parentId": "functions",
+  "title": "Особенности работы функций",
+  "children": [
+    "hoisting-functions",
+    "callback-functions",
+    "recursion"
+  ]
+}

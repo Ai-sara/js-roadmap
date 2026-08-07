@@ -1,0 +1,20 @@
+{
+  "id": "data-types",
+  "parentId": null,
+  "title": "Типы данных",
+  "children": [
+    "what-is-data-type",
+    "primitive-vs-reference",
+    "string",
+    "number",
+    "bigint",
+    "boolean",
+    "undefined",
+    "null",
+    "null-vs-undefined",
+    "symbol",
+    "object",
+    "array",
+    "typeof"
+  ]
+}

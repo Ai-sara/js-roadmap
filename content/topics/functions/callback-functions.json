@@ -1,0 +1,76 @@
+{
+  "id": "callback-functions",
+  "parentId": "function-behavior",
+  "title": "Callback-функции",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Callback (функция обратного вызова) — это функция, которая передается в другую функцию в качестве аргумента и вызывается внутри нее."
+    },
+    {
+      "type": "heading",
+      "content": "Простой пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function greet(name) {\n    console.log(`Привет, ${name}!`);\n}\n\nfunction processUser(callback) {\n    callback(\"Анна\");\n}\n\nprocessUser(greet);"
+    },
+    {
+      "type": "result",
+      "content": "Привет, Анна!"
+    },
+    {
+      "type": "text",
+      "content": "Функция greet передается как аргумент и вызывается внутри processUser."
+    },
+    {
+      "type": "heading",
+      "content": "Анонимный callback"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "processUser(function (name) {\n    console.log(`Привет, ${name}!`);\n});"
+    },
+    {
+      "type": "heading",
+      "content": "Стрелочная функция"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "processUser((name) => {\n    console.log(`Привет, ${name}!`);\n});"
+    },
+    {
+      "type": "heading",
+      "content": "Где используются callback-функции"
+    },
+    {
+      "type": "list",
+      "items": [
+        "обработка событий;",
+        "методы массивов (map, filter, reduce, forEach и другие);",
+        "асинхронный код;",
+        "таймеры setTimeout и setInterval."
+      ]
+    },
+    {
+      "type": "note",
+      "content": "Callback-функции являются одной из основных концепций JavaScript. Позже они будут использоваться при изучении методов массивов, событий, Promise и async/await."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Callback — это функция, переданная в другую функцию.",
+        "Callback вызывается внутри другой функции.",
+        "В качестве callback можно передавать обычные, анонимные и стрелочные функции.",
+        "Callback-функции широко используются в JavaScript."
+      ]
+    }
+  ]
+}

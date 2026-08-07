@@ -1,0 +1,80 @@
+{
+  "id": "object",
+  "parentId": "data-types",
+  "title": "Object",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Object — это ссылочный тип данных, который позволяет хранить несколько связанных значений в одном месте."
+    },
+    {
+      "type": "text",
+      "content": "Объект состоит из свойств. Каждое свойство представляет собой пару ключ: значение."
+    },
+    {
+      "type": "note",
+      "content": "Массивы, функции, даты, коллекции (Map, Set) и некоторые другие структуры в JavaScript также являются объектами. Они имеют собственные возможности, поэтому будут рассмотрены отдельно."
+    },
+    {
+      "type": "heading",
+      "content": "Создание объекта"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = {\n    name: \"Sarah\",\n    age: 25,\n    isStudent: true\n};"
+    },
+    {
+      "type": "heading",
+      "content": "Структура объекта"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "user\n│\n├── name → \"Sarah\"\n├── age → 25\n└── isStudent → true"
+    },
+    {
+      "type": "heading",
+      "content": "Получение значения свойства"
+    },
+    {
+      "type": "text",
+      "content": "Получить значение свойства можно двумя способами."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(user.name);\nconsole.log(user[\"name\"]);"
+    },
+    {
+      "type": "heading",
+      "content": "Изменение свойств"
+    },
+    {
+      "type": "text",
+      "content": "Свойства объекта можно изменять, добавлять и удалять."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = {\n    name: \"Sarah\"\n};\n\nuser.name = \"Lara\";\nuser.age = 25;\n\ndelete user.name;"
+    },
+    {
+      "type": "note",
+      "content": "Даже если объект объявлен через const, его содержимое можно изменять. Нельзя только присвоить переменной новый объект."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Object — ссылочный тип данных.",
+        "Объект хранит данные в виде пар ключ: значение.",
+        "К свойствам объекта можно обращаться через . или [].",
+        "Свойства объекта можно изменять независимо от того, объявлен объект через const или let."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "do-while",
+  "parentId": "loops",
+  "title": "Цикл do...while",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Цикл <strong>do...while</strong> похож на цикл <strong>while</strong>, но имеет одно важное отличие — тело цикла выполняется до проверки условия. Поэтому цикл <strong>do...while</strong> всегда выполняется минимум один раз."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "do {\n    // тело цикла\n} while (условие);"
+    },
+    {
+      "type": "note",
+      "content": "После <strong>while (условие)</strong> обязательно ставится точка с запятой (<strong>;</strong>)."
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let i = 1;\n\ndo {\n    console.log(i);\n    i++;\n} while (i <= 5);"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\n1\n2\n3\n4\n5"
+    },
+    {
+      "type": "heading",
+      "content": "Если условие сразу ложное"
+    },
+    {
+      "type": "text",
+      "content": "В отличие от <strong>while</strong>, тело цикла все равно выполнится один раз."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let i = 10;\n\ndo {\n    console.log(i);\n} while (i < 5);"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\n10"
+    },
+    {
+      "type": "heading",
+      "content": "Почему?"
+    },
+    {
+      "type": "scheme",
+      "content": "Сначала выполняется тело цикла\n↓\nТолько после этого проверяется условие\n↓\nЕсли условие true → следующая итерация\nЕсли условие false → цикл завершается"
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение while и do...while"
+    },
+    {
+      "type": "heading_sm",
+      "content": "while"
+    },
+    {
+      "type": "text",
+      "content": "Сначала проверяет условие."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let i = 10;\n\nwhile (i < 5) {\n    console.log(i);\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\nНичего не выведется."
+    },
+    {
+      "type": "heading_sm",
+      "content": "do...while"
+    },
+    {
+      "type": "text",
+      "content": "Сначала выполняет тело цикла."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let i = 10;\n\ndo {\n    console.log(i);\n} while (i < 5);"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\n10"
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать do...while?"
+    },
+    {
+      "type": "text",
+      "content": "Используйте <strong>do...while</strong>, если код должен выполниться хотя бы один раз независимо от условия."
+    },
+    {
+      "type": "list",
+      "items": [
+        "отображение меню пользователю;",
+        "повторный запрос данных;",
+        "ввод пароля до тех пор, пока он не станет правильным."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>do...while</strong> сначала выполняет тело цикла, затем проверяет условие.",
+        "Тело цикла всегда выполняется минимум один раз.",
+        "После <strong>while (условие)</strong> ставится точка с запятой (<strong>;</strong>).",
+        "Используется реже, чем <strong>while</strong> и <strong>for</strong>, но полезен, когда первая итерация должна выполниться обязательно."
+      ]
+    }
+  ]
+}

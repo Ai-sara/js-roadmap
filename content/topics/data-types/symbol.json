@@ -1,0 +1,71 @@
+{
+  "id": "symbol",
+  "parentId": "data-types",
+  "title": "Symbol",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Symbol</strong> — это примитивный тип данных, предназначенный для создания <strong>уникальных идентификаторов</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Каждый созданный <strong>Symbol</strong> уникален, даже если имеет одинаковое описание."
+    },
+    {
+      "type": "heading",
+      "content": "Создание Symbol"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const id = Symbol();\nconst userId = Symbol(\"userId\");"
+    },
+    {
+      "type": "note",
+      "content": "Текст внутри <strong>Symbol()</strong> — это только описание для удобства. Оно <strong>не влияет</strong> на уникальность символа."
+    },
+    {
+      "type": "heading",
+      "content": "Уникальность"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const id1 = Symbol(\"id\");\nconst id2 = Symbol(\"id\");\n\nconsole.log(id1 === id2); // false"
+    },
+    {
+      "type": "text",
+      "content": "Несмотря на одинаковое описание, <strong>id1</strong> и <strong>id2</strong> являются разными значениями."
+    },
+    {
+      "type": "heading",
+      "content": "Использование в объектах"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Symbol</strong> часто используют в качестве уникальных ключей объектов, чтобы избежать совпадения имен свойств."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const id = Symbol(\"id\");\n\nconst user = {\n    name: \"Sarah\",\n    [id]: 1\n};"
+    },
+    {
+      "type": "note",
+      "content": "<strong>Symbol</strong> используется значительно реже, чем остальные примитивные типы данных. В повседневной разработке он встречается нечасто."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Symbol</strong> — примитивный тип данных.",
+        "Каждый созданный <strong>Symbol</strong> уникален.",
+        "Описание внутри <strong>Symbol()</strong> не влияет на уникальность.",
+        "<strong>Symbol</strong> часто используется как уникальный ключ объекта."
+      ]
+    }
+  ]
+}

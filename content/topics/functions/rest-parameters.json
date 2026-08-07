@@ -1,0 +1,82 @@
+{
+  "id": "rest-parameters",
+  "parentId": "parameters-and-return",
+  "title": "Остаточные параметры (Rest Parameters)",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Остаточные параметры позволяют функции принимать неограниченное количество аргументов."
+    },
+    {
+      "type": "text",
+      "content": "Для этого перед именем параметра используется оператор ..."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function sum(...numbers) {\n    console.log(numbers);\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Вызов функции"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "sum(1, 2, 3);\nsum(10, 20, 30, 40);"
+    },
+    {
+      "type": "result",
+      "content": "[1, 2, 3]\n[10, 20, 30, 40]"
+    },
+    {
+      "type": "text",
+      "content": "Все переданные аргументы собираются в один массив."
+    },
+    {
+      "type": "heading",
+      "content": "Использование Rest Parameters"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function sum(...numbers) {\n    let total = 0;\n\n    for (const number of numbers) {\n        total += number;\n    }\n\n    return total;\n}\n\nconsole.log(sum(5, 10, 15));"
+    },
+    {
+      "type": "result",
+      "content": "30"
+    },
+    {
+      "type": "heading",
+      "content": "Ограничения"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function example(a, b, ...rest) {\n    console.log(a, b, rest);\n}"
+    },
+    {
+      "type": "text",
+      "content": "Rest-параметр может быть только один и обязательно должен находиться последним в списке параметров."
+    },
+    {
+      "type": "note",
+      "content": "Rest Parameters не следует путать с оператором Spread (...). Они используют одинаковый синтаксис, но выполняют разные задачи: Rest собирает аргументы в массив, а Spread распаковывает элементы массива или объекта."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Rest Parameters позволяют принимать любое количество аргументов.",
+        "Все аргументы собираются в массив.",
+        "Используется оператор ....",
+        "Rest-параметр может быть только один.",
+        "Rest-параметр всегда должен быть последним параметром функции.",
+        "Rest Parameters и Spread Operator — разные возможности JavaScript."
+      ]
+    }
+  ]
+}

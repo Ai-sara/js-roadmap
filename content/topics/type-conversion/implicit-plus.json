@@ -1,0 +1,89 @@
+{
+  "id": "implicit-plus",
+  "parentId": "implicit-type-conversion",
+  "title": "Неявное преобразование при операторе +",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Оператор <strong>+</strong> может выполнять две разные операции: <strong>сложение чисел</strong> и <strong>конкатенацию (объединение) строк</strong>. Поэтому JavaScript сначала определяет, с какими типами данных работает."
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм работы"
+    },
+    {
+      "type": "heading_sm",
+      "content": "1. Если хотя бы один операнд — String"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript преобразует второй операнд в строку и объединяет значения."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"5\" + 2           // \"52\"\n2 + \"5\"           // \"25\"\n\n\"Hello \" + \"JS\"  // \"Hello JS\"\n\ntrue + \"1\"        // \"true1\"\n\nnull + \"\"         // \"null\"\n\nundefined + \"\"    // \"undefined\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "2. Если строк нет"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript пытается преобразовать оба операнда в <strong>Number</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "true + 1      // 2\nfalse + 5     // 5\n\nnull + 5      // 5\n\ntrue + false  // 1"
+    },
+    {
+      "type": "heading_sm",
+      "content": "3. Если участвует BigInt"
+    },
+    {
+      "type": "text",
+      "content": "Оба значения должны иметь тип <strong>BigInt</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "10n + 5n // 15n\n\n10n + 5\n// ❌ TypeError"
+    },
+    {
+      "type": "heading_sm",
+      "content": "4. Если участвует Symbol"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Symbol</strong> нельзя автоматически преобразовать в строку или число при использовании оператора <strong>+</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Symbol() + \"\"\n// ❌ TypeError"
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "+\n│\n├── Есть String?\n│   │\n│   ├── Да\n│   │   └── Второй операнд → String\n│   │       ↓\n│   │     Конкатенация\n│   │\n│   └── Нет\n│       │\n│       ├── Есть BigInt?\n│       │   ├── Да → оба должны быть BigInt\n│       │   └── Нет\n│       │\n│       └── Оба значения → Number\n│           ↓\n│         Сложение"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Оператор <strong>+</strong> выполняет либо сложение, либо объединение строк.",
+        "Если хотя бы один операнд имеет тип <strong>String</strong>, второй также преобразуется в <strong>String</strong>.",
+        "Если строк нет, значения преобразуются в <strong>Number</strong>.",
+        "<strong>BigInt</strong> можно складывать только с <strong>BigInt</strong>.",
+        "Использование <strong>Symbol</strong> с оператором <strong>+</strong> приводит к <strong>TypeError</strong>."
+      ]
+    }
+  ]
+}

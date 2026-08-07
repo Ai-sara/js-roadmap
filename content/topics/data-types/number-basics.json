@@ -1,0 +1,71 @@
+{
+  "id": "number-basics",
+  "parentId": "number",
+  "title": "Number",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Number</strong> — это тип данных, предназначенный для хранения <strong>целых</strong> и <strong>дробных</strong> чисел."
+    },
+    {
+      "type": "heading",
+      "content": "Примеры"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 25;\nlet temperature = -10;\nlet price = 99.99;\nlet pi = 3.14159;"
+    },
+    {
+      "type": "heading",
+      "content": "Какие числа поддерживает Number?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Положительные</strong> числа.",
+        "<strong>Отрицательные</strong> числа.",
+        "<strong>Целые</strong> числа.",
+        "<strong>Дробные</strong> числа."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Арифметические операции"
+    },
+    {
+      "type": "text",
+      "content": "С числами можно выполнять стандартные математические операции."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let a = 10;\nlet b = 3;\n\nconsole.log(a + b); // 13\nconsole.log(a - b); // 7\nconsole.log(a * b); // 30\nconsole.log(a / b); // 3.333...\nconsole.log(a % b); // 1\nconsole.log(a ** b); // 1000"
+    },
+    {
+      "type": "heading",
+      "content": "Диапазон значений"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Number</strong> использует формат хранения чисел <strong>IEEE 754</strong>. Благодаря этому можно хранить очень большие и очень маленькие числа."
+    },
+    {
+      "type": "note",
+      "content": "Из-за особенностей формата <strong>IEEE 754</strong> некоторые дробные числа могут вычисляться <strong>неточно</strong>. Подробнее об этом будет рассказано в отдельной теме."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Number</strong> хранит целые и дробные числа.",
+        "Поддерживает стандартные арифметические операции.",
+        "Основан на формате <strong>IEEE 754</strong>.",
+        "Имеет специальные значения, такие как <strong>Infinity</strong> и <strong>NaN</strong>, которые будут рассмотрены в следующей теме."
+      ]
+    }
+  ]
+}

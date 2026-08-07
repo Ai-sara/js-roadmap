@@ -1,0 +1,78 @@
+{
+  "id": "boolean",
+  "parentId": "data-types",
+  "title": "Boolean",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Boolean</strong> — это тип данных, который может принимать только <strong>два значения</strong>: <strong>true</strong> или <strong>false</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Логические значения чаще всего используются при проверке условий и принятии решений в программе."
+    },
+    {
+      "type": "heading",
+      "content": "Возможные значения"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>true</strong> — истина.",
+        "<strong>false</strong> — ложь."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Примеры"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let isOnline = true;\nlet isAdmin = false;"
+    },
+    {
+      "type": "heading",
+      "content": "Boolean в условиях"
+    },
+    {
+      "type": "text",
+      "content": "Логические значения чаще всего используются в условных конструкциях."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let isLoggedIn = true;\n\nif (isLoggedIn) {\n    console.log(\"Добро пожаловать!\");\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Результат сравнений"
+    },
+    {
+      "type": "text",
+      "content": "Операторы сравнения всегда возвращают значение типа <strong>Boolean</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(10 > 5);      // true\nconsole.log(10 < 5);      // false\nconsole.log(5 === 5);     // true\nconsole.log(5 !== 5);     // false"
+    },
+    {
+      "type": "note",
+      "content": "Подробно операторы сравнения и логические операторы будут рассмотрены в отдельных темах."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Boolean</strong> имеет только два значения: <strong>true</strong> и <strong>false</strong>.",
+        "Используется для хранения логических значений.",
+        "Чаще всего применяется в условиях и сравнениях.",
+        "Результатом любого сравнения является значение типа <strong>Boolean</strong>."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "nested-functions-and-scope",
+  "parentId": "scope",
+  "title": "Вложенные функции и область видимости",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "В JavaScript функции можно объявлять внутри других функций. Такие функции называются вложенными."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function outer() {\n    function inner() {\n        console.log(\"Внутренняя функция\");\n    }\n\n    inner();\n}\n\nouter();"
+    },
+    {
+      "type": "result",
+      "content": "Внутренняя функция"
+    },
+    {
+      "type": "heading",
+      "content": "Доступ к внешним переменным"
+    },
+    {
+      "type": "text",
+      "content": "Вложенная функция имеет доступ к переменным своей внешней функции."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function outer() {\n    const message = \"Hello\";\n\n    function inner() {\n        console.log(message);\n    }\n\n    inner();\n}\n\nouter();"
+    },
+    {
+      "type": "result",
+      "content": "Hello"
+    },
+    {
+      "type": "heading",
+      "content": "Доступ снаружи"
+    },
+    {
+      "type": "text",
+      "content": "Внешняя функция не имеет доступа к локальным переменным вложенной функции."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function outer() {\n    function inner() {\n        const message = \"Hello\";\n    }\n\n    inner();\n    console.log(message);\n}\n\nouter();"
+    },
+    {
+      "type": "result",
+      "content": "ReferenceError: message is not defined"
+    },
+    {
+      "type": "note",
+      "content": "Именно возможность вложенной функции обращаться к переменным внешней функции лежит в основе механизма замыканий (Closures), который рассматривается в следующей теме."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Функции можно объявлять внутри других функций.",
+        "Вложенная функция имеет доступ к переменным внешней функции.",
+        "Внешняя функция не имеет доступа к локальным переменным вложенной функции.",
+        "Вложенные функции являются основой для создания замыканий."
+      ]
+    }
+  ]
+}

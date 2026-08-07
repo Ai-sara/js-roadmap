@@ -1,0 +1,71 @@
+{
+  "id": "typeof",
+  "parentId": "data-types",
+  "title": "typeof",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>typeof</strong> — это оператор JavaScript, который позволяет определить <strong>тип данных</strong> значения."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "typeof значение\n\ntypeof(значение)"
+    },
+    {
+      "type": "note",
+      "content": "Обе формы записи работают одинаково. Скобки используются только для удобства чтения."
+    },
+    {
+      "type": "heading",
+      "content": "Примеры"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(typeof \"Hello\");      // \"string\"\nconsole.log(typeof 10);           // \"number\"\nconsole.log(typeof 10n);          // \"bigint\"\nconsole.log(typeof true);         // \"boolean\"\nconsole.log(typeof undefined);    // \"undefined\"\nconsole.log(typeof Symbol());     // \"symbol\"\nconsole.log(typeof {});           // \"object\""
+    },
+    {
+      "type": "heading",
+      "content": "Особенность null"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(typeof null); // \"object\""
+    },
+    {
+      "type": "text",
+      "content": "<strong>null</strong> не является объектом, несмотря на результат <strong>\"object\"</strong>. Это историческая ошибка JavaScript, которая была сохранена для совместимости со старым кодом."
+    },
+    {
+      "type": "note",
+      "content": "Это одна из самых известных особенностей JavaScript, которую часто спрашивают на собеседованиях."
+    },
+    {
+      "type": "heading",
+      "content": "Результаты typeof"
+    },
+    {
+      "type": "scheme",
+      "content": "String      → \"string\"\nNumber      → \"number\"\nBigInt      → \"bigint\"\nBoolean     → \"boolean\"\nUndefined   → \"undefined\"\nSymbol      → \"symbol\"\nObject      → \"object\"\nNull        → \"object\" ⚠"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>typeof</strong> используется для определения типа данных.",
+        "Результатом всегда является строка.",
+        "<strong>typeof null</strong> возвращает <strong>\"object\"</strong> — это историческая особенность JavaScript.",
+        "<strong>typeof</strong> часто используется при проверке типов данных."
+      ]
+    }
+  ]
+}

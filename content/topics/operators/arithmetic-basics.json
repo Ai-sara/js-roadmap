@@ -1,0 +1,92 @@
+{
+  "id": "arithmetic-basics",
+  "parentId": "arithmetic-operators",
+  "title": "Арифметические операторы",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Арифметические операторы</strong> используются для выполнения математических операций над числами."
+    },
+    {
+      "type": "heading",
+      "content": "Основные арифметические операторы"
+    },
+    {
+      "type": "scheme",
+      "content": "+   Сложение\n-   Вычитание\n*   Умножение\n/   Деление\n%   Остаток от деления\n**  Возведение в степень"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Сложение (+)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let result = 5 + 3;\n\nconsole.log(result); // 8"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Вычитание (-)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let result = 10 - 4;\n\nconsole.log(result); // 6"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Умножение (*)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let result = 6 * 7;\n\nconsole.log(result); // 42"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Деление (/)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let result = 20 / 5;\n\nconsole.log(result); // 4"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Остаток от деления (%)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let result = 10 % 3;\n\nconsole.log(result); // 1"
+    },
+    {
+      "type": "note",
+      "content": "Оператор <strong>%</strong> возвращает <strong>остаток</strong> после деления, а не проценты."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Возведение в степень (**)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let result = 2 ** 3;\n\nconsole.log(result); // 8"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>+</strong> — сложение.",
+        "<strong>-</strong> — вычитание.",
+        "<strong>*</strong> — умножение.",
+        "<strong>/</strong> — деление.",
+        "<strong>%</strong> — остаток от деления.",
+        "<strong>**</strong> — возведение в степень."
+      ]
+    }
+  ]
+}

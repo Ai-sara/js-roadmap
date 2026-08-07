@@ -1,0 +1,10 @@
+{
+  "id": "ecmascript",
+  "parentId": "javascript-intro",
+  "title": "ECMAScript",
+  "blocks": [
+    { "type": "text", "content": "ECMAScript — это стандарт, который описывает, каким должен быть JavaScript."},
+    { "type": "text", "content": "JavaScript — это реализация этого стандарта."},
+    { "type": "note", "content": "\uD83D\uDCCC Каждый год в ECMAScript добавляют новые возможности, которые постепенно появляются в JavaScript." }
+  ]
+}

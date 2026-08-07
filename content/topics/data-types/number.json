@@ -1,0 +1,10 @@
+{
+  "id": "number",
+  "parentId": "data-types",
+  "title": "Number",
+  "children": [
+    "number-basics",
+    "special-number-values",
+    "ieee-754"
+  ]
+}

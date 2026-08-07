@@ -1,0 +1,9 @@
+{
+  "id": "scope-and-closures",
+  "parentId": "functions",
+  "title": "Область видимости и замыкания",
+  "children": [
+    "scope",
+    "closures"
+  ]
+}

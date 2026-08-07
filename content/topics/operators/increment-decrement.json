@@ -1,0 +1,88 @@
+{
+  "id": "increment-decrement",
+  "parentId": "operators",
+  "title": "Инкремент и декремент",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Инкремент</strong> и <strong>декремент</strong> — это специальные операторы, которые увеличивают или уменьшают значение переменной на <strong>1</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Инкремент (++)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>++</strong> увеличивает значение переменной на <strong>1</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 5;\n\ncount++;\n\nconsole.log(count); // 6"
+    },
+    {
+      "type": "heading",
+      "content": "Декремент (--)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>--</strong> уменьшает значение переменной на <strong>1</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 5;\n\ncount--;\n\nconsole.log(count); // 4"
+    },
+    {
+      "type": "heading",
+      "content": "Префиксная и постфиксная формы"
+    },
+    {
+      "type": "text",
+      "content": "Инкремент и декремент могут располагаться <strong>до</strong> переменной или <strong>после</strong> нее."
+    },
+    {
+      "type": "scheme",
+      "content": "++value  → Префиксная форма\nvalue++  → Постфиксная форма\n\n--value  → Префиксная форма\nvalue--  → Постфиксная форма"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Префиксный инкремент"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 5;\n\nconsole.log(++count); // 6\nconsole.log(count);   // 6"
+    },
+    {
+      "type": "note",
+      "content": "В префиксной форме значение <strong>сначала изменяется</strong>, а затем используется."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Постфиксный инкремент"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 5;\n\nconsole.log(count++); // 5\nconsole.log(count);   // 6"
+    },
+    {
+      "type": "note",
+      "content": "В постфиксной форме <strong>сначала используется текущее значение</strong>, а затем переменная изменяется."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>++</strong> увеличивает значение на <strong>1</strong>.",
+        "<strong>--</strong> уменьшает значение на <strong>1</strong>.",
+        "<strong>++value</strong> — сначала изменение, потом использование значения.",
+        "<strong>value++</strong> — сначала использование значения, потом изменение."
+      ]
+    }
+  ]
+}

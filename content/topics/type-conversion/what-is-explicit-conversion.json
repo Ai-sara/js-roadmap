@@ -1,0 +1,97 @@
+{
+  "id": "what-is-explicit-conversion",
+  "parentId": "explicit-type-conversion",
+  "title": "Что такое явное преобразование?",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Явное преобразование типов (Explicit Type Conversion)</strong> — это преобразование данных из одного типа в другой, которое программист выполняет самостоятельно, явно указывая тип, в который нужно преобразовать значение."
+    },
+    {
+      "type": "heading",
+      "content": "Во что можно преобразовать?"
+    },
+    {
+      "type": "text",
+      "content": "В JavaScript можно явно преобразовать значение в следующие типы данных:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>String</strong> → <code>String(value)</code>",
+        "<strong>Number</strong> → <code>Number(value)</code>",
+        "<strong>Boolean</strong> → <code>Boolean(value)</code>",
+        "<strong>BigInt</strong> → <code>BigInt(value)</code>*"
+      ]
+    },
+    {
+      "type": "note",
+      "content": "<strong>BigInt()</strong> имеет ограничения и может преобразовать не каждое значение."
+    },
+    {
+      "type": "heading",
+      "content": "Почему нет остальных типов?"
+    },
+    {
+      "type": "text",
+      "content": "Для следующих типов универсального преобразования не существует:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Null",
+        "Undefined",
+        "Symbol",
+        "Object"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Null(value)\nUndefined(value)"
+    },
+    {
+      "type": "note",
+      "content": "Таких функций в JavaScript не существует."
+    },
+    {
+      "type": "heading",
+      "content": "Особенности"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Symbol()"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Symbol()</strong> не преобразует значение в тип <strong>Symbol</strong>, а создает новый уникальный Symbol."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const id = Symbol(\"id\");"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Object()"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Object()</strong> не относится к обычному преобразованию типов. Она используется для создания объекта или объекта-обертки и изучается отдельно в теме <strong>Object</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Явное преобразование выполняет программист.",
+        "Для преобразования используются функции <strong>String()</strong>, <strong>Number()</strong>, <strong>Boolean()</strong> и <strong>BigInt()</strong>.",
+        "Универсальных функций преобразования для <strong>Null</strong>, <strong>Undefined</strong>, <strong>Symbol</strong> и <strong>Object</strong> не существует.",
+        "<strong>Symbol()</strong> создает новый Symbol, а не преобразует значение.",
+        "<strong>Object()</strong> используется для создания объектов и рассматривается отдельно."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "for-of",
+  "parentId": "loops",
+  "title": "Цикл for...of",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Цикл <strong>for...of</strong> используется для последовательного перебора элементов итерируемых объектов, например строк, массивов, Set и Map."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "for (const элемент of коллекция) {\n    // тело цикла\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "JavaScript берет первый элемент коллекции.",
+        "Выполняет тело цикла.",
+        "Переходит к следующему элементу.",
+        "Цикл завершается после обработки последнего элемента."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Перебор массива"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const numbers = [10, 20, 30];\n\nfor (const number of numbers) {\n    console.log(number);\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\n10\n20\n30"
+    },
+    {
+      "type": "heading",
+      "content": "Перебор строки"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const text = \"JS\";\n\nfor (const char of text) {\n    console.log(char);\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\nJ\nS"
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Коллекция\n↓\nПолучить следующий элемент\n↓\nВыполнить тело цикла\n↓\nЕсть еще элементы?\n│\n├── Да → следующая итерация\n└── Нет → завершить цикл"
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "для перебора массивов;",
+        "для перебора строк;",
+        "для перебора других итерируемых объектов."
+      ]
+    },
+    {
+      "type": "note",
+      "content": "<strong>for...of</strong> возвращает сами значения элементов, а не их индексы."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>for...of</strong> перебирает значения элементов.",
+        "Работает только с итерируемыми объектами.",
+        "Чаще всего используется для массивов и строк.",
+        "Не возвращает индексы элементов."
+      ]
+    }
+  ]
+}

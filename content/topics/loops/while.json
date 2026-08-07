@@ -1,0 +1,94 @@
+{
+  "id": "while",
+  "parentId": "loops",
+  "title": "Цикл while",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Цикл — это конструкция, которая позволяет многократно выполнять один и тот же блок кода, пока выполняется определенное условие."
+    },
+    {
+      "type": "text",
+      "content": "Цикл <strong>while</strong> сначала проверяет условие. Если условие истинно (<strong>true</strong>), выполняется тело цикла. После выполнения тела цикла условие проверяется снова. Цикл продолжается до тех пор, пока условие остается истинным."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "while (условие) {\n    // тело цикла\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let i = 1;\n\nwhile (i <= 5) {\n    console.log(i);\n    i++;\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\n1\n2\n3\n4\n5"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает пример?"
+    },
+    {
+      "type": "scheme",
+      "content": "Начальное значение:\ni = 1\n\n↓\n\nПроверка:\ni <= 5\n\n↓\n\ntrue?\n│\n├── Да\n│   ↓\n│ console.log(i)\n│ i++\n│\n└── Проверить условие снова\n\nЦикл продолжается, пока условие не станет false."
+    },
+    {
+      "type": "heading",
+      "content": "Если условие сразу ложное"
+    },
+    {
+      "type": "text",
+      "content": "Тело цикла не выполнится ни разу."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let i = 10;\n\nwhile (i < 5) {\n    console.log(i);\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// Результат\nНичего не выведется."
+    },
+    {
+      "type": "heading",
+      "content": "Бесконечный цикл"
+    },
+    {
+      "type": "text",
+      "content": "Если условие никогда не станет <strong>false</strong>, цикл будет выполняться бесконечно."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "while (true) {\n    console.log(\"Hello\");\n}"
+    },
+    {
+      "type": "note",
+      "content": "Такой цикл самостоятельно не завершится."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>while</strong> сначала проверяет условие.",
+        "Если условие <strong>false</strong>, цикл не выполнится ни разу.",
+        "После каждой итерации условие проверяется снова.",
+        "Нужно изменять данные, влияющие на условие, иначе можно получить бесконечный цикл."
+      ]
+    }
+  ]
+}

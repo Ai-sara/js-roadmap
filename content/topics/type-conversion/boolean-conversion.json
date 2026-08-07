@@ -1,0 +1,85 @@
+{
+  "id": "boolean-conversion",
+  "parentId": "explicit-type-conversion",
+  "title": "Преобразование в Boolean",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Преобразование в Boolean</strong> — это процесс преобразования значения в логический тип."
+    },
+    {
+      "type": "text",
+      "content": "Для явного преобразования используется функция:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Boolean(value)"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает Boolean(value)?"
+    },
+    {
+      "type": "text",
+      "content": "У JavaScript очень простое правило."
+    },
+    {
+      "type": "heading_sm",
+      "content": "1. Falsy значения"
+    },
+    {
+      "type": "text",
+      "content": "Существует всего <strong>8 значений</strong>, которые преобразуются в <strong>false</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Boolean(false)       // false\nBoolean(0)           // false\nBoolean(-0)          // false\nBoolean(0n)          // false\nBoolean(\"\")          // false\nBoolean(null)        // false\nBoolean(undefined)   // false\nBoolean(NaN)         // false"
+    },
+    {
+      "type": "note",
+      "content": "Эти значения называются <strong>Falsy values</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "2. Truthy значения"
+    },
+    {
+      "type": "text",
+      "content": "Все остальные значения преобразуются в <strong>true</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Boolean(1)            // true\nBoolean(-10)          // true\nBoolean(123n)         // true\nBoolean(\"0\")          // true\nBoolean(\"false\")      // true\nBoolean(\" \")          // true\nBoolean([])           // true\nBoolean({})           // true\nBoolean(Symbol())     // true\nBoolean(function(){}) // true"
+    },
+    {
+      "type": "note",
+      "content": "Любое значение, которое не входит в список <strong>Falsy</strong>, является <strong>Truthy</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Boolean(value)\n│\n├── Falsy (false)\n│   ├── false\n│   ├── 0\n│   ├── -0\n│   ├── 0n\n│   ├── \"\"\n│   ├── null\n│   ├── undefined\n│   └── NaN\n│\n└── Всё остальное → true"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Для преобразования в логический тип используется <strong>Boolean()</strong>.",
+        "В JavaScript только <strong>8 значений</strong> преобразуются в <strong>false</strong>.",
+        "Все остальные значения преобразуются в <strong>true</strong>.",
+        "Пустая строка <strong>\"\"</strong> — <strong>false</strong>, а строка с пробелом <strong>\" \"</strong> — <strong>true</strong>.",
+        "Строки <strong>\"0\"</strong> и <strong>\"false\"</strong> — не пустые строки, поэтому преобразуются в <strong>true</strong>.",
+        "Пустой массив <strong>[]</strong> и пустой объект <strong>{}</strong> также преобразуются в <strong>true</strong>."
+      ]
+    }
+  ]
+}

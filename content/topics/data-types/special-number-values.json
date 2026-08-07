@@ -1,0 +1,84 @@
+{
+  "id": "special-number-values",
+  "parentId": "number",
+  "title": "Специальные значения Number",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Помимо обычных чисел, тип <strong>Number</strong> имеет несколько <strong>специальных значений</strong>, которые используются в различных ситуациях."
+    },
+    {
+      "type": "heading",
+      "content": "Infinity"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Infinity</strong> — это специальное значение, обозначающее <strong>бесконечность</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(1 / 0); // Infinity"
+    },
+    {
+      "type": "note",
+      "content": "<strong>Infinity</strong> не является ошибкой. Это специальное числовое значение типа <strong>Number</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "-Infinity"
+    },
+    {
+      "type": "text",
+      "content": "<strong>-Infinity</strong> — это отрицательная бесконечность."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(-1 / 0); // -Infinity"
+    },
+    {
+      "type": "heading",
+      "content": "NaN"
+    },
+    {
+      "type": "text",
+      "content": "<strong>NaN (Not-a-Number)</strong> — специальное значение, которое означает, что результат вычисления <strong>не является корректным числом</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(\"Hello\" * 2); // NaN\nconsole.log(0 / 0); // NaN"
+    },
+    {
+      "type": "note",
+      "content": "<strong>NaN</strong> имеет тип <strong>Number</strong>, несмотря на свое название."
+    },
+    {
+      "type": "heading",
+      "content": "Проверка NaN"
+    },
+    {
+      "type": "text",
+      "content": "Для проверки значения <strong>NaN</strong> рекомендуется использовать метод <strong>Number.isNaN()</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(Number.isNaN(NaN)); // true\nconsole.log(Number.isNaN(10)); // false"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Infinity</strong> — положительная бесконечность.",
+        "<strong>-Infinity</strong> — отрицательная бесконечность.",
+        "<strong>NaN</strong> означает некорректный результат вычисления.",
+        "<strong>Infinity</strong>, <strong>-Infinity</strong> и <strong>NaN</strong> являются специальными значениями типа <strong>Number</strong>."
+      ]
+    }
+  ]
+}

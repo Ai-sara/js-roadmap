@@ -1,0 +1,155 @@
+{
+  "id": "implicit-math-operators",
+  "parentId": "implicit-type-conversion",
+  "title": "Неявное преобразование при математических операторах",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Операторы <strong>-</strong>, <strong>*</strong>, <strong>/</strong>, <strong>%</strong> и <strong>**</strong> всегда работают только с числами. Если операнды имеют другой тип данных, JavaScript автоматически пытается преобразовать их в <strong>Number</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм работы"
+    },
+    {
+      "type": "text",
+      "content": "Перед выполнением операции JavaScript преобразует оба операнда в <strong>Number</strong>. Если преобразование прошло успешно, выполняется математическая операция. Если хотя бы один операнд нельзя преобразовать в число, результатом будет <strong>NaN</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "String"
+    },
+    {
+      "type": "text",
+      "content": "Если строка содержит корректное число, она преобразуется в <strong>Number</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"10\" - 5     // 5\n\"10\" * 2     // 20\n\"10\" / 2     // 5\n\"10\" % 3     // 1\n\"2\" ** 3     // 8"
+    },
+    {
+      "type": "text",
+      "content": "Если строка не является корректным числом:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "\"Hello\" - 2 // NaN\n\"abc\" * 5   // NaN"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Boolean"
+    },
+    {
+      "type": "text",
+      "content": "Перед вычислением значения преобразуются по правилам:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "true - false // 1\ntrue * 5     // 5"
+    },
+    {
+      "type": "note",
+      "content": "Для оператора <strong>+</strong> действуют отдельные правила, которые рассмотрены в предыдущей теме."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Null"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "null - 5   // -5\nnull * 10  // 0"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Undefined"
+    },
+    {
+      "type": "text",
+      "content": "<strong>undefined</strong> преобразуется в <strong>NaN</strong>. Любая математическая операция с <strong>NaN</strong> возвращает <strong>NaN</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "undefined - 1 // NaN\nundefined * 2 // NaN"
+    },
+    {
+      "type": "heading_sm",
+      "content": "BigInt"
+    },
+    {
+      "type": "text",
+      "content": "<strong>BigInt</strong> работает только с другим <strong>BigInt</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "10n * 5n // 50n\n\n10n - 5\n// ❌ TypeError"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Symbol"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Symbol</strong> нельзя преобразовать в число."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "Symbol() - 1\n// ❌ TypeError"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Object"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript сначала пытается получить примитивное значение, затем преобразует его в число. Если это невозможно, результат — <strong>NaN</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "{} - 1 // NaN"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Array"
+    },
+    {
+      "type": "text",
+      "content": "Массив сначала преобразуется в примитив, затем в число."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "[] - 1      // -1\n[5] * 2     // 10\n[1, 2] - 1  // NaN"
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "-, *, /, %, **\n│\n├── Оба операнда → Number\n│\n├── Преобразование успешно?\n│   ├── Да → Выполнить операцию\n│   └── Нет → NaN\n│\n├── BigInt → только с BigInt\n└── Symbol → TypeError"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Операторы <strong>-</strong>, <strong>*</strong>, <strong>/</strong>, <strong>%</strong> и <strong>**</strong> работают только с числами.",
+        "Перед вычислением JavaScript пытается преобразовать оба операнда в <strong>Number</strong>.",
+        "Если преобразование невозможно, результат — <strong>NaN</strong>.",
+        "<strong>BigInt</strong> можно использовать только с другим <strong>BigInt</strong>.",
+        "Использование <strong>Symbol</strong> вызывает <strong>TypeError</strong>.",
+        "В отличие от оператора <strong>+</strong>, эти операторы никогда не объединяют строки."
+      ]
+    }
+  ]
+}

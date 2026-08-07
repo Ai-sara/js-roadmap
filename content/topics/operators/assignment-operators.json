@@ -1,0 +1,107 @@
+{
+  "id": "assignment-operators",
+  "parentId": "operators",
+  "title": "Операторы присваивания",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Операторы присваивания</strong> используются для записи значения в переменную."
+    },
+    {
+      "type": "heading",
+      "content": "Основной оператор присваивания"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>=</strong> присваивает значение переменной."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 25;"
+    },
+    {
+      "type": "heading",
+      "content": "Составные операторы присваивания"
+    },
+    {
+      "type": "text",
+      "content": "Составные операторы позволяют одновременно выполнить вычисление и присвоить результат переменной."
+    },
+    {
+      "type": "scheme",
+      "content": "=   Простое присваивание\n+=  Сложение с присваиванием\n-=  Вычитание с присваиванием\n*=  Умножение с присваиванием\n/=  Деление с присваиванием\n%=  Остаток от деления с присваиванием\n**= Возведение в степень с присваиванием"
+    },
+    {
+      "type": "heading_sm",
+      "content": "+="
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 5;\n\ncount += 3;\n\nconsole.log(count); // 8"
+    },
+    {
+      "type": "heading_sm",
+      "content": "-="
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 10;\n\ncount -= 4;\n\nconsole.log(count); // 6"
+    },
+    {
+      "type": "heading_sm",
+      "content": "*="
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 5;\n\ncount *= 2;\n\nconsole.log(count); // 10"
+    },
+    {
+      "type": "heading_sm",
+      "content": "/="
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 20;\n\ncount /= 5;\n\nconsole.log(count); // 4"
+    },
+    {
+      "type": "heading_sm",
+      "content": "%="
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 10;\n\ncount %= 3;\n\nconsole.log(count); // 1"
+    },
+    {
+      "type": "heading_sm",
+      "content": "**="
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let count = 2;\n\ncount **= 3;\n\nconsole.log(count); // 8"
+    },
+    {
+      "type": "note",
+      "content": "Запись <strong>x += y</strong> эквивалентна <strong>x = x + y</strong>. Аналогично работают остальные составные операторы присваивания."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>=</strong> — присваивает значение переменной.",
+        "Составные операторы объединяют вычисление и присваивание.",
+        "<strong>x += y</strong> эквивалентно <strong>x = x + y</strong>.",
+        "Аналогично работают <strong>-=</strong>, <strong>*=</strong>, <strong>/=</strong>, <strong>%=</strong> и <strong>**=</strong>."
+      ]
+    }
+  ]
+}

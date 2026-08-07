@@ -1,0 +1,98 @@
+{
+  "id": "arrow-functions",
+  "parentId": "function-types",
+  "title": "Стрелочные функции (Arrow Functions)",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Arrow Function — это сокращенный способ записи функции, появившийся в ES6."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const greet = () => {\n    console.log(\"Hello!\");\n};"
+    },
+    {
+      "type": "heading",
+      "content": "Вызов функции"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "greet();"
+    },
+    {
+      "type": "result",
+      "content": "Hello!"
+    },
+    {
+      "type": "heading",
+      "content": "Параметры"
+    },
+    {
+      "type": "text",
+      "content": "Если параметр один, круглые скобки можно опустить."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const greet = name => {\n    console.log(`Привет, ${name}!`);\n};"
+    },
+    {
+      "type": "text",
+      "content": "Если параметров нет или их несколько, круглые скобки обязательны."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const hello = () => {};\n\nconst sum = (a, b) => {\n    return a + b;\n};"
+    },
+    {
+      "type": "heading",
+      "content": "Неявный return"
+    },
+    {
+      "type": "text",
+      "content": "Если тело функции состоит из одного выражения, фигурные скобки и return можно не писать."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const sum = (a, b) => a + b;"
+    },
+    {
+      "type": "result",
+      "content": "Возвращается сумма a + b."
+    },
+    {
+      "type": "heading",
+      "content": "Когда используются"
+    },
+    {
+      "type": "text",
+      "content": "Стрелочные функции часто используются для небольших функций, колбэков и обработки массивов."
+    },
+    {
+      "type": "note",
+      "content": "Arrow Function имеет несколько важных отличий от обычной функции. Например, она не имеет собственного this, arguments и не может использоваться как конструктор. Эти особенности рассматриваются в отдельных темах."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Arrow Function — сокращенная запись функции.",
+        "Использует оператор =>.",
+        "При одном параметре круглые скобки можно опустить.",
+        "Если тело состоит из одного выражения, можно использовать неявный return.",
+        "Arrow Function отличается от обычной функции поведением this и arguments."
+      ]
+    }
+  ]
+}

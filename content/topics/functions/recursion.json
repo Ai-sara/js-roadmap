@@ -1,0 +1,84 @@
+{
+  "id": "recursion",
+  "parentId": "function-behavior",
+  "title": "Рекурсия",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Рекурсия — это способ решения задачи, при котором функция вызывает саму себя."
+    },
+    {
+      "type": "heading",
+      "content": "Простой пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function countdown(number) {\n    console.log(number);\n\n    if (number > 1) {\n        countdown(number - 1);\n    }\n}\n\ncountdown(5);"
+    },
+    {
+      "type": "result",
+      "content": "5\n4\n3\n2\n1"
+    },
+    {
+      "type": "heading",
+      "content": "Базовый случай"
+    },
+    {
+      "type": "text",
+      "content": "Каждая рекурсивная функция должна иметь условие, при котором рекурсивные вызовы прекращаются. Такое условие называется базовым случаем (Base Case)."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function countdown(number) {\n    if (number === 0) {\n        return;\n    }\n\n    console.log(number);\n    countdown(number - 1);\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Что произойдет без базового случая"
+    },
+    {
+      "type": "text",
+      "content": "Если функция всегда вызывает саму себя и никогда не прекращает выполнение, стек вызовов переполняется."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "function loop() {\n    loop();\n}\n\nloop();"
+    },
+    {
+      "type": "result",
+      "content": "RangeError: Maximum call stack size exceeded"
+    },
+    {
+      "type": "heading",
+      "content": "Где используется рекурсия"
+    },
+    {
+      "type": "list",
+      "items": [
+        "обход дерева DOM;",
+        "обход древовидных структур данных;",
+        "поиск в файловых системах;",
+        "математические задачи (например, факториал и числа Фибоначчи)."
+      ]
+    },
+    {
+      "type": "note",
+      "content": "Многие задачи, решаемые рекурсией, можно решить и с помощью циклов. В некоторых случаях рекурсия делает код более понятным, особенно при работе с древовидными структурами."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Рекурсия — это вызов функцией самой себя.",
+        "Каждая рекурсивная функция должна иметь базовый случай.",
+        "Без базового случая возникнет переполнение стека вызовов.",
+        "Рекурсия часто используется при работе с деревьями и вложенными структурами данных."
+      ]
+    }
+  ]
+}

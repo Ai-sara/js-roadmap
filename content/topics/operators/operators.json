@@ -1,0 +1,17 @@
+{
+  "id": "operators",
+  "parentId": null,
+  "title": "Операторы",
+  "children": [
+    "what-is-operator",
+    "arithmetic-operators",
+    "assignment-operators",
+    "increment-decrement",
+    "comparison-operators",
+    "logical-operators",
+    "ternary-operator",
+    "nullish-coalescing",
+    "optional-chaining",
+    "logical-assignment"
+  ]
+}

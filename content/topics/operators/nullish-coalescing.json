@@ -1,0 +1,85 @@
+{
+  "id": "nullish-coalescing",
+  "parentId": "operators",
+  "title": "Nullish Coalescing (??)",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Оператор Nullish Coalescing (??)</strong> возвращает первое значение, если оно <strong>не равно null и undefined</strong>. В противном случае возвращается второе значение."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "value1 ?? value2"
+    },
+    {
+      "type": "scheme",
+      "content": "value1\n│\n├── null или undefined → value2\n└── любое другое значение → value1"
+    },
+    {
+      "type": "heading",
+      "content": "Примеры"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Значение равно null"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let name = null;\n\nconsole.log(name ?? \"Гость\"); // \"Гость\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "Значение равно undefined"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age;\n\nconsole.log(age ?? 18); // 18"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Обычное значение"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 25;\n\nconsole.log(age ?? 18); // 25"
+    },
+    {
+      "type": "note",
+      "content": "<strong>??</strong> проверяет <strong>только</strong> значения <strong>null</strong> и <strong>undefined</strong>. Значения <strong>0</strong>, <strong>\"\"</strong> и <strong>false</strong> считаются обычными значениями."
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение с ||"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(0 || 100);  // 100\nconsole.log(0 ?? 100);  // 0"
+    },
+    {
+      "type": "note",
+      "content": "<strong>||</strong> заменяет любое <strong>falsy</strong>-значение, а <strong>??</strong> — только <strong>null</strong> и <strong>undefined</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>??</strong> возвращает первое значение, если оно не равно <strong>null</strong> и <strong>undefined</strong>.",
+        "Если первое значение равно <strong>null</strong> или <strong>undefined</strong>, возвращается второе.",
+        "<strong>0</strong>, <strong>false</strong> и <strong>\"\"</strong> оператор <strong>??</strong> не заменяет.",
+        "<strong>??</strong> часто используется для установки значений по умолчанию."
+      ]
+    }
+  ]
+}

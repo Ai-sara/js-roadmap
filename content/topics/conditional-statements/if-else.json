@@ -1,0 +1,145 @@
+{
+  "id": "if-else",
+  "parentId": "conditional-statements",
+  "title": "if, else, else if",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Условные операторы позволяют выполнять разный код в зависимости от того, выполняется условие или нет."
+    },
+    {
+      "type": "text",
+      "content": "JavaScript проверяет условие и автоматически преобразует его результат в <strong>Boolean</strong>."
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>true</strong> — выполняется один блок кода.",
+        "<strong>false</strong> — выполняется другой блок кода."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Оператор if"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>if</strong> выполняет код только в том случае, если условие возвращает <strong>true</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "if (условие) {\n    // код выполняется, если условие true\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 18;\n\nif (age >= 18) {\n    console.log(\"Доступ разрешен\");\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Условие\n   ↓\nПреобразование в Boolean\n   ↓\ntrue?\n│\n├── Да → выполнить код внутри if\n│\n└── Нет → пропустить блок"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Условие с другими типами данных"
+    },
+    {
+      "type": "text",
+      "content": "В условии можно использовать не только значения типа <strong>Boolean</strong>. JavaScript автоматически преобразует значение в <strong>Boolean</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "if (\"Hello\") {\n    console.log(\"Выполнится\");\n}"
+    },
+    {
+      "type": "text",
+      "content": "Строка <strong>\"Hello\"</strong> является truthy-значением, поэтому условие выполнится."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "if (0) {\n    console.log(\"Выполнится\");\n}"
+    },
+    {
+      "type": "text",
+      "content": "Число <strong>0</strong> является falsy-значением, поэтому код внутри <strong>if</strong> не выполнится."
+    },
+    {
+      "type": "heading",
+      "content": "Оператор else"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>else</strong> выполняет блок кода, если условие в <strong>if</strong> оказалось ложным."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "if (условие) {\n    // если true\n} else {\n    // если false\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let age = 16;\n\nif (age >= 18) {\n    console.log(\"Можно\");\n} else {\n    console.log(\"Нельзя\");\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Условие\n    ↓\nBoolean\n    ↓\ntrue?\n│\n├── Да → выполнить if\n│\n└── Нет → выполнить else"
+    },
+    {
+      "type": "heading",
+      "content": "Оператор else if"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>else if</strong> позволяет проверить несколько условий подряд."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "if (условие1) {\n\n} else if (условие2) {\n\n} else {\n\n}"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript проверяет условия сверху вниз. Как только найдено первое значение <strong>true</strong>, остальные условия больше не проверяются."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "let score = 85;\n\nif (score >= 90) {\n    console.log(\"A\");\n} else if (score >= 70) {\n    console.log(\"B\");\n} else {\n    console.log(\"C\");\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "Проверить условие 1\n│\n├── true → выполнить код → остановка\n│\n└── false\n      ↓\nПроверить условие 2\n│\n├── true → выполнить код → остановка\n│\n└── false\n      ↓\nelse"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>if</strong> выполняет код только при <strong>true</strong>.",
+        "Условия автоматически преобразуются в <strong>Boolean</strong>.",
+        "<strong>else</strong> выполняется, если <strong>if</strong> получил <strong>false</strong>.",
+        "<strong>else if</strong> позволяет проверить несколько вариантов.",
+        "Проверка идет сверху вниз.",
+        "После первого найденного <strong>true</strong> остальные условия не выполняются."
+      ]
+    }
+  ]
+}

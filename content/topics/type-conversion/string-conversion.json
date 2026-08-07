@@ -1,0 +1,138 @@
+{
+  "id": "string-conversion",
+  "parentId": "explicit-type-conversion",
+  "title": "Преобразование в String",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Преобразование в String</strong> — это процесс преобразования значения в строку."
+    },
+    {
+      "type": "text",
+      "content": "Для явного преобразования используется функция:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String(value)"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает String(value)?"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Number → String"
+    },
+    {
+      "type": "text",
+      "content": "Любое число преобразуется в строку."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String(123)      // \"123\"\nString(3.14)     // \"3.14\"\nString(-15)      // \"-15\"\nString(NaN)      // \"NaN\"\nString(Infinity) // \"Infinity\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "Boolean → String"
+    },
+    {
+      "type": "text",
+      "content": "Логические значения преобразуются в текст."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String(true)   // \"true\"\nString(false)  // \"false\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "Null → String"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String(null) // \"null\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "Undefined → String"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String(undefined) // \"undefined\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "BigInt → String"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String(123n) // \"123\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "Symbol → String"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String(Symbol(\"id\")) // \"Symbol(id)\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "Object → String"
+    },
+    {
+      "type": "text",
+      "content": "Для объектов JavaScript сначала пытается получить строковое представление объекта."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String({}) // \"[object Object]\""
+    },
+    {
+      "type": "heading_sm",
+      "content": "Array → String"
+    },
+    {
+      "type": "text",
+      "content": "Массив преобразуется в строку путем объединения всех элементов через запятую."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "String([])          // \"\"\nString([1])         // \"1\"\nString([1, 2, 3])   // \"1,2,3\"\nString([\"a\", \"b\"])  // \"a,b\""
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "String(value)\n│\n├── Number      → строка с числом\n├── Boolean\n│   ├── true    → \"true\"\n│   └── false   → \"false\"\n├── null        → \"null\"\n├── undefined   → \"undefined\"\n├── BigInt      → строка без \"n\"\n├── Symbol      → \"Symbol(description)\"\n├── Object      → строковое представление объекта\n└── Array       → элементы через запятую"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Для преобразования в строку используется <strong>String()</strong>.",
+        "Практически любое значение можно преобразовать в <strong>String</strong>.",
+        "<strong>Number</strong> становится строкой с числом.",
+        "<strong>Boolean</strong> преобразуется в <strong>\"true\"</strong> или <strong>\"false\"</strong>.",
+        "<strong>null</strong> → <strong>\"null\"</strong>.",
+        "<strong>undefined</strong> → <strong>\"undefined\"</strong>.",
+        "<strong>BigInt</strong> преобразуется без суффикса <strong>n</strong>.",
+        "Массив объединяет элементы через запятую.",
+        "Обычный объект преобразуется в строку <strong>\"[object Object]\"</strong>."
+      ]
+    }
+  ]
+}

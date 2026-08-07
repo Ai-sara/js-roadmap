@@ -1,0 +1,148 @@
+{
+  "id": "strict-comparison",
+  "parentId": "implicit-type-conversion",
+  "title": "Строгое сравнение (=== и !==)",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Операторы <strong>===</strong> и <strong>!==</strong> сравнивают значения <strong>без преобразования типов</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Для равенства через <strong>===</strong> должны совпадать:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "тип данных;",
+        "значение."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Строгое равенство (===)"
+    },
+    {
+      "type": "text",
+      "content": "Если типы одинаковые, JavaScript сравнивает значения. Если типы разные — сразу возвращает <strong>false</strong>."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "5 === 5               // true\n\"hello\" === \"hello\" // true\ntrue === true         // true\n\n5 === \"5\"            // false"
+    },
+    {
+      "type": "scheme",
+      "content": "5 → Number\n\"5\" → String\n↓\nТипы разные\n↓\nfalse"
+    },
+    {
+      "type": "heading",
+      "content": "Строгое неравенство (!==)"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <strong>!==</strong> является противоположностью <strong>===</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Он возвращает <strong>true</strong>, если:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "типы разные;",
+        "или значения разные."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "5 !== \"5\"   // true\n10 !== 5    // true\n\"JS\" !== \"JS\" // false"
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение объектов"
+    },
+    {
+      "type": "text",
+      "content": "При строгом сравнении объекты сравниваются <strong>по ссылке</strong>, а не по содержимому."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "{} === {} // false\n\nlet a = {};\nlet b = a;\n\na === b // true"
+    },
+    {
+      "type": "text",
+      "content": "Два одинаково выглядящих объекта — это разные объекты в памяти. Если две переменные указывают на один и тот же объект, сравнение вернет <strong>true</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "NaN, null и undefined"
+    },
+    {
+      "type": "heading_sm",
+      "content": "NaN"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "NaN === NaN // false"
+    },
+    {
+      "type": "note",
+      "content": "<strong>NaN</strong> никогда не равен самому себе."
+    },
+    {
+      "type": "heading_sm",
+      "content": "null и undefined"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "null === undefined // false"
+    },
+    {
+      "type": "text",
+      "content": "<strong>null</strong> и <strong>undefined</strong> имеют разные типы данных, поэтому результат сравнения — <strong>false</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "BigInt и Number"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "10n === 10 // false"
+    },
+    {
+      "type": "text",
+      "content": "<strong>BigInt</strong> и <strong>Number</strong> имеют разные типы данных, поэтому они не равны при строгом сравнении."
+    },
+    {
+      "type": "heading",
+      "content": "Алгоритм"
+    },
+    {
+      "type": "scheme",
+      "content": "a === b\n│\n▼\nТипы одинаковые?\n│\n├── Нет → false\n│\n└── Да\n    │\n    ▼\nСравнить значения\n    │\n    ├── Одинаковые → true\n    └── Разные      → false"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>===</strong> не выполняет преобразование типов.",
+        "Для <strong>===</strong> должны совпадать и тип, и значение.",
+        "<strong>!==</strong> — противоположность <strong>===</strong>.",
+        "Объекты сравниваются <strong>по ссылке</strong>, а не по содержимому.",
+        "<strong>null !== undefined</strong> при строгом сравнении.",
+        "<strong>NaN !== NaN</strong>.",
+        "<strong>10n !== 10</strong>, потому что это разные типы данных.",
+        "В большинстве случаев рекомендуется использовать <strong>===</strong> вместо <strong>==</strong>."
+      ]
+    }
+  ]
+}

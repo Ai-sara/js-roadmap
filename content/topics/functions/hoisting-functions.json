@@ -1,0 +1,79 @@
+{
+  "id": "hoisting-functions",
+  "parentId": "function-behavior",
+  "title": "Hoisting функций",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Hoisting (поднятие) — это механизм JavaScript, при котором объявления Function Declaration становятся доступными до их фактического места в коде."
+    },
+    {
+      "type": "heading",
+      "content": "Function Declaration"
+    },
+    {
+      "type": "text",
+      "content": "Функцию, объявленную с помощью Function Declaration, можно вызвать до ее объявления."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "sayHello();\n\nfunction sayHello() {\n    console.log(\"Hello!\");\n}"
+    },
+    {
+      "type": "result",
+      "content": "Hello!"
+    },
+    {
+      "type": "text",
+      "content": "Во время создания контекста выполнения JavaScript полностью поднимает объявление такой функции."
+    },
+    {
+      "type": "heading",
+      "content": "Function Expression"
+    },
+    {
+      "type": "text",
+      "content": "Function Expression ведет себя иначе, потому что функция хранится в переменной."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "sayHello();\n\nconst sayHello = function () {\n    console.log(\"Hello!\");\n};"
+    },
+    {
+      "type": "result",
+      "content": "ReferenceError: Cannot access 'sayHello' before initialization"
+    },
+    {
+      "type": "text",
+      "content": "Переменная объявляется, но до ее инициализации использовать функцию нельзя."
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "// ✅ Работает\nsayHello();\n\nfunction sayHello() {}\n\n// ❌ Ошибка\nsayHi();\n\nconst sayHi = function () {};"
+    },
+    {
+      "type": "note",
+      "content": "Поднятие Function Declaration не означает, что код функции выполняется заранее. JavaScript лишь делает объявление функции доступным до начала выполнения программы."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Hoisting — это механизм поднятия объявлений.",
+        "Function Declaration можно вызвать до объявления.",
+        "Function Expression нельзя вызвать до инициализации переменной.",
+        "Hoisting не выполняет функцию заранее — он делает объявление доступным."
+      ]
+    }
+  ]
+}
