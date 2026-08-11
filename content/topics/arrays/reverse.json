@@ -1,0 +1,132 @@
+{
+  "id": "reverse",
+  "parentId": "array-ordering",
+  "title": "reverse()",
+  "difficulty": 1,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое reverse()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод reverse() изменяет порядок элементов массива на противоположный.\n\nПервый элемент становится последним, последний — первым."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.reverse();"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает reverse()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод меняет порядок элементов внутри исходного массива.\n\nПосле завершения работы возвращается этот же массив, но уже с элементами в обратном порядке."
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4,\n    5\n];\n\nnumbers.reverse();\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "result",
+      "content": "[5, 4, 3, 2, 1]"
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает reverse()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод возвращает **тот же самый массив**, порядок элементов в котором был изменен."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому результат можно записать в переменную:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst result = numbers.reverse();\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[3, 2, 1]"
+    },
+    {
+      "type": "text",
+      "content": "Однако новый массив при этом **не создается**.\n\nПеременные numbers и result будут ссылаться на один и тот же массив."
+    },
+    {
+      "type": "heading",
+      "content": "Как сохранить исходный массив?"
+    },
+    {
+      "type": "text",
+      "content": "Если необходимо сохранить исходный массив, сначала создают его копию."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst reversedNumbers = [...numbers].reverse();\n\nconsole.log(reversedNumbers);"
+    },
+    {
+      "type": "result",
+      "content": "[3, 2, 1]"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(numbers);"
+    },
+    {
+      "type": "result",
+      "content": "[1, 2, 3]"
+    },
+    {
+      "type": "text",
+      "content": "Остался без изменений."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать reverse()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод reverse() используют, когда необходимо:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "развернуть порядок элементов массива;",
+        "получить элементы в обратном порядке."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "reverse() изменяет исходный массив.",
+        "Метод возвращает тот же самый массив.",
+        "Новый массив не создается.",
+        "Если необходимо сохранить исходный массив, перед вызовом reverse() создают его копию."
+      ]
+    }
+  ]
+}

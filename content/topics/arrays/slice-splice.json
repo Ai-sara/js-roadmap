@@ -1,0 +1,601 @@
+{
+  "id": "slice-splice",
+  "parentId": "arrays",
+  "title": "slice() и splice()",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Методы slice() и splice() имеют похожие названия, поэтому их часто путают."
+    },
+    {
+      "type": "text",
+      "content": "Однако они решают разные задачи."
+    },
+    {
+      "type": "list",
+      "items": [
+        "slice() — получает часть массива.",
+        "splice() — изменяет массив: удаляет, добавляет или заменяет элементы."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что такое slice()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод slice() создает **новый массив**, содержащий часть элементов исходного массива."
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив при этом **не изменяется**."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\",\n    \"Kiwi\"\n];\n\nconst result = fruits.slice(1, 3);\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Banana\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(fruits);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Apple\", \"Banana\", \"Orange\", \"Kiwi\"]"
+    },
+    {
+      "type": "text",
+      "content": "Как видно, fruits остался без изменений."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис slice()"
+    },
+    {
+      "type": "code",
+      "content": "array.slice(start);\n\narray.slice(start, end);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "start"
+    },
+    {
+      "type": "text",
+      "content": "Индекс элемента, **с которого начинается копирование**."
+    },
+    {
+      "type": "text",
+      "content": "Этот элемент будет включен в новый массив."
+    },
+    {
+      "type": "heading_sm",
+      "content": "end"
+    },
+    {
+      "type": "text",
+      "content": "Индекс, **до которого выполняется копирование**."
+    },
+    {
+      "type": "text",
+      "content": "Элемент с этим индексом **не включается** в новый массив."
+    },
+    {
+      "type": "text",
+      "content": "Именно поэтому диапазон выглядит так:"
+    },
+    {
+      "type": "text",
+      "content": "[start, end)"
+    },
+    {
+      "type": "list",
+      "items": [
+        "start — включается;",
+        "end — не включается."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    10,\n    20,\n    30,\n    40,\n    50\n];\n\nconst result = numbers.slice(1, 4);\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[20, 30, 40]"
+    },
+    {
+      "type": "text",
+      "content": "Были скопированы элементы с индексами:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Элемент с индексом 4 уже не вошел в результат."
+    },
+    {
+      "type": "heading",
+      "content": "Если указать только start"
+    },
+    {
+      "type": "text",
+      "content": "Если указать только первый параметр:"
+    },
+    {
+      "type": "code",
+      "content": "array.slice(start);"
+    },
+    {
+      "type": "text",
+      "content": "копирование продолжится **до конца массива**."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    10,\n    20,\n    30,\n    40,\n    50\n];\n\nconst result = numbers.slice(2);\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[30, 40, 50]"
+    },
+    {
+      "type": "text",
+      "content": "Все элементы начиная с индекса 2 были скопированы в новый массив."
+    },
+    {
+      "type": "heading",
+      "content": "Отрицательные индексы"
+    },
+    {
+      "type": "text",
+      "content": "Метод slice() поддерживает отрицательные индексы."
+    },
+    {
+      "type": "text",
+      "content": "В этом случае отсчет начинается **с конца массива**."
+    },
+    {
+      "type": "text",
+      "content": "Например, для массива:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    10,\n    20,\n    30,\n    40,\n    50\n];"
+    },
+    {
+      "type": "text",
+      "content": "Индексы можно представить так:"
+    },
+    {
+      "type": "text",
+      "content": "Положительные:"
+    },
+    {
+      "type": "text",
+      "content": "0    1    2    3    4\n[10, 20, 30, 40, 50]"
+    },
+    {
+      "type": "text",
+      "content": "Отрицательные:"
+    },
+    {
+      "type": "text",
+      "content": "-5   -4   -3   -2   -1"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Последний элемент"
+    },
+    {
+      "type": "text",
+      "content": "Чтобы получить последний элемент в виде массива:"
+    },
+    {
+      "type": "code",
+      "content": "const result = numbers.slice(-1);\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[50]"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Последние два элемента"
+    },
+    {
+      "type": "code",
+      "content": "const result = numbers.slice(-2);\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[40, 50]"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Часть массива"
+    },
+    {
+      "type": "text",
+      "content": "Можно использовать сразу два отрицательных индекса."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const result = numbers.slice(-4, -1);\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[20, 30, 40]"
+    },
+    {
+      "type": "text",
+      "content": "Были скопированы элементы начиная с индекса -4 и до индекса -1, не включая его."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает slice()?"
+    },
+    {
+      "type": "text",
+      "content": "Работу метода можно представить следующим алгоритмом."
+    },
+    {
+      "type": "scheme",
+      "content": [
+        "Создается новый пустой массив.",
+        "JavaScript начинает копировать элементы начиная с индекса start.",
+        "Копирование продолжается до индекса end (не включая его).",
+        "Новый массив возвращается как результат работы метода."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "При этом исходный массив остается без изменений."
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает slice()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод всегда возвращает **новый массив**."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    10,\n    20,\n    30,\n    40\n];\n\nconst result = numbers.slice(1, 3);\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[20, 30]"
+    },
+    {
+      "type": "text",
+      "content": "Переменная result содержит новый массив."
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "по-прежнему содержит:"
+    },
+    {
+      "type": "text",
+      "content": "[10, 20, 30, 40]"
+    },
+    {
+      "type": "text",
+      "content": "То есть slice() не изменяет исходный массив, а создает его копию (полную или частичную)."
+    },
+    {
+      "type": "heading",
+      "content": "Что такое splice()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод splice() используется для изменения массива."
+    },
+    {
+      "type": "text",
+      "content": "С его помощью можно:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "удалить элементы;",
+        "добавить новые элементы;",
+        "заменить существующие элементы."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "В отличие от slice(), метод splice() **изменяет исходный массив**."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.splice(start);\n\narray.splice(start, deleteCount);\n\narray.splice(start, deleteCount, item1, item2, ...);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "start"
+    },
+    {
+      "type": "text",
+      "content": "Индекс, с которого начинается изменение массива."
+    },
+    {
+      "type": "heading_sm",
+      "content": "deleteCount"
+    },
+    {
+      "type": "text",
+      "content": "Количество элементов, которое необходимо удалить."
+    },
+    {
+      "type": "heading_sm",
+      "content": "item1, item2, ..."
+    },
+    {
+      "type": "text",
+      "content": "Новые элементы, которые будут вставлены в массив."
+    },
+    {
+      "type": "text",
+      "content": "Добавлять новые элементы необязательно."
+    },
+    {
+      "type": "heading",
+      "content": "Удаление элементов"
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\",\n    \"Kiwi\"\n];\n\nfruits.splice(1, 2);\n\nconsole.log(fruits);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Apple\", \"Kiwi\"]"
+    },
+    {
+      "type": "text",
+      "content": "Начиная с индекса 1 были удалены два элемента:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Banana\"",
+        "\"Orange\""
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив изменился."
+    },
+    {
+      "type": "heading",
+      "content": "Добавление элементов"
+    },
+    {
+      "type": "text",
+      "content": "Если deleteCount равен 0, элементы не удаляются."
+    },
+    {
+      "type": "text",
+      "content": "Вместо этого новые элементы вставляются в массив."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Orange\"\n];\n\nfruits.splice(1, 0, \"Banana\");\n\nconsole.log(fruits);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Apple\", \"Banana\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "Элемент \"Banana\" был вставлен перед элементом с индексом 1."
+    },
+    {
+      "type": "heading",
+      "content": "Замена элементов"
+    },
+    {
+      "type": "text",
+      "content": "Удаление и добавление можно выполнить одновременно."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfruits.splice(1, 1, \"Kiwi\");\n\nconsole.log(fruits);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Apple\", \"Kiwi\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "Сначала был удален один элемент:"
+    },
+    {
+      "type": "text",
+      "content": "\"Banana\""
+    },
+    {
+      "type": "text",
+      "content": "Затем на его место был вставлен:"
+    },
+    {
+      "type": "text",
+      "content": "\"Kiwi\""
+    },
+    {
+      "type": "text",
+      "content": "Таким образом элемент был заменен."
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает splice()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод splice() возвращает **массив удаленных элементов**."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\",\n    \"Kiwi\"\n];\n\nconst removed = fruits.splice(1, 2);\n\nconsole.log(removed);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Banana\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(fruits);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Apple\", \"Kiwi\"]"
+    },
+    {
+      "type": "text",
+      "content": "Если элементы не удалялись (deleteCount = 0), метод вернет пустой массив."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst removed = numbers.splice(1, 0, 10);\n\nconsole.log(removed);"
+    },
+    {
+      "type": "result",
+      "content": "[]"
+    },
+    {
+      "type": "heading",
+      "content": "Главное отличие slice() и splice()"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "slice()",
+        "splice()"
+      ],
+      "rows": [
+        [
+          "Не изменяет исходный массив",
+          "Изменяет исходный массив"
+        ],
+        [
+          "Возвращает новый массив",
+          "Возвращает массив удаленных элементов"
+        ],
+        [
+          "Используется для копирования части массива",
+          "Используется для удаления, добавления и замены элементов"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "text",
+      "content": "Используйте **slice()**, если:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "нужно получить часть массива;",
+        "нужно создать копию массива;",
+        "нельзя изменять исходный массив."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Используйте **splice()**, если:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "нужно удалить элементы;",
+        "нужно добавить элементы;",
+        "нужно заменить элементы;",
+        "необходимо изменить исходный массив."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "slice() не изменяет исходный массив и возвращает новый.",
+        "splice() изменяет исходный массив.",
+        "splice() возвращает массив удаленных элементов.",
+        "slice() используют для копирования, splice() — для изменения массива."
+      ]
+    }
+  ]
+}

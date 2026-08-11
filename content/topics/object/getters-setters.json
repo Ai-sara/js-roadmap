@@ -1,0 +1,313 @@
+{
+  "id": "getters-setters",
+  "parentId": "object",
+  "title": "Геттеры и сеттеры",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое геттеры и сеттеры?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Геттеры и сеттеры</strong> — это специальные методы объекта, которые позволяют управлять чтением и изменением свойства."
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>getter</strong> выполняется при получении значения свойства;",
+        "<strong>setter</strong> выполняется при присваивании значения свойству."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "При этом снаружи они выглядят как обычные свойства:"
+    },
+    {
+      "type": "code",
+      "content": "user.name"
+    },
+    {
+      "type": "text",
+      "content": "а не как вызов метода:"
+    },
+    {
+      "type": "code",
+      "content": "user.name()"
+    },
+    {
+      "type": "heading",
+      "content": "Getter"
+    },
+    {
+      "type": "text",
+      "content": "Getter создаётся с помощью ключевого слова <code>get</code>."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    firstName: \"Alex\",\n    lastName: \"Smith\",\n\n    get fullName() {\n        return `${this.firstName} ${this.lastName}`;\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "Теперь <code>fullName</code> можно получить как обычное свойство:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(user.fullName);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex Smith"
+    },
+    {
+      "type": "text",
+      "content": "При обращении к <code>user.fullName</code> автоматически выполняется код внутри getter."
+    },
+    {
+      "type": "heading",
+      "content": "Почему getter называется свойством?"
+    },
+    {
+      "type": "text",
+      "content": "Несмотря на то что внутри находится функция:"
+    },
+    {
+      "type": "code",
+      "content": "get fullName() {\n    return `${this.firstName} ${this.lastName}`;\n}"
+    },
+    {
+      "type": "text",
+      "content": "вызывается она без круглых скобок:"
+    },
+    {
+      "type": "code",
+      "content": "user.fullName;"
+    },
+    {
+      "type": "text",
+      "content": "А не:"
+    },
+    {
+      "type": "code",
+      "content": "user.fullName();"
+    },
+    {
+      "type": "text",
+      "content": "Это позволяет представить вычисляемое значение как обычное свойство объекта."
+    },
+    {
+      "type": "heading",
+      "content": "Setter"
+    },
+    {
+      "type": "text",
+      "content": "Setter создаётся с помощью ключевого слова <code>set</code>."
+    },
+    {
+      "type": "text",
+      "content": "Он выполняется, когда свойству присваивается новое значение."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    _name: \"\",\n\n    set name(value) {\n        this._name = value;\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "user.name = \"Alex\";"
+    },
+    {
+      "type": "text",
+      "content": "автоматически запускает setter."
+    },
+    {
+      "type": "text",
+      "content": "Значение передаётся в параметр <code>value</code>."
+    },
+    {
+      "type": "heading",
+      "content": "Getter и setter вместе"
+    },
+    {
+      "type": "text",
+      "content": "Часто getter и setter используются вместе для одного свойства."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    _name: \"\",\n\n    get name() {\n        return this._name;\n    },\n\n    set name(value) {\n        this._name = value;\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "Теперь можно читать и изменять значение как обычное свойство:"
+    },
+    {
+      "type": "code",
+      "content": "user.name = \"Alex\";\n\nconsole.log(user.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex"
+    },
+    {
+      "type": "text",
+      "content": "При этом:"
+    },
+    {
+      "type": "code",
+      "content": "user.name = \"Alex\";"
+    },
+    {
+      "type": "text",
+      "content": "вызывает setter, а:"
+    },
+    {
+      "type": "code",
+      "content": "user.name"
+    },
+    {
+      "type": "text",
+      "content": "вызывает getter."
+    },
+    {
+      "type": "heading",
+      "content": "Зачем нужны геттеры и сеттеры?"
+    },
+    {
+      "type": "text",
+      "content": "Они позволяют контролировать работу со свойством."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    _age: 0,\n\n    set age(value) {\n        if (value >= 0) {\n            this._age = value;\n        }\n    },\n\n    get age() {\n        return this._age;\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "user.age = 25;\n\nconsole.log(user.age);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "25"
+    },
+    {
+      "type": "text",
+      "content": "Но отрицательное значение не будет сохранено:"
+    },
+    {
+      "type": "code",
+      "content": "user.age = -10;\n\nconsole.log(user.age);"
+    },
+    {
+      "type": "text",
+      "content": "Значение останется прежним."
+    },
+    {
+      "type": "heading",
+      "content": "Getter может вычислять значение"
+    },
+    {
+      "type": "text",
+      "content": "Getter не обязан просто возвращать сохранённое свойство."
+    },
+    {
+      "type": "text",
+      "content": "Он может каждый раз вычислять результат:"
+    },
+    {
+      "type": "code",
+      "content": "const rectangle = {\n    width: 10,\n    height: 5,\n\n    get area() {\n        return this.width * this.height;\n    }\n};\n\nconsole.log(rectangle.area);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "50"
+    },
+    {
+      "type": "text",
+      "content": "Если изменить размеры:"
+    },
+    {
+      "type": "code",
+      "content": "rectangle.width = 20;\n\nconsole.log(rectangle.area);"
+    },
+    {
+      "type": "text",
+      "content": "Результат автоматически изменится:"
+    },
+    {
+      "type": "code",
+      "content": "100"
+    },
+    {
+      "type": "heading",
+      "content": "Важное отличие от обычного метода"
+    },
+    {
+      "type": "text",
+      "content": "Обычный метод вызывается с <code>()</code>:"
+    },
+    {
+      "type": "code",
+      "content": "user.getName();"
+    },
+    {
+      "type": "text",
+      "content": "Getter используется без <code>()</code>:"
+    },
+    {
+      "type": "code",
+      "content": "user.name;"
+    },
+    {
+      "type": "text",
+      "content": "Setter также используется как обычное присваивание:"
+    },
+    {
+      "type": "code",
+      "content": "user.name = \"Alex\";"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Getter используется для чтения значения через свойство.",
+        "Setter используется для изменения значения через свойство.",
+        "Getter создаётся с помощью <code>get</code>.",
+        "Setter создаётся с помощью <code>set</code>.",
+        "Getter вызывается без круглых скобок.",
+        "Setter автоматически получает присваиваемое значение через параметр.",
+        "Getter может вычислять значение на основе других свойств.",
+        "Setter позволяет проверять или изменять значение перед сохранением.",
+        "Геттеры и сеттеры позволяют скрыть внутреннюю логику за интерфейсом обычного свойства."
+      ]
+    }
+  ]
+}

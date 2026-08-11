@@ -1,0 +1,187 @@
+{
+  "id": "concat",
+  "parentId": "arrays",
+  "title": "concat()",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое concat()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод concat() используется для объединения массивов."
+    },
+    {
+    "type": "text",
+    "content": "Он создает <strong>новый массив</strong>, содержащий элементы всех объединяемых массивов."
+    },
+    {
+    "type": "text",
+    "content": "Исходные массивы при этом <strong>не изменяются</strong>."
+    },
+    {
+    "type": "heading",
+    "content": "Синтаксис"
+    },
+    {
+    "type": "code",
+    "content": "array.concat(value1);\n\narray.concat(value1, value2, ...);"
+    },
+    {
+    "type": "heading",
+    "content": "Как работает concat()?"
+    },
+    {
+    "type": "text",
+    "content": "Метод последовательно копирует элементы исходного массива, а затем добавляет элементы, переданные в качестве аргументов."
+    },
+    {
+    "type": "text",
+    "content": "После объединения метод возвращает новый массив."
+    },
+    {
+    "type": "text",
+    "content": "Исходные массивы остаются без изменений."
+    },
+    {
+    "type": "heading",
+    "content": "Объединение двух массивов"
+    },
+    {
+    "type": "code",
+    "content": "const fruits = [\n    \"Apple\",\n    \"Banana\"\n];\n\nconst berries = [\n    \"Strawberry\",\n    \"Blueberry\"\n];\n\nconst result = fruits.concat(berries);\n\nconsole.log(result);"
+    },
+    {
+    "type": "text",
+    "content": "Результат:"
+    },
+    {
+    "type": "code",
+    "content": "[\"Apple\", \"Banana\", \"Strawberry\", \"Blueberry\"]"
+    },
+    {
+    "type": "heading",
+    "content": "Объединение нескольких массивов"
+    },
+    {
+    "type": "code",
+    "content": "const numbers1 = [1, 2];\nconst numbers2 = [3, 4];\nconst numbers3 = [5, 6];\n\nconst result = numbers1.concat(\n    numbers2,\n    numbers3\n);\n\nconsole.log(result);"
+    },
+    {
+    "type": "text",
+    "content": "Результат:"
+    },
+    {
+    "type": "code",
+    "content": "[1, 2, 3, 4, 5, 6]"
+    },
+    {
+    "type": "heading",
+    "content": "Добавление отдельных элементов"
+    },
+    {
+    "type": "text",
+    "content": "В concat() можно передавать не только массивы, но и отдельные значения."
+    },
+    {
+    "type": "code",
+    "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst result = numbers.concat(\n    4,\n    5\n);\n\nconsole.log(result);"
+    },
+    {
+    "type": "text",
+    "content": "Результат:"
+    },
+    {
+    "type": "code",
+    "content": "[1, 2, 3, 4, 5]"
+    },
+    {
+    "type": "heading",
+    "content": "Одновременное объединение массивов и элементов"
+    },
+    {
+    "type": "code",
+    "content": "const numbers = [\n    1,\n    2\n];\n\nconst result = numbers.concat(\n    3,\n    [4, 5],\n    6\n);\n\nconsole.log(result);"
+    },
+    {
+    "type": "text",
+    "content": "Результат:"
+    },
+    {
+    "type": "code",
+    "content": "[1, 2, 3, 4, 5, 6]"
+    },
+    {
+    "type": "heading",
+    "content": "Что возвращает concat()?"
+    },
+    {
+    "type": "text",
+    "content": "Метод всегда возвращает <strong>новый массив</strong>."
+    },
+    {
+    "type": "code",
+    "content": "const numbers1 = [\n    1,\n    2\n];\n\nconst numbers2 = [\n    3,\n    4\n];\n\nconst result = numbers1.concat(numbers2);\n\nconsole.log(result);"
+    },
+    {
+    "type": "text",
+    "content": "Результат:"
+    },
+    {
+    "type": "code",
+    "content": "[1, 2, 3, 4]"
+    },
+    {
+    "type": "text",
+    "content": "Исходные массивы:"
+    },
+    {
+    "type": "code",
+    "content": "console.log(numbers1);\n\nconsole.log(numbers2);"
+    },
+    {
+    "type": "text",
+    "content": "Результат:"
+    },
+    {
+    "type": "code",
+    "content": "[1, 2]\n\n[3, 4]"
+    },
+    {
+    "type": "text",
+    "content": "Они не изменились."
+    },
+    {
+    "type": "heading",
+    "content": "Когда использовать concat()?"
+    },
+    {
+    "type": "text",
+    "content": "Метод concat() используют, когда необходимо:"
+    },
+    {
+    "type": "list",
+    "items": [
+    "объединить два или несколько массивов;",
+    "добавить элементы в конец массива без изменения исходного массива;",
+    "получить новый объединенный массив."
+    ]
+    },
+    {
+    "type": "heading",
+    "content": "Что нужно помнить"
+    },
+    {
+    "type": "list",
+    "items": [
+    "concat() объединяет массивы.",
+    "Метод не изменяет исходные массивы.",
+    "Метод всегда возвращает новый массив.",
+    "В concat() можно передавать как массивы, так и отдельные значения.",
+    "Можно объединять сразу несколько массивов за один вызов."
+    ]
+    }
+  ]
+}
+

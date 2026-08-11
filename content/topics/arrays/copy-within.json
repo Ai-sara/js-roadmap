@@ -1,0 +1,141 @@
+{
+  "id": "copy-within",
+  "parentId": "arrays",
+  "title": "copyWithin()",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое copyWithin()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод copyWithin() копирует часть элементов массива в другую позицию <strong>внутри этого же массива</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Количество элементов массива при этом <strong>не изменяется</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Метод <strong>изменяет исходный массив</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.copyWithin(target);\n\narray.copyWithin(target, start);\n\narray.copyWithin(target, start, end);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "target"
+    },
+    {
+      "type": "text",
+      "content": "Индекс, с которого начинается вставка скопированных элементов."
+    },
+    {
+      "type": "heading_sm",
+      "content": "start"
+    },
+    {
+      "type": "text",
+      "content": "Индекс, с которого начинается копирование."
+    },
+    {
+      "type": "heading_sm",
+      "content": "end"
+    },
+    {
+      "type": "text",
+      "content": "Индекс, до которого выполняется копирование."
+    },
+    {
+      "type": "text",
+      "content": "Элемент с этим индексом <strong>не копируется</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает copyWithin()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод копирует часть элементов массива и вставляет их в указанную позицию внутри этого же массива."
+    },
+    {
+      "type": "text",
+      "content": "Если при вставке существующие элементы оказываются на этих позициях, они будут заменены."
+    },
+    {
+      "type": "text",
+      "content": "После завершения работы метод возвращает измененный массив."
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4,\n    5\n];\n\nnumbers.copyWithin(3, 0, 2);\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[1, 2, 3, 1, 2]"
+    },
+    {
+      "type": "text",
+      "content": "Были скопированы элементы:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "и вставлены начиная с индекса 3."
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает copyWithin()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод возвращает <strong>тот же самый массив</strong>, который был изменен."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать copyWithin()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод используют редко."
+    },
+    {
+      "type": "text",
+      "content": "Обычно его применяют, когда необходимо скопировать часть элементов внутри одного массива без создания нового массива."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "copyWithin() изменяет исходный массив.",
+        "Метод не создает новый массив.",
+        "Количество элементов массива не изменяется.",
+        "Метод копирует элементы внутри одного и того же массива.",
+        "Метод возвращает измененный массив."
+      ]
+    }
+  ]
+}

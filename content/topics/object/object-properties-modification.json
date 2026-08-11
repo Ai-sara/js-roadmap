@@ -1,0 +1,290 @@
+{
+  "id": "object-properties-modification",
+  "parentId": "object",
+  "title": "Добавление, изменение и удаление свойств объекта",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Изменение существующего свойства"
+    },
+    {
+      "type": "text",
+      "content": "Свойство объекта можно изменить, обратившись к нему через точку или квадратные скобки."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nuser.age = 26;\n\nconsole.log(user.age);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "26"
+    },
+    {
+      "type": "text",
+      "content": "Значение свойства <code>age</code> было заменено."
+    },
+    {
+      "type": "heading",
+      "content": "Добавление нового свойства"
+    },
+    {
+      "type": "text",
+      "content": "Если обратиться к свойству, которого еще нет, JavaScript создаст его автоматически."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nuser.age = 25;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\",\n    age: 25\n}"
+    },
+    {
+      "type": "text",
+      "content": "Новое свойство <code>age</code> было добавлено в объект."
+    },
+    {
+      "type": "heading",
+      "content": "Добавление свойства через квадратные скобки"
+    },
+    {
+      "type": "text",
+      "content": "Можно добавлять свойства, используя <code>[]</code>."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nconst property = \"age\";\n\nuser[property] = 25;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\",\n    age: 25\n}"
+    },
+    {
+      "type": "text",
+      "content": "Такой способ удобен, когда имя свойства хранится в переменной."
+    },
+    {
+      "type": "heading",
+      "content": "Удаление свойства"
+    },
+    {
+      "type": "text",
+      "content": "Для удаления свойства используется оператор <code>delete</code>."
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "delete object.property;"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\ndelete user.age;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Свойство <code>age</code> полностью удалено из объекта."
+    },
+    {
+      "type": "heading",
+      "content": "Удаление через квадратные скобки"
+    },
+    {
+      "type": "text",
+      "content": "Также можно использовать <code>[]</code>."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\ndelete user[\"age\"];"
+    },
+    {
+      "type": "heading",
+      "content": "Проверка после удаления"
+    },
+    {
+      "type": "text",
+      "content": "После удаления свойства обращение к нему вернет:"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\ndelete user.name;\n\nconsole.log(user.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "heading",
+      "content": "Важный момент: `const` объект можно изменять"
+    },
+    {
+      "type": "text",
+      "content": "Частая ошибка — думать, что если объект объявлен через <code>const</code>, то его нельзя изменять."
+    },
+    {
+      "type": "text",
+      "content": "На самом деле <code>const</code> защищает <strong>не сам объект</strong>, а <strong>ссылку на него</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};"
+    },
+    {
+      "type": "text",
+      "content": "После создания объекта переменная <code>user</code> хранит <strong>не сам объект</strong>, а ссылку на него."
+    },
+    {
+      "type": "text",
+      "content": "Схематично это можно представить так:"
+    },
+    {
+      "type": "scheme",
+      "content": "user\n │\n ▼\n{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Когда выполняется:"
+    },
+    {
+      "type": "code",
+      "content": "user.name = \"Bob\";"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript не заменяет объект."
+    },
+    {
+      "type": "text",
+      "content": "Он изменяет содержимое объекта, на который уже указывает переменная."
+    },
+    {
+      "type": "text",
+      "content": "Ссылка остается прежней."
+    },
+    {
+      "type": "scheme",
+      "content": "user\n │\n ▼\n{\n    name: \"Bob\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Поэтому такой код работает:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nuser.name = \"Bob\";"
+    },
+    {
+      "type": "heading_sm",
+      "content": "А теперь другой пример"
+    },
+    {
+      "type": "code",
+      "content": "user = {};"
+    },
+    {
+      "type": "text",
+      "content": "Здесь JavaScript должен сделать следующее:"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Было"
+    },
+    {
+      "type": "scheme",
+      "content": "user\n │\n ▼\n{\n    name: \"Bob\"\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Стало"
+    },
+    {
+      "type": "scheme",
+      "content": "user\n │\n ▼\n{}"
+    },
+    {
+      "type": "text",
+      "content": "То есть переменная <code>user</code> должна начать ссылаться <strong>на совершенно другой объект</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Именно это запрещает <code>const</code>."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому возникает ошибка:"
+    },
+    {
+      "type": "code",
+      "content": "TypeError: Assignment to constant variable."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Существующее свойство можно изменить через <code>=</code>.",
+        "Если свойства нет, оно будет создано автоматически.",
+        "Новые свойства можно добавлять через <code>.</code> и <code>[]</code>.",
+        "Для удаления используется оператор <code>delete</code>.",
+        "<code>const</code> запрещает изменить ссылку, которая хранится в переменной.",
+        "<code>const</code> <strong>не запрещает изменять содержимое объекта</strong>.",
+        "Можно изменять, добавлять и удалять свойства объекта.",
+        "Нельзя присвоить переменной новый объект.",
+        "После удаления свойства его значение становится <code>undefined</code>."
+      ]
+    }
+  ]
+}

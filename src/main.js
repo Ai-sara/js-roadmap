@@ -57,10 +57,11 @@ const blockRenderers = {
     code: (block) => {
         const lines = block.content.split('\n')
         const numbers = lines.map((_, i) => i + 1).join('\n')
+        const langClass = `language-${block.lang || 'javascript'}`
         return `<div class="code-block">
                     <pre class="code-gutter">${numbers}</pre>
-                    <pre class="code-content"><code class="language-javascript">${block.content}</code></pre>
-                </div>`
+                    <pre class="code-content"><code class="${langClass}">${block.content}</code></pre>
+                  </div>`
     },
     list: (block) => `<ul>${block.items.map(item => `<li>${item}</li>`).join('')}</ul>`,
     scheme: (block) => {
@@ -71,6 +72,13 @@ const blockRenderers = {
             return `<div class="scheme-flow">${steps}</div>`
         }
         return `<pre class="scheme">${block.content}</pre>`
+    },
+    table: (block) => {
+        const headerHtml = block.headers.map(h => `<th>${h}</th>`).join('')
+        const rowsHtml = block.rows
+            .map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`)
+            .join('')
+        return `<table class="content-table"><thead><tr>${headerHtml}</tr></thead><tbody>${rowsHtml}</tbody></table>`
     },
 }
 

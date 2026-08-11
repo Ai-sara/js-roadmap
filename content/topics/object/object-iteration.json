@@ -1,0 +1,588 @@
+{
+  "id": "object-iteration",
+  "parentId": "object",
+  "title": "Перебор объектов",
+  "difficulty": 2.5,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Зачем нужен перебор объектов?"
+    },
+    {
+      "type": "text",
+      "content": "Иногда необходимо получить все свойства объекта."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};"
+    },
+    {
+      "type": "text",
+      "content": "Если свойств немного, можно обратиться к каждому вручную."
+    },
+    {
+      "type": "code",
+      "content": "console.log(user.name);\nconsole.log(user.age);\nconsole.log(user.city);"
+    },
+    {
+      "type": "text",
+      "content": "Но если свойств десятки или сотни, такой способ становится неудобным."
+    },
+    {
+      "type": "text",
+      "content": "В этом случае используют перебор объекта."
+    },
+    {
+      "type": "text",
+      "content": "В JavaScript для этого существует несколько способов:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "`for...in`",
+        "`Object.keys()`",
+        "`Object.values()`",
+        "`Object.entries()`"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Цикл `for...in`"
+    },
+    {
+      "type": "text",
+      "content": "Цикл `for...in` уже был подробно рассмотрен в теме <strong>«Циклы»</strong>."
+    },
+    {
+      "type": "text",
+      "content": "При работе с объектами он перебирает <strong>имена (ключи) всех перечисляемых свойств объекта</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nfor (const key in user) {\n    console.log(key);\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "name\nage\ncity"
+    },
+    {
+      "type": "text",
+      "content": "Чтобы получить значение свойства, используют квадратные скобки."
+    },
+    {
+      "type": "code",
+      "content": "for (const key in user) {\n    console.log(user[key]);\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex\n25\nLondon"
+    },
+    {
+      "type": "text",
+      "content": "Почему используются квадратные скобки, а не точка?"
+    },
+    {
+      "type": "text",
+      "content": "Потому что переменная `key` содержит имя свойства."
+    },
+    {
+      "type": "text",
+      "content": "Если написать:"
+    },
+    {
+      "type": "code",
+      "content": "user.key"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript будет искать свойство с именем `\"key\"`."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому используется запись:"
+    },
+    {
+      "type": "code",
+      "content": "user[key]"
+    },
+    {
+      "type": "text",
+      "content": "Потребнее мы расматривали в “Свойства объекта и доступ к ним”"
+    },
+    {
+      "type": "heading",
+      "content": "Object.keys()"
+    },
+    {
+      "type": "text",
+      "content": "Метод `Object.keys()` возвращает <strong>массив, содержащий имена (ключи) собственных перечисляемых свойств объекта</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "Object.keys(object);"
+    },
+    {
+      "type": "text",
+      "content": "Возвращаемое значение:"
+    },
+    {
+      "type": "code",
+      "content": "Array"
+    },
+    {
+      "type": "text",
+      "content": "То есть результатом работы метода всегда является массив."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nconst keys = Object.keys(user);\n\nconsole.log(keys);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "[\n    \"name\",\n    \"age\",\n    \"city\"\n]"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript создал новый массив, содержащий все имена свойств объекта."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Почему возвращается массив?"
+    },
+    {
+      "type": "text",
+      "content": "Потому что массивом намного удобнее пользоваться."
+    },
+    {
+      "type": "text",
+      "content": "Например, можно узнать количество свойств объекта."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nconsole.log(Object.keys(user).length);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "3"
+    },
+    {
+      "type": "text",
+      "content": "Можно обратиться к элементу по индексу."
+    },
+    {
+      "type": "code",
+      "content": "const keys = Object.keys(user);\n\nconsole.log(keys[0]);\nconsole.log(keys[1]);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "name\nage"
+    },
+    {
+      "type": "note",
+      "content": "📌 В большинстве случаев `Object.keys()` возвращает ключи в порядке их добавления. Однако если ключи являются целыми числами (или строками, которые выглядят как целые числа), JavaScript сначала отсортирует их по возрастанию. Поэтому не стоит полагаться на порядок ключей, если объект использует числовые имена свойств."
+    },
+    {
+      "type": "text",
+      "content": "Можно использовать любые методы массивов."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const keys = Object.keys(user);\n\nconsole.log(keys.includes(\"age\"));"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "true"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Перебор через Object.keys()"
+    },
+    {
+      "type": "text",
+      "content": "Поскольку `Object.keys()` возвращает массив, его удобно перебирать с помощью цикла `for...of`."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nfor (const key of Object.keys(user)) {\n    console.log(key);\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "name\nage\ncity"
+    },
+    {
+      "type": "text",
+      "content": "Чтобы получить значение свойства, используют квадратные скобки."
+    },
+    {
+      "type": "code",
+      "content": "for (const key of Object.keys(user)) {\n    console.log(user[key]);\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex\n25\nLondon"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Когда использовать Object.keys()?"
+    },
+    {
+      "type": "text",
+      "content": "`Object.keys()` удобно использовать, когда нужны только имена свойств объекта."
+    },
+    {
+      "type": "text",
+      "content": "Кроме того, поскольку результатом является массив, можно использовать все методы массивов, например:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "`length`",
+        "`includes()`",
+        "`map()`",
+        "`filter()`",
+        "`find()`",
+        "`forEach()`"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Это делает `Object.keys()` более гибким по сравнению с `for...in`."
+    },
+    {
+      "type": "heading",
+      "content": "Object.values()"
+    },
+    {
+      "type": "text",
+      "content": "Метод `Object.values()` возвращает <strong>массив, содержащий значения собственных перечисляемых свойств объекта</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "Object.values(object);"
+    },
+    {
+      "type": "text",
+      "content": "Возвращаемое значение:"
+    },
+    {
+      "type": "code",
+      "content": "Array"
+    },
+    {
+      "type": "text",
+      "content": "То есть результатом работы метода всегда является массив."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nconst values = Object.values(user);\n\nconsole.log(values);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "[\n    \"Alex\",\n    25,\n    \"London\"\n]"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript создал новый массив, содержащий значения всех свойств объекта."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Порядок значений"
+    },
+    {
+      "type": "text",
+      "content": "Значения располагаются в том же порядке, что и соответствующие им ключи."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nconsole.log(Object.keys(user));\nconsole.log(Object.values(user));"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "[\"name\", \"age\", \"city\"]\n\n[\"Alex\", 25, \"London\"]"
+    },
+    {
+      "type": "text",
+      "content": "Первое значение массива всегда соответствует первому ключу, второе — второму и так далее."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Перебор через Object.values()"
+    },
+    {
+      "type": "text",
+      "content": "Так как `Object.values()` возвращает массив, его удобно перебирать с помощью `for...of`."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nfor (const value of Object.values(user)) {\n    console.log(value);\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex\n25\nLondon"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Когда использовать Object.values()?"
+    },
+    {
+      "type": "text",
+      "content": "`Object.values()` используют, когда нужны только значения объекта, а имена свойств не имеют значения."
+    },
+    {
+      "type": "text",
+      "content": "Поскольку возвращается массив, можно использовать все методы массивов."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например, найти сумму чисел"
+    },
+    {
+      "type": "code",
+      "content": "const scores = {\n    math: 90,\n    english: 85,\n    physics: 95\n};\n\nconst values = Object.values(scores);\n\nlet sum = 0;\n\nfor (const value of values) {\n    sum += value;\n}\n\nconsole.log(sum);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "270"
+    },
+    {
+      "type": "heading",
+      "content": "Object.entries()"
+    },
+    {
+      "type": "text",
+      "content": "Метод `Object.entries()` возвращает <strong>массив, элементы которого представляют собой пары</strong> <strong>`[ключ, значение]`</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "Object.entries(object);"
+    },
+    {
+      "type": "text",
+      "content": "Возвращаемое значение:"
+    },
+    {
+      "type": "code",
+      "content": "Array"
+    },
+    {
+      "type": "text",
+      "content": "Каждый элемент этого массива тоже является массивом из двух элементов:"
+    },
+    {
+      "type": "code",
+      "content": "[\n    ключ,\n    значение\n]"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nconst entries = Object.entries(user);\n\nconsole.log(entries);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "[\n    [\"name\", \"Alex\"],\n    [\"age\", 25],\n    [\"city\", \"London\"]\n]"
+    },
+    {
+      "type": "text",
+      "content": "Каждый внутренний массив содержит:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "первый элемент — ключ;",
+        "второй элемент — значение."
+      ]
+    },
+    {
+      "type": "heading_sm",
+      "content": "Перебор через Object.entries()"
+    },
+    {
+      "type": "text",
+      "content": "Очень удобно использовать `for...of`."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n\nfor (const [key, value] of Object.entries(user)) {\n    console.log(key, value);\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "name Alex\nage 25\ncity London"
+    },
+    {
+      "type": "text",
+      "content": "Запись:"
+    },
+    {
+      "type": "code",
+      "content": "const [key, value]"
+    },
+    {
+      "type": "text",
+      "content": "называется <strong>деструктуризацией массива</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Пока достаточно понимать, что JavaScript автоматически помещает первый элемент пары в переменную `key`, а второй — в переменную `value`."
+    },
+    {
+      "type": "note",
+      "content": "Тема деструктуризации будет подробно рассмотрена позже."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать Object.entries()?"
+    },
+    {
+      "type": "text",
+      "content": "`Object.entries()` используют, когда одновременно нужны и ключ, и значение."
+    },
+    {
+      "type": "text",
+      "content": "Это самый удобный способ перебора объектов, если требуется работать сразу с обоими."
+    },
+    {
+      "type": "heading",
+      "content": "Какой способ выбрать?"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Способ",
+        "Что возвращает",
+        "Когда использовать"
+      ],
+      "rows": [
+        [
+          "for...in",
+          "Ключи",
+          "Когда нужен простой перебор объекта."
+        ],
+        [
+          "Object.keys()",
+          "Массив ключей",
+          "Когда нужны только ключи или методы массива."
+        ],
+        [
+          "Object.values()",
+          "Массив значений",
+          "Когда нужны только значения."
+        ],
+        [
+          "Object.entries()",
+          "Массив пар `[ключ, значение]`",
+          "Когда одновременно нужны ключи и значения."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "`for...in` перебирает ключи объекта.",
+        "`Object.keys()` возвращает массив ключей.",
+        "`Object.values()` возвращает массив значений.",
+        "`Object.entries()` возвращает массив пар `[ключ, значение]`.",
+        "Методы `Object.keys()`, `Object.values()` и `Object.entries()` возвращают массивы, поэтому к результату можно применять любые методы массивов.",
+        "Если нужны одновременно ключ и значение, удобнее всего использовать `Object.entries()`."
+      ]
+    }
+  ]
+}

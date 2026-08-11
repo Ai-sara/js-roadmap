@@ -1,0 +1,263 @@
+{
+  "id": "optional-chaining",
+  "parentId": "object",
+  "title": "Optional chaining (`?.`)",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое Optional chaining?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Optional chaining</strong> (`?.`) — это оператор, который позволяет безопасно обращаться к свойствам и методам объекта, если часть цепочки может отсутствовать."
+    },
+    {
+      "type": "text",
+      "content": "Без него обращение к отсутствующему промежуточному объекту может привести к ошибке."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nconsole.log(user.address.city);"
+    },
+    {
+      "type": "text",
+      "content": "Здесь свойства <code>address</code> нет. Поэтому JavaScript не сможет получить <code>city</code> и возникнет ошибка."
+    },
+    {
+      "type": "text",
+      "content": "С Optional chaining:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nconsole.log(user.address?.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "text",
+      "content": "Если значение перед `?.` равно `null` или `undefined`, JavaScript прекращает дальнейшее обращение и возвращает `undefined`."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "object?.property"
+    },
+    {
+      "type": "text",
+      "content": "Для вложенных свойств:"
+    },
+    {
+      "type": "code",
+      "content": "object?.property?.anotherProperty"
+    },
+    {
+      "type": "heading",
+      "content": "Проверка вложенных свойств"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    address: {\n        city: \"Almaty\"\n    }\n};\n\nconsole.log(user.address?.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Almaty"
+    },
+    {
+      "type": "text",
+      "content": "Если `address` отсутствует:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nconsole.log(user.address?.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "heading",
+      "content": "Цепочка Optional chaining"
+    },
+    {
+      "type": "text",
+      "content": "Можно использовать несколько `?.` подряд:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {};\n\nconsole.log(user.address?.location?.city);"
+    },
+    {
+      "type": "text",
+      "content": "Если `address` отсутствует, дальнейшая часть цепочки не выполняется."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "heading",
+      "content": "Optional chaining с вызовом метода"
+    },
+    {
+      "type": "text",
+      "content": "`?.` можно использовать перед скобками для безопасного вызова метода:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    sayHello() {\n        console.log(\"Hello!\");\n    }\n};\n\nuser.sayHello?.();"
+    },
+    {
+      "type": "text",
+      "content": "Если метода нет:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {};\n\nuser.sayHello?.();"
+    },
+    {
+      "type": "text",
+      "content": "ошибки не будет."
+    },
+    {
+      "type": "heading",
+      "content": "Optional chaining с функцией"
+    },
+    {
+      "type": "text",
+      "content": "Его также можно использовать для безопасного вызова функции, которая может отсутствовать:"
+    },
+    {
+      "type": "code",
+      "content": "const callback = undefined;\n\ncallback?.();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "text",
+      "content": "Без `?.` попытка вызвать `undefined` как функцию привела бы к ошибке."
+    },
+    {
+      "type": "heading",
+      "content": "Optional chaining с массивами"
+    },
+    {
+      "type": "text",
+      "content": "Можно безопасно обращаться к элементу массива:"
+    },
+    {
+      "type": "code",
+      "content": "const users = [];\n\nconsole.log(users?.[0]);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "text",
+      "content": "Также можно использовать его с динамическим индексом:"
+    },
+    {
+      "type": "code",
+      "content": "const index = 2;\n\nconsole.log(users?.[index]);"
+    },
+    {
+      "type": "note",
+      "content": "Важный момент"
+    },
+    {
+      "type": "text",
+      "content": "Optional chaining проверяет только значение непосредственно перед `?.`."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = null;\n\nconsole.log(user?.address.city);"
+    },
+    {
+      "type": "text",
+      "content": "Здесь доступ к `user` безопасен, поэтому результатом будет `undefined`."
+    },
+    {
+      "type": "text",
+      "content": "Но `?.` не означает, что **вся дальнейшая цепочка автоматически защищена в любом выражении**. Если цепочка прерывается, а затем обращение продолжается отдельно, ошибка всё ещё возможна."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому при длинных цепочках `?.` ставят там, где действительно может отсутствовать значение:"
+    },
+    {
+      "type": "code",
+      "content": "user?.address?.location?.city;"
+    },
+    {
+      "type": "note",
+      "content": "Optional chaining не заменяет проверку существования свойства"
+    },
+    {
+      "type": "text",
+      "content": "`?.` возвращает `undefined`, если значение отсутствует."
+    },
+    {
+      "type": "text",
+      "content": "Если нужно именно определить, существует ли свойство, используются другие способы проверки, например оператор `in` или `Object.hasOwn()`."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "`?.` позволяет безопасно обращаться к свойствам, которые могут отсутствовать.",
+        "Если значение перед `?.` равно `null` или `undefined`, результатом становится `undefined` вместо ошибки.",
+        "`?.` можно использовать с вложенными свойствами.",
+        "`?.()` позволяет безопасно вызвать функцию или метод.",
+        "`?.[]` позволяет безопасно обратиться к элементу массива или свойству по динамическому ключу.",
+        "В длинных цепочках `?.` ставят на каждом участке, который потенциально может отсутствовать."
+      ]
+    }
+  ]
+}

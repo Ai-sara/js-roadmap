@@ -1,0 +1,98 @@
+{
+  "id": "add-remove-elements",
+  "parentId": "arrays",
+  "title": "Добавление и удаление элементов массива",
+  "difficulty": 1.5,
+  "blocks": [
+    { "type": "heading_xl", "content": "Зачем нужны специальные методы?" },
+    { "type": "text", "content": "Элементы массива можно изменять по индексу." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\"\n];\n\nfruits[2] = \"Orange\";" },
+    { "type": "text", "content": "Но такой способ подходит не всегда." },
+    { "type": "text", "content": "Например, если неизвестно, сколько элементов уже находится в массиве, определить индекс последнего элемента будет неудобно." },
+    { "type": "text", "content": "Для этого в JavaScript существуют специальные методы." },
+    { "type": "text", "content": "Они позволяют легко добавлять и удалять элементы как в начале, так и в конце массива." },
+
+    { "type": "heading_xl", "content": "Добавление элемента в конец — push()" },
+    { "type": "text", "content": "Метод <code>push()</code> добавляет один или несколько элементов <strong>в конец массива</strong>." },
+    { "type": "text", "content": "Синтаксис:" },
+    { "type": "code", "content": "array.push(element1, element2, ...);" },
+    { "type": "text", "content": "Пример:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\"\n];\n\nfruits.push(\"Orange\");\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n]" },
+
+    { "type": "heading", "content": "Добавление нескольких элементов" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\"\n];\n\nfruits.push(\n    \"Banana\",\n    \"Orange\",\n    \"Kiwi\"\n);\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\",\n    \"Orange\",\n    \"Kiwi\"\n]" },
+
+    { "type": "heading", "content": "Что возвращает push()?" },
+    { "type": "text", "content": "Метод <code>push()</code> возвращает <strong>новую длину массива</strong>." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\"\n];\n\nconst length = fruits.push(\"Orange\");\n\nconsole.log(length);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "3" },
+
+    { "type": "heading_xl", "content": "Удаление последнего элемента — pop()" },
+    { "type": "text", "content": "Метод <code>pop()</code> удаляет <strong>последний элемент массива</strong>." },
+    { "type": "text", "content": "Синтаксис:" },
+    { "type": "code", "content": "array.pop();" },
+    { "type": "text", "content": "Пример:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfruits.pop();\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\"\n]" },
+
+    { "type": "heading", "content": "Что возвращает pop()?" },
+    { "type": "text", "content": "В отличие от <code>push()</code>, метод <code>pop()</code> возвращает <strong>удаленный элемент</strong>." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconst removed = fruits.pop();\n\nconsole.log(removed);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Orange" },
+
+    { "type": "heading_xl", "content": "Добавление элемента в начало — unshift()" },
+    { "type": "text", "content": "Метод <code>unshift()</code> добавляет один или несколько элементов <strong>в начало массива</strong>." },
+    { "type": "code", "content": "const fruits = [\n    \"Banana\",\n    \"Orange\"\n];\n\nfruits.unshift(\"Apple\");\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n]" },
+
+    { "type": "heading", "content": "Что возвращает unshift()?" },
+    { "type": "text", "content": "Как и <code>push()</code>, метод <code>unshift()</code> возвращает новую длину массива." },
+    { "type": "code", "content": "const fruits = [\n    \"Banana\"\n];\n\nconst length = fruits.unshift(\"Apple\");\n\nconsole.log(length);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "2" },
+
+    { "type": "heading_xl", "content": "Удаление первого элемента — shift()" },
+    { "type": "text", "content": "Метод <code>shift()</code> удаляет <strong>первый элемент массива</strong>." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfruits.shift();\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Banana\",\n    \"Orange\"\n]" },
+
+    { "type": "heading", "content": "Что возвращает shift()?" },
+    { "type": "text", "content": "Метод <code>shift()</code> возвращает удаленный элемент." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconst removed = fruits.shift();\n\nconsole.log(removed);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple" },
+
+    { "type": "heading_xl", "content": "Какой метод использовать?" },
+    {
+      "type": "table",
+      "headers": ["Метод", "Что делает", "Что возвращает"],
+      "rows": [
+        ["push()", "Добавляет элементы в конец массива", "Новую длину массива"],
+        ["pop()", "Удаляет последний элемент", "Удаленный элемент"],
+        ["unshift()", "Добавляет элементы в начало массива", "Новую длину массива"],
+        ["shift()", "Удаляет первый элемент", "Удаленный элемент"]
+      ]
+    },
+
+    { "type": "heading_xl", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "<code>push()</code> добавляет элементы в конец массива.",
+      "<code>pop()</code> удаляет последний элемент массива.",
+      "<code>unshift()</code> добавляет элементы в начало массива.",
+      "<code>shift()</code> удаляет первый элемент массива.",
+      "<code>push()</code> и <code>unshift()</code> возвращают новую длину массива.",
+      "<code>pop()</code> и <code>shift()</code> возвращают удаленный элемент.",
+      "Все четыре метода изменяют исходный массив."
+    ]}
+  ]
+}

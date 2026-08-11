@@ -1,0 +1,264 @@
+{
+  "id": "flat-flatmap",
+  "parentId": "arrays",
+  "title": "flat() и flatMap()",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Методы flat() и flatMap() используются для работы с вложенными массивами."
+    },
+    {
+      "type": "list",
+      "items": [
+        "flat() — уменьшает уровень вложенности массива.",
+        "flatMap() — сначала выполняет map(), затем автоматически применяет flat()."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что такое flat()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод flat() создает новый массив, в котором вложенные массивы раскрываются."
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив при этом <strong>не изменяется</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.flat();\n\narray.flat(depth);"
+    },
+    {
+      "type": "heading",
+      "content": "depth"
+    },
+    {
+      "type": "text",
+      "content": "Количество уровней вложенности, которое необходимо раскрыть."
+    },
+    {
+      "type": "text",
+      "content": "По умолчанию:"
+    },
+    {
+      "type": "code",
+      "content": "1"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает flat()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод проходит по массиву."
+    },
+    {
+      "type": "text",
+      "content": "Если встречается вложенный массив, его элементы извлекаются наружу."
+    },
+    {
+      "type": "text",
+      "content": "После обработки возвращается новый массив."
+    },
+    {
+      "type": "heading",
+      "content": "Один уровень вложенности"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    [3, 4],\n    5\n];\n\nconst result = numbers.flat();\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[1, 2, 3, 4, 5]"
+    },
+    {
+      "type": "heading",
+      "content": "Несколько уровней вложенности"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    [2, [3, 4]]\n];\n\nconst result = numbers.flat(2);\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[1, 2, 3, 4]"
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает flat()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод всегда возвращает <strong>новый массив</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив остается без изменений."
+    },
+    {
+      "type": "heading",
+      "content": "Что такое flatMap()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод flatMap() сначала выполняет преобразование элементов массива с помощью map(), а затем автоматически раскрывает результат на один уровень вложенности."
+    },
+    {
+      "type": "text",
+      "content": "Его можно представить как последовательное выполнение двух методов:"
+    },
+    {
+      "type": "code",
+      "content": "array.map(callback).flat();"
+    },
+    {
+      "type": "text",
+      "content": "Метод flatMap() делает то же самое за один вызов."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.flatMap(callback);"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает flatMap()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод последовательно выполняет три действия:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "перебирает элементы массива;",
+        "применяет callback к каждому элементу;",
+        "автоматически раскрывает результат на один уровень вложенности."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "После обработки возвращается новый массив."
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst result = numbers.flatMap((number) => {\n    return [number, number * 2];\n});\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[1, 2, 2, 4, 3, 6]"
+    },
+    {
+      "type": "text",
+      "content": "Каждый элемент был преобразован в массив:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "1 → [1, 2]",
+        "2 → [2, 4]",
+        "3 → [3, 6]"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "После этого flatMap() автоматически объединил все вложенные массивы в один."
+    },
+    {
+      "type": "heading",
+      "content": "Чем отличается от map()?"
+    },
+    {
+      "type": "text",
+      "content": "Если использовать только map():"
+    },
+    {
+      "type": "code",
+      "content": "const result = numbers.map((number) => {\n    return [number, number * 2];\n});\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[\n    [1, 2],\n    [2, 4],\n    [3, 6]\n]"
+    },
+    {
+      "type": "text",
+      "content": "Получится массив массивов."
+    },
+    {
+      "type": "text",
+      "content": "flatMap() автоматически раскрывает этот уровень вложенности и возвращает обычный массив."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "text",
+      "content": "Используйте flat(), если необходимо:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "уменьшить уровень вложенности массива."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Используйте flatMap(), если необходимо:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "преобразовать элементы массива;",
+        "сразу получить плоский массив без дополнительного вызова flat()."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "flat() уменьшает уровень вложенности массива.",
+        "flat() не изменяет исходный массив.",
+        "flat() возвращает новый массив.",
+        "По умолчанию flat() раскрывает один уровень вложенности.",
+        "flatMap() объединяет работу map() и flat().",
+        "flatMap() эквивалентен map().flat().",
+        "flatMap() всегда раскрывает только один уровень вложенности."
+      ]
+    }
+  ]
+}

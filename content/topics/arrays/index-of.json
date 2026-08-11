@@ -1,0 +1,93 @@
+{
+  "id": "index-of",
+  "parentId": "array-search",
+  "title": "Метод indexOf()",
+  "difficulty": 2,
+  "blocks": [
+    { "type": "heading", "content": "Что делает indexOf()?" },
+    { "type": "text", "content": "Метод indexOf() ищет указанное значение в массиве и возвращает <strong>индекс первого найденного элемента</strong>." },
+    { "type": "text", "content": "Если элемент не найден, метод возвращает:" },
+    { "type": "code", "content": "-1" },
+
+    { "type": "heading", "content": "Синтаксис" },
+    { "type": "code", "content": "array.indexOf(value)" },
+    { "type": "text", "content": "где:" },
+    { "type": "list", "items": [
+      "array — массив;",
+      "value — значение, которое необходимо найти"
+    ] },
+
+    { "type": "heading", "content": "Пример" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits.indexOf(\"Banana\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "1" },
+    { "type": "text", "content": "Метод нашел элемент \"Banana\".\n\nЕго индекс равен 1, поэтому именно это значение возвращается." },
+
+    { "type": "heading", "content": "Если элемент отсутствует" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits.indexOf(\"Kiwi\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "-1" },
+    { "type": "text", "content": "Значение -1 означает, что элемент в массиве не найден." },
+
+    { "type": "heading", "content": "Если одинаковых элементов несколько" },
+    { "type": "text", "content": "indexOf() всегда возвращает <strong>индекс первого найденного элемента</strong>." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\",\n    \"Banana\"\n];\n\nconsole.log(fruits.indexOf(\"Banana\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "1" },
+    { "type": "text", "content": "Несмотря на то что \"Banana\" встречается два раза, метод остановился после первого совпадения." },
+
+    { "type": "heading", "content": "Проверяется строгое равенство" },
+    { "type": "text", "content": "Как и includes(), метод использует строгое сравнение (===)." },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconsole.log(numbers.indexOf(\"20\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "-1" },
+    { "type": "text", "content": "Строка \"20\" не равна числу 20." },
+
+    { "type": "heading", "content": "Поиск объектов" },
+    { "type": "text", "content": "Для объектов также сравниваются ссылки." },
+    { "type": "code", "content": "const user = {\n    name: \"Alex\"\n};\n\nconst users = [\n    user\n];\n\nconsole.log(users.indexOf(user));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "0" },
+    { "type": "text", "content": "Используется одна и та же ссылка на объект." },
+    { "type": "text", "content": "Теперь другой пример:" },
+    { "type": "code", "content": "const users = [\n    {\n        name: \"Alex\"\n    }\n];\n\nconsole.log(\n    users.indexOf({\n        name: \"Alex\"\n    })\n);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "-1" },
+    { "type": "text", "content": "Несмотря на одинаковое содержимое, это разные объекты с разными ссылками." },
+
+    { "type": "heading", "content": "includes() или indexOf()?" },
+    { "type": "text", "content": "Оба метода ищут значение в массиве.\n\nРазница заключается в том, что они возвращают." },
+    {
+      "type": "table",
+      "headers": ["Метод", "Возвращает"],
+      "rows": [
+        ["includes()", "true или false"],
+        ["indexOf()", "индекс элемента или -1"]
+      ]
+    },
+    { "type": "text", "content": "Если нужно только проверить наличие элемента, обычно используют includes()." },
+    { "type": "code", "content": "const hasBanana = fruits.includes(\"Banana\");" },
+    { "type": "text", "content": "Если нужен индекс найденного элемента, используют indexOf()." },
+    { "type": "code", "content": "const index = fruits.indexOf(\"Banana\");" },
+
+    { "type": "heading", "content": "Когда использовать indexOf()?" },
+    { "type": "text", "content": "Метод удобно использовать, когда необходимо узнать, <strong>где находится элемент</strong> в массиве." },
+    { "type": "list", "items": [
+      "определить позицию элемента;",
+      "удалить элемент по его индексу;",
+      "заменить найденный элемент;",
+      "начать обработку массива с найденного элемента."
+    ] },
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "indexOf() ищет значение в массиве.",
+      "Метод возвращает индекс первого найденного элемента.",
+      "Если элемент отсутствует, возвращается -1.",
+      "При наличии нескольких одинаковых элементов возвращается индекс первого из них.",
+      "Поиск выполняется с использованием строгого сравнения (===).",
+      "Для объектов сравниваются ссылки, а не содержимое.",
+      "Если нужен только ответ «есть или нет», удобнее использовать includes()."
+    ] }
+  ]
+}

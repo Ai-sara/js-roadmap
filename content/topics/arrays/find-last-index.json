@@ -1,0 +1,60 @@
+{
+  "id": "find-last-index",
+  "parentId": "array-search",
+  "title": "Метод findLastIndex()",
+  "difficulty": 2,
+  "blocks": [
+    { "type": "heading", "content": "Что такое findLastIndex()?" },
+    { "type": "text", "content": "Метод findLastIndex() ищет <strong>индекс последнего элемента массива</strong>, который удовлетворяет указанному условию." },
+    { "type": "text", "content": "Поиск выполняется <strong>с конца массива к началу</strong>." },
+    { "type": "text", "content": "Исходный массив при этом <strong>не изменяется</strong>." },
+
+    { "type": "heading", "content": "Синтаксис" },
+    { "type": "code", "content": "array.findLastIndex(callback);" },
+
+    { "type": "heading_sm", "content": "callback" },
+    { "type": "text", "content": "Функция, которая вызывается для каждого элемента массива." },
+    { "type": "text", "content": "Она должна вернуть:" },
+    { "type": "list", "items": [
+      "true — если элемент подходит;",
+      "false — если элемент не подходит."
+    ] },
+
+    { "type": "heading", "content": "Как работает findLastIndex()?" },
+    { "type": "text", "content": "Метод начинает проверку с последнего элемента массива." },
+    { "type": "text", "content": "Если callback возвращает true, поиск сразу прекращается и возвращается индекс найденного элемента." },
+    { "type": "text", "content": "Если подходящего элемента нет, метод возвращает -1." },
+
+    { "type": "heading", "content": "Пример" },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30,\n    20,\n    40\n];\n\nconst result = numbers.findLastIndex((number) => {\n    return number === 20;\n});\n\nconsole.log(result);\n\n// 3" },
+    { "type": "text", "content": "Будет найден индекс <strong>последнего</strong> элемента со значением 20." },
+
+    { "type": "heading", "content": "Если элемент не найден" },
+    { "type": "code", "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst result = numbers.findLastIndex((number) => {\n    return number > 10;\n});\n\nconsole.log(result);\n\n// -1" },
+
+    { "type": "heading", "content": "Чем отличается от findIndex()?" },
+    { "type": "text", "content": "findIndex() выполняет поиск <strong>с начала массива</strong>." },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30,\n    20\n];\n\nconsole.log(\n    numbers.findIndex((number) => number === 20)\n);\n\n// 1" },
+    { "type": "text", "content": "findLastIndex() выполняет поиск <strong>с конца массива</strong>." },
+    { "type": "code", "content": "console.log(\n    numbers.findLastIndex((number) => number === 20)\n);\n\n// 3" },
+
+    { "type": "heading", "content": "Что возвращает findLastIndex()?" },
+    { "type": "text", "content": "Метод возвращает:" },
+    { "type": "list", "items": [
+      "индекс найденного элемента;",
+      "-1, если подходящего элемента нет."
+    ] },
+
+    { "type": "heading", "content": "Когда использовать?" },
+    { "type": "text", "content": "Метод используют, когда необходимо найти <strong>индекс последнего элемента</strong>, удовлетворяющего определенному условию." },
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "findLastIndex() не изменяет исходный массив.",
+      "Поиск выполняется с конца массива.",
+      "Метод возвращает индекс найденного элемента.",
+      "Если элемент не найден, возвращается -1.",
+      "findLastIndex() является противоположностью findIndex(), который ищет с начала массива."
+    ] }
+  ]
+}

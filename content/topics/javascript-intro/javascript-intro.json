@@ -2,5 +2,9 @@
   "id": "javascript-intro",
   "parentId": null,
   "title": "JavaScript — Введение",
-  "children": ["what-is-js", "ecmascript", "typing", "type-casting"]
+  "children": [
+    "what-is-js",
+    "ecmascript",
+    "typing",
+    "type-casting"]
 }

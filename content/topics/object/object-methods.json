@@ -1,0 +1,171 @@
+{
+  "id": "object-methods",
+  "parentId": "object",
+  "title": "Методы объекта (Object Methods)",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое метод?"
+    },
+    {
+      "type": "text",
+      "content": "Метод — это функция, которая является свойством объекта."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n\n    greet() {\n        console.log(\"Hello!\");\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "В этом объекте:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>name</code> — обычное свойство;",
+        "<code>greet</code> — метод."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Единственное отличие метода от обычного свойства заключается в том, что его значением является функция."
+    },
+    {
+      "type": "heading",
+      "content": "Метод через `function`"
+    },
+    {
+      "type": "text",
+      "content": "Метод можно записать так же, как обычное свойство."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    greet: function () {\n        console.log(\"Hello!\");\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "Такой способ полностью работоспособен."
+    },
+    {
+      "type": "heading",
+      "content": "Краткая запись метода"
+    },
+    {
+      "type": "text",
+      "content": "В современном JavaScript чаще используют сокращенную запись."
+    },
+    {
+      "type": "text",
+      "content": "Вместо:"
+    },
+    {
+      "type": "code",
+      "content": "greet: function () {\n    console.log(\"Hello!\");\n}"
+    },
+    {
+      "type": "text",
+      "content": "пишут:"
+    },
+    {
+      "type": "code",
+      "content": "greet() {\n    console.log(\"Hello!\");\n}"
+    },
+    {
+      "type": "text",
+      "content": "Обе записи создают одинаковый метод."
+    },
+    {
+      "type": "text",
+      "content": "Разница только в синтаксисе."
+    },
+    {
+      "type": "heading",
+      "content": "Вызов метода"
+    },
+    {
+      "type": "text",
+      "content": "Метод вызывается так же, как обычная функция, но через объект."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    greet() {\n        console.log(\"Hello!\");\n    }\n};\n\nuser.greet();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Hello!"
+    },
+    {
+      "type": "text",
+      "content": "Сначала JavaScript получает свойство <code>greet</code> объекта <code>user</code>, а затем вызывает находящуюся в нем функцию."
+    },
+    {
+      "type": "heading",
+      "content": "Метод может принимать параметры"
+    },
+    {
+      "type": "text",
+      "content": "Методы работают так же, как обычные функции."
+    },
+    {
+      "type": "text",
+      "content": "Они могут принимать параметры и возвращать значения."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    greet(name) {\n        return `Hello, ${name}!`;\n    }\n};\n\nconsole.log(user.greet(\"Alex\"));"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Hello, Alex!"
+    },
+    {
+      "type": "heading",
+      "content": "Метод — это обычная функция"
+    },
+    {
+      "type": "text",
+      "content": "Несмотря на отдельное название, метод не является особым типом функции."
+    },
+    {
+      "type": "text",
+      "content": "Это обычная функция, которая хранится в свойстве объекта."
+    },
+    {
+      "type": "text",
+      "content": "Именно поэтому к ней применяются почти все правила, которые уже были изучены для функций."
+    },
+    {
+      "type": "text",
+      "content": "Особенность методов заключается в работе ключевого слова `this`, которое будет рассмотрено в следующей теме."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Метод — это функция, которая является свойством объекта.",
+        "Метод можно записать через <code>function</code> или с помощью сокращенного синтаксиса.",
+        "В современном JavaScript чаще используют сокращенную запись.",
+        "Метод вызывается через объект.",
+        "Метод может принимать параметры и возвращать значения.",
+        "Метод — это обычная функция, которая хранится в свойстве объекта.",
+        "Главная особенность методов связана с использованием <code>this</code>."
+      ]
+    }
+  ]
+}

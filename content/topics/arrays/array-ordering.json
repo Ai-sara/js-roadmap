@@ -1,0 +1,10 @@
+{
+  "id": "array-ordering",
+  "parentId": "arrays",
+  "title": "Изменение порядка элементов",
+  "difficulty": 2,
+  "children": [
+    "sort",
+    "reverse"
+  ]
+}

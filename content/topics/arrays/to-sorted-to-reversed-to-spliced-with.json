@@ -1,0 +1,215 @@
+{
+  "id": "to-sorted-to-reversed-to-spliced-with",
+  "parentId": "arrays",
+  "title": "toSorted(), toReversed(), toSpliced() и with()",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Методы toSorted(), toReversed(), toSpliced() и with() являются современными аналогами методов массива."
+    },
+    {
+      "type": "text",
+      "content": "Главное отличие заключается в том, что они <strong>не изменяют исходный массив</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Вместо этого они создают и возвращают новый массив."
+    },
+    {
+      "type": "heading",
+      "content": "Что такое toSorted()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод toSorted() работает так же, как sort(), но не изменяет исходный массив."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.toSorted();\n\narray.toSorted(compareFn);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    3,\n    1,\n    2\n];\n\nconst result = numbers.toSorted();\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[1, 2, 3]"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[3, 1, 2]"
+    },
+    {
+      "type": "heading",
+      "content": "Что такое toReversed()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод toReversed() работает так же, как reverse(), но не изменяет исходный массив."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.toReversed();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst result = numbers.toReversed();\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[3, 2, 1]"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив останется без изменений."
+    },
+    {
+      "type": "heading",
+      "content": "Что такое toSpliced()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод toSpliced() работает так же, как splice(), но возвращает новый массив вместо изменения исходного."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.toSpliced(start, deleteCount, items...);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconst result = fruits.toSpliced(\n    1,\n    1,\n    \"Kiwi\"\n);\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[\"Apple\", \"Kiwi\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив останется прежним."
+    },
+    {
+      "type": "heading",
+      "content": "Что такое with()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод with() создает новый массив, заменяя элемент по указанному индексу."
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив не изменяется."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.with(index, value);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconst result = numbers.with(\n    1,\n    100\n);\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[10, 100, 30]"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[10, 20, 30]"
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "text",
+      "content": "Используйте эти методы, если необходимо получить измененный массив, <strong>не изменяя исходный</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Все четыре метода возвращают новый массив.",
+        "Исходный массив не изменяется.",
+        "toSorted() — аналог sort().",
+        "toReversed() — аналог reverse().",
+        "toSpliced() — аналог splice().",
+        "with() заменяет элемент по индексу, создавая новый массив."
+      ]
+    }
+  ]
+}

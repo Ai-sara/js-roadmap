@@ -1,0 +1,109 @@
+{
+  "id": "find",
+  "parentId": "array-search",
+  "title": "Метод find()",
+  "difficulty": 2,
+  "blocks": [
+    { "type": "heading", "content": "Что делает find()?" },
+    { "type": "text", "content": "Метод find() ищет <strong>первый элемент массива</strong>, который удовлетворяет указанному условию." },
+    { "type": "text", "content": "Если такой элемент найден, метод возвращает <strong>сам элемент</strong>." },
+    { "type": "text", "content": "Если подходящий элемент отсутствует, метод возвращает:" },
+    { "type": "code", "content": "undefined" },
+
+    { "type": "heading", "content": "Почему появился find()?" },
+    { "type": "text", "content": "Методы includes(), indexOf() и lastIndexOf() ищут <strong>готовое значение</strong>." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits.includes(\"Banana\"));" },
+    { "type": "text", "content": "Но часто необходимо найти элемент не по значению, а по некоторому условию." },
+    { "type": "list", "items": [
+      "найти первое число больше 100;",
+      "найти пользователя с именем \"Alex\";",
+      "найти первый отрицательный элемент;",
+      "найти товар дешевле 5000."
+    ] },
+    { "type": "text", "content": "Для таких задач используется find()." },
+
+    { "type": "heading", "content": "Синтаксис" },
+    { "type": "code", "content": "array.find(callback)" },
+    { "type": "text", "content": "где:" },
+    { "type": "list", "items": [
+      "array — массив;",
+      "callback — функция, которая проверяет каждый элемент массива."
+    ] },
+
+    { "type": "heading", "content": "Как работает find()?" },
+    { "type": "text", "content": "JavaScript перебирает элементы массива по одному." },
+    { "type": "text", "content": "Для каждого элемента вызывается callback-функция." },
+    { "type": "text", "content": "Если функция возвращает:" },
+    { "type": "code", "content": "true" },
+    { "type": "text", "content": "поиск сразу прекращается." },
+    { "type": "text", "content": "Метод возвращает найденный элемент." },
+    { "type": "text", "content": "Если функция возвращает:" },
+    { "type": "code", "content": "false" },
+    { "type": "text", "content": "JavaScript переходит к следующему элементу." },
+
+    { "type": "heading", "content": "Пример" },
+    { "type": "code", "content": "const numbers = [\n    10,\n    25,\n    80,\n    150,\n    200\n];\n\nconst result = numbers.find((number) => {\n    return number > 100;\n});\n\nconsole.log(result);\n\n// 150" },
+
+    { "type": "heading", "content": "Что произошло?" },
+    { "type": "text", "content": "JavaScript перебирал массив по порядку." },
+    { "type": "code", "content": "10" },
+    { "type": "text", "content": "Проверка:" },
+    { "type": "code", "content": "10 > 100" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "false" },
+    { "type": "code", "content": "25" },
+    { "type": "text", "content": "Проверка:" },
+    { "type": "code", "content": "25 > 100" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "false" },
+    { "type": "code", "content": "80" },
+    { "type": "text", "content": "Проверка:" },
+    { "type": "code", "content": "80 > 100" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "false" },
+    { "type": "code", "content": "150" },
+    { "type": "text", "content": "Проверка:" },
+    { "type": "code", "content": "150 > 100" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "true" },
+    { "type": "text", "content": "После получения true поиск сразу прекращается." },
+    { "type": "text", "content": "Метод возвращает найденный элемент." },
+    { "type": "text", "content": "Следующий элемент массива (200) уже не проверяется." },
+
+    { "type": "heading", "content": "Если подходящего элемента нет" },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconst result = numbers.find((number) => {\n    return number > 100;\n});\n\nconsole.log(result);\n\n// undefined" },
+    { "type": "text", "content": "Это означает, что ни один элемент массива не удовлетворил условию." },
+
+    { "type": "heading", "content": "Поиск объектов" },
+    { "type": "text", "content": "Одно из самых частых применений find() — поиск объектов." },
+    { "type": "code", "content": "const users = [\n    {\n        id: 1,\n        name: \"Alex\"\n    },\n    {\n        id: 2,\n        name: \"Bob\"\n    },\n    {\n        id: 3,\n        name: \"Kate\"\n    }\n];\n\nconst user = users.find((item) => {\n    return item.id === 2;\n});\n\nconsole.log(user);\n\n// {\n//     id: 2,\n//     name: \"Bob\"\n// }" },
+    { "type": "text", "content": "Именно поэтому find() очень часто используют при работе с массивами объектов." },
+
+    { "type": "heading", "content": "Что возвращает callback-функция в find()?" },
+    { "type": "text", "content": "Callback-функция должна вернуть значение, которое можно преобразовать к true или false." },
+    { "type": "text", "content": "Чаще всего возвращают результат сравнения." },
+    { "type": "code", "content": "return number > 100;" },
+    { "type": "text", "content": "или" },
+    { "type": "code", "content": "return user.id === 2;" },
+    { "type": "text", "content": "Если результат равен true, элемент считается найденным." },
+
+    { "type": "heading", "content": "Когда использовать find()?" },
+    { "type": "text", "content": "Метод удобно использовать, когда необходимо получить <strong>первый элемент</strong>, удовлетворяющий определенному условию." },
+    { "type": "list", "items": [
+      "найти пользователя по id;",
+      "найти товар по цене;",
+      "найти первое отрицательное число;",
+      "найти первую ошибку в списке."
+    ] },
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "find() ищет элемент по условию.",
+      "Условие задается с помощью callback-функции.",
+      "Если callback возвращает true, поиск сразу прекращается.",
+      "Метод возвращает первый найденный элемент.",
+      "Если подходящий элемент отсутствует, возвращается undefined.",
+      "find() особенно часто используется для поиска объектов в массиве."
+    ] }
+  ]
+}

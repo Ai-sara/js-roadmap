@@ -1,0 +1,64 @@
+{
+  "id": "change-elements",
+  "parentId": "arrays",
+  "title": "Изменение элементов массива",
+  "difficulty": 1,
+  "blocks": [
+    { "type": "heading_xl", "content": "Как изменить элемент массива?" },
+    { "type": "text", "content": "Для изменения элемента используют его индекс." },
+    { "type": "text", "content": "Синтаксис:" },
+    { "type": "code", "content": "array[index] = новоеЗначение;" },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfruits[1] = \"Mango\";\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Mango\",\n    \"Orange\"\n]" },
+    { "type": "text", "content": "JavaScript нашел элемент с индексом 1 и заменил его новым значением." },
+
+    { "type": "heading_xl", "content": "Изменение первого элемента" },
+    { "type": "text", "content": "Первый элемент всегда имеет индекс 0." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfruits[0] = \"Kiwi\";\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Kiwi\",\n    \"Banana\",\n    \"Orange\"\n]" },
+
+    { "type": "heading_xl", "content": "Изменение последнего элемента" },
+    { "type": "text", "content": "Последний элемент удобно получать через length." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfruits[fruits.length - 1] = \"Pear\";\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\",\n    \"Pear\"\n]" },
+
+    { "type": "heading", "content": "Можно заменить элемент любым типом данных" },
+    { "type": "text", "content": "JavaScript не ограничивает тип нового значения." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const data = [\n    \"Alex\",\n    25,\n    true\n];\n\ndata[1] = {\n    age: 30\n};\n\nconsole.log(data);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Alex\",\n    {\n        age: 30\n    },\n    true\n]" },
+
+    { "type": "heading", "content": "Что произойдет, если элемента нет?" },
+    { "type": "text", "content": "Если указать индекс, которого пока не существует, JavaScript автоматически увеличит массив." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\"\n];\n\nfruits[4] = \"Orange\";\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\",\n    <2 empty items>,\n    \"Orange\"\n]" },
+    { "type": "text", "content": "JavaScript не выдает ошибку." },
+    { "type": "text", "content": "Он создает массив большей длины, а между существующими и новым элементом появляются пустые позиции." },
+
+    { "type": "heading", "content": "Можно ли добавить элемент таким способом?" },
+    { "type": "text", "content": "Технически — да." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\"\n];\n\nfruits[2] = \"Orange\";" },
+    { "type": "text", "content": "Получится:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n]" },
+    { "type": "text", "content": "Однако такой способ используют редко." },
+    { "type": "text", "content": "Для добавления новых элементов существуют специальные методы массива (<code>push()</code>, <code>unshift()</code> и другие), которые будут рассмотрены в следующих темах." },
+
+    { "type": "heading_xl", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "Элемент массива изменяется через его индекс.",
+      "Первый элемент имеет индекс 0.",
+      "Последний элемент удобно получать через array.length - 1.",
+      "Вместо старого значения можно записать значение любого типа данных.",
+      "Если указать несуществующий индекс, массив автоматически увеличится.",
+      "Для добавления новых элементов обычно используют специальные методы массива, а не запись по индексу."
+    ]}
+  ]
+}

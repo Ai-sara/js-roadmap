@@ -1,0 +1,396 @@
+{
+  "id": "object-property-restrictions",
+  "parentId": "object",
+  "title": "Ограничение изменений объекта",
+  "difficulty": 3,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Ограничение изменений объекта"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript позволяет ограничить возможность изменения объекта с помощью трёх статических методов:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Object.freeze()</strong>",
+        "<strong>Object.seal()</strong>",
+        "<strong>Object.preventExtensions()</strong>"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Они отличаются тем, <strong>какие действия с объектом остаются разрешёнными</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "<code>Object.freeze()</code>"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Что такое <code>Object.freeze()</code>?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Object.freeze()</strong> делает объект <strong>неизменяемым</strong>."
+    },
+    {
+      "type": "text",
+      "content": "После заморозки объекта нельзя:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "добавлять новые свойства;",
+        "удалять существующие свойства;",
+        "изменять значения существующих свойств."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "Object.freeze(object);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Изменение свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.freeze(user);\n\nuser.name = \"Bob\";\n\nconsole.log(user.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex"
+    },
+    {
+      "type": "text",
+      "content": "Значение не изменилось."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Добавление нового свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.freeze(user);\n\nuser.age = 25;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Новое свойство не добавилось."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Удаление свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.freeze(user);\n\ndelete user.name;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Свойство не удалилось."
+    },
+    {
+      "type": "heading",
+      "content": "<code>Object.seal()</code>"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Что такое <code>Object.seal()</code>?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Object.seal()</strong> <strong>запечатывает объект</strong>."
+    },
+    {
+      "type": "text",
+      "content": "После этого:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "нельзя добавлять новые свойства;",
+        "нельзя удалять существующие свойства;",
+        "можно изменять значения существующих свойств."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "Object.seal(object);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Изменение свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.seal(user);\n\nuser.name = \"Bob\";\n\nconsole.log(user.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Bob"
+    },
+    {
+      "type": "text",
+      "content": "Существующее свойство можно изменить."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Добавление нового свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.seal(user);\n\nuser.age = 25;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Новое свойство не добавилось."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Удаление свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.seal(user);\n\ndelete user.name;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Свойство не удалилось."
+    },
+    {
+      "type": "heading",
+      "content": "<code>Object.preventExtensions()</code>"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Что такое <code>Object.preventExtensions()</code>?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Object.preventExtensions()</strong> запрещает <strong>добавлять новые свойства</strong> в объект."
+    },
+    {
+      "type": "text",
+      "content": "При этом:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "существующие свойства можно изменять;",
+        "существующие свойства можно удалять;",
+        "новые свойства добавлять нельзя."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "Object.preventExtensions(object);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Изменение свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.preventExtensions(user);\n\nuser.name = \"Bob\";\n\nconsole.log(user.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Bob"
+    },
+    {
+      "type": "text",
+      "content": "Существующее свойство можно изменить."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Добавление нового свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.preventExtensions(user);\n\nuser.age = 25;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Новое свойство не добавилось."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Удаление свойства"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nObject.preventExtensions(user);\n\ndelete user.name;\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{}"
+    },
+    {
+      "type": "text",
+      "content": "Существующее свойство можно удалить."
+    },
+    {
+      "type": "heading",
+      "content": "Вложенные объекты"
+    },
+    {
+      "type": "text",
+      "content": "Все три метода ограничивают изменения <strong>только самого объекта</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Вложенные объекты и массивы автоматически не замораживаются, не запечатываются и не получают запрет на добавление свойств."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    address: {\n        city: \"London\"\n    }\n};\n\nObject.freeze(user);\n\nuser.address.city = \"Paris\";\n\nconsole.log(user.address.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Paris"
+    },
+    {
+      "type": "text",
+      "content": "<strong>user</strong> заморожен, но вложенный объект <strong>address</strong> остался обычным объектом."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому для вложенных объектов ограничения нужно применять отдельно."
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение методов"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Метод",
+        "Изменять свойства",
+        "Добавлять свойства",
+        "Удалять свойства"
+      ],
+      "rows": [
+        [
+          "<code>Object.preventExtensions()</code>",
+          "✅",
+          "❌",
+          "✅"
+        ],
+        [
+          "<code>Object.seal()</code>",
+          "✅",
+          "❌",
+          "❌"
+        ],
+        [
+          "<code>Object.freeze()</code>",
+          "❌",
+          "❌",
+          "❌"
+        ]
+      ]
+    },
+    {
+      "type": "heading_sm",
+      "content": "Можно запомнить так"
+    },
+    {
+      "type": "scheme",
+      "content": "preventExtensions()\n    ↓\nнельзя добавлять\n\nseal()\n    ↓\nнельзя добавлять + нельзя удалять\n\nfreeze()\n    ↓\nнельзя добавлять + нельзя удалять + нельзя изменять"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Object.preventExtensions()</strong> запрещает добавлять новые свойства.",
+        "<strong>Object.seal()</strong> запрещает добавлять и удалять свойства, но позволяет изменять существующие.",
+        "<strong>Object.freeze()</strong> запрещает добавлять, удалять и изменять свойства.",
+        "Все три метода действуют только на текущий объект.",
+        "Вложенные объекты и массивы автоматически не получают ограничения.",
+        "Чем дальше от <strong>preventExtensions()</strong> к <strong>freeze()</strong>, тем больше ограничений накладывается на объект."
+      ]
+    }
+  ]
+}

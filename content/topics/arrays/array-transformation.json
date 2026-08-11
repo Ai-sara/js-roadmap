@@ -1,0 +1,12 @@
+{
+  "id": "array-transformation",
+  "parentId": "arrays",
+  "title": "Преобразование массивов",
+  "difficulty": 2,
+  "children": [
+    "transformation-introduction",
+    "map",
+    "filter",
+    "reduce"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "keys-values-entries",
+  "parentId": "arrays",
+  "title": "keys(), values() и entries()",
+  "difficulty": 1.5,
+  "blocks": [
+    { "type": "text", "content": "Методы keys(), values() и entries() возвращают <strong>итератор</strong> для перебора массива." },
+    { "type": "list", "items": [
+      "keys() — возвращает индексы элементов.",
+      "values() — возвращает значения элементов.",
+      "entries() — возвращает пары [индекс, значение]."
+    ]},
+    { "type": "text", "content": "Исходный массив при этом <strong>не изменяется</strong>." },
+
+    { "type": "heading", "content": "Что такое keys()?" },
+    { "type": "text", "content": "Метод keys() возвращает итератор, содержащий индексы элементов массива." },
+
+    { "type": "heading_sm", "content": "Синтаксис" },
+    { "type": "code", "content": "array.keys();" },
+
+    { "type": "heading_sm", "content": "Пример" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfor (const key of fruits.keys()) {\n    console.log(key);\n}" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "0\n1\n2" },
+
+    { "type": "heading", "content": "Что такое values()?" },
+    { "type": "text", "content": "Метод values() возвращает итератор, содержащий значения элементов массива." },
+
+    { "type": "heading_sm", "content": "Синтаксис" },
+    { "type": "code", "content": "array.values();" },
+
+    { "type": "heading_sm", "content": "Пример" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfor (const value of fruits.values()) {\n    console.log(value);\n}" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple\nBanana\nOrange" },
+
+    { "type": "heading", "content": "Что такое entries()?" },
+    { "type": "text", "content": "Метод entries() возвращает итератор, содержащий пары:" },
+    { "type": "code", "content": "[индекс, значение]" },
+
+    { "type": "heading_sm", "content": "Синтаксис" },
+    { "type": "code", "content": "array.entries();" },
+
+    { "type": "heading_sm", "content": "Пример" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfor (const entry of fruits.entries()) {\n    console.log(entry);\n}" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[0, \"Apple\"]\n[1, \"Banana\"]\n[2, \"Orange\"]" },
+    { "type": "text", "content": "Можно сразу получить индекс и значение:" },
+    { "type": "code", "content": "for (const [index, value] of fruits.entries()) {\n    console.log(index, value);\n}" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "0 Apple\n1 Banana\n2 Orange" },
+
+    { "type": "heading", "content": "Что возвращают методы?" },
+    { "type": "text", "content": "Все три метода возвращают <strong>итератор</strong>." },
+    { "type": "text", "content": "Чаще всего они используются вместе с циклом for...of." },
+
+    { "type": "heading", "content": "Когда использовать?" },
+    { "type": "list", "items": [
+      "keys() — когда нужны только индексы.",
+      "values() — когда нужны только значения.",
+      "entries() — когда одновременно нужны индекс и значение."
+    ]},
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "keys(), values() и entries() не изменяют исходный массив.",
+      "Все три метода возвращают итератор.",
+      "keys() возвращает индексы.",
+      "values() возвращает значения.",
+      "entries() возвращает пары [индекс, значение].",
+      "Чаще всего эти методы используются вместе с циклом for...of."
+    ]}
+  ]
+}

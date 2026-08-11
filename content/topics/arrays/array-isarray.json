@@ -1,0 +1,109 @@
+{
+  "id": "array-isarray",
+  "parentId": "arrays",
+  "title": "Array.isArray()",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Array.isArray()</strong> — это статический метод класса <strong>Array</strong>, который проверяет, является ли значение массивом."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "Array.isArray(value);"
+    },
+    {
+      "type": "heading",
+      "content": "value"
+    },
+    {
+      "type": "text",
+      "content": "Значение, которое необходимо проверить."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает Array.isArray()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод получает значение и проверяет, является ли оно массивом.<br><br>После проверки возвращается результат."
+    },
+    {
+      "type": "heading",
+      "content": "Если значение является массивом"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n  1,\n  2,\n  3\n];\n\nconsole.log(\n  Array.isArray(numbers)\n);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:<br><br>true"
+    },
+    {
+      "type": "heading",
+      "content": "Если значение не является массивом"
+    },
+    {
+      "type": "code",
+      "content": "console.log(\n  Array.isArray(\"Hello\")\n);\n\nconsole.log(\n  Array.isArray(100)\n);\n\nconsole.log(\n  Array.isArray({})\n);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:<br><br>false<br><br>false<br><br>false"
+    },
+    {
+      "type": "heading",
+      "content": "Почему нельзя использовать typeof?"
+    },
+    {
+      "type": "text",
+      "content": "Массив является объектом.<br><br>Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [];\n\nconsole.log(typeof numbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:<br><br>object<br><br>Поэтому с помощью <strong>typeof</strong> невозможно определить, является ли значение массивом или обычным объектом.<br><br>Для этого используют <strong>Array.isArray()</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает Array.isArray()?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>true</strong> — если значение является массивом.",
+        "<strong>false</strong> — если значение не является массивом."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать Array.isArray()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод используют, когда необходимо проверить, является ли значение массивом.<br><br>Это особенно полезно, если неизвестно, какие данные были получены."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Array.isArray()</strong> — статический метод класса <strong>Array</strong>.",
+        "Вызывается как <strong>Array.isArray()</strong>, а не <strong>array.isArray()</strong>.",
+        "Метод проверяет, является ли значение массивом.",
+        "Метод всегда возвращает <strong>true</strong> или <strong>false</strong>.",
+        "Для проверки массива рекомендуется использовать <strong>Array.isArray()</strong>, а не <strong>typeof</strong>."
+      ]
+    }
+  ]
+}

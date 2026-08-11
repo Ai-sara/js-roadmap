@@ -1,0 +1,257 @@
+{
+  "id": "what-is-array",
+  "parentId": "arrays",
+  "title": "Что такое массив (Array)?",
+  "difficulty": 1,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое массив?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Массив (Array)</strong> — это специальный объект JavaScript, предназначенный для хранения <strong>упорядоченной коллекции значений</strong>.<br><br>В отличие от обычного объекта, элементы массива располагаются в определенном порядке и доступны по их индексу."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];"
+    },
+    {
+      "type": "text",
+      "content": "В этом массиве хранится три элемента.<br><br>Каждый элемент имеет свой индекс:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Индекс",
+        "Значение"
+      ],
+      "rows": [
+        [
+          "0",
+          "\"Apple\""
+        ],
+        [
+          "1",
+          "\"Banana\""
+        ],
+        [
+          "2",
+          "\"Orange\""
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Почему массив называют упорядоченной коллекцией?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Коллекция</strong> — это набор нескольких значений.<br><br>Например:<br><br>\"Apple\"<br>\"Banana\"<br>\"Orange\"<br><br>Если объединить их в один массив:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "[\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n]"
+    },
+    {
+      "type": "text",
+      "content": "получится одна коллекция.<br><br>Она называется <strong>упорядоченной</strong>, потому что JavaScript запоминает порядок расположения элементов.<br><br>Например:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "[\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n]\n\n[\n    \"Orange\",\n    \"Apple\",\n    \"Banana\"\n]"
+    },
+    {
+      "type": "text",
+      "content": "— это уже разные массивы.<br><br>Для массива порядок элементов имеет значение."
+    },
+    {
+      "type": "heading",
+      "content": "Почему нельзя использовать объект?"
+    },
+    {
+      "type": "text",
+      "content": "Технически можно.<br><br>Например:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const fruits = {\n    first: \"Apple\",\n    second: \"Banana\",\n    third: \"Orange\"\n};"
+    },
+    {
+      "type": "text",
+      "content": "Но такой способ неудобен.<br><br>Чтобы получить второй элемент, нужно знать имя свойства:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "console.log(fruits.second);"
+    },
+    {
+      "type": "text",
+      "content": "Если элементов станет 100 или 1000, придумывать имя каждому свойству будет неудобно.<br><br>Массив решает эту проблему.<br><br>Он автоматически использует числовые индексы."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits[1]);"
+    },
+    {
+      "type": "heading",
+      "content": "Массив — это объект"
+    },
+    {
+      "type": "text",
+      "content": "Несмотря на отдельное название, массив является объектом.<br><br>Это можно проверить:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const fruits = [];\n\nconsole.log(typeof fruits);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:<br><br>object<br><br>Это означает, что массив относится к ссылочным типам данных."
+    },
+    {
+      "type": "list",
+      "items": [
+        "массив хранится в памяти как объект;",
+        "переменная хранит ссылку на массив;",
+        "при присваивании копируется ссылка, а не сам массив."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Эти правила полностью совпадают с правилами работы объектов.<br><br>Подробно ссылочный тип данных уже был рассмотрен в теме <strong>«Объекты»</strong>, поэтому далее мы будем использовать эти знания."
+    },
+    {
+      "type": "heading",
+      "content": "Какие значения может хранить массив?"
+    },
+    {
+      "type": "text",
+      "content": "Массив может хранить значения любого типа данных.<br><br>Например:"
+    },
+    {
+      "type": "code",
+      "content": "const data = [\n    \"Alex\",\n    25,\n    true,\n    null,\n    undefined\n];"
+    },
+    {
+      "type": "text",
+      "content": "В одном массиве могут одновременно находиться разные типы данных.<br><br>Также массив может хранить:<br><br><strong>объекты:</strong>"
+    },
+    {
+      "type": "code",
+      "content": "const users = [\n    {\n        name: \"Alex\"\n    },\n    {\n        name: \"Bob\"\n    }\n];"
+    },
+    {
+      "type": "text",
+      "content": "<strong>другие массивы:</strong>"
+    },
+    {
+      "type": "code",
+      "content": "const matrix = [\n    [1, 2],\n    [3, 4]\n];"
+    },
+    {
+      "type": "text",
+      "content": "<strong>функции:</strong>"
+    },
+    {
+      "type": "code",
+      "content": "const actions = [\n    function () {\n        console.log(\"Hello\");\n    }\n];"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript не ограничивает тип данных элементов массива."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать массив?"
+    },
+    {
+      "type": "text",
+      "content": "Массив используют, когда необходимо хранить <strong>несколько однотипных или связанных между собой значений</strong>, порядок которых имеет значение.<br><br>Например:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "список пользователей;",
+        "список товаров;",
+        "список оценок;",
+        "список сообщений;",
+        "список фотографий;",
+        "результаты поиска."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Во всех этих случаях количество элементов может изменяться, а их порядок важен."
+    },
+    {
+      "type": "heading",
+      "content": "Можно ли сравнивать массивы?"
+    },
+    {
+      "type": "text",
+      "content": "Массивы можно сравнивать с помощью <code>===</code>.<br><br>Например:"
+    },
+    {
+      "type": "code",
+      "content": "const arr1 = [1, 2, 3];\nconst arr2 = [1, 2, 3];\n\nconsole.log(arr1 === arr2);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:<br><br>false<br><br>Массивы одинаковые по содержимому, но результат — <code>false</code>.<br><br>Массив — ссылочный тип данных.<br><br>Оператор <code>===</code> сравнивает не содержимое, а ссылку.<br><br><code>arr1</code> и <code>arr2</code> — это два разных массива в памяти.<br><br>Поэтому их ссылки различаются."
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение одной и той же ссылки"
+    },
+    {
+      "type": "code",
+      "content": "const arr1 = [1, 2, 3];\nconst arr3 = arr1;\n\nconsole.log(arr1 === arr3);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:<br><br>true<br><br><code>arr3</code> хранит ту же ссылку, что и <code>arr1</code>.<br><br>Поэтому результат — <code>true</code>."
+    },
+    {
+      "type": "heading",
+      "content": "Как сравнить содержимое массивов?"
+    },
+    {
+      "type": "text",
+      "content": "Один из способов — превратить массивы в строку и сравнить строки."
+    },
+    {
+      "type": "code",
+      "content": "const arr1 = [1, 2, 3];\nconst arr2 = [1, 2, 3];\n\nconsole.log(JSON.stringify(arr1) === JSON.stringify(arr2));"
+    },
+    {
+      "type": "text",
+      "content": "Результат:<br><br>true"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Массив (Array) — специальный объект для хранения упорядоченной коллекции значений.",
+        "Элементы массива располагаются в определенном порядке.",
+        "Каждый элемент имеет свой индекс.",
+        "Массив является объектом (<code>typeof [] === \"object\"</code>).",
+        "Массив относится к ссылочным типам данных.",
+        "В массиве могут храниться значения любых типов данных, включая объекты, массивы и функции.",
+        "Массив используют, когда нужно хранить несколько значений, порядок которых имеет значение.",
+        "Массивы сравниваются по ссылке, а не по содержимому.",
+        "Для сравнения содержимого массивы превращают в строку через <code>JSON.stringify()</code>."
+      ]
+    }
+  ]
+}

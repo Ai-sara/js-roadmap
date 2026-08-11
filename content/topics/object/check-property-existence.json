@@ -1,0 +1,212 @@
+{
+  "id": "check-property-existence",
+  "parentId": "object",
+  "title": "Проверка существования свойства",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Иногда необходимо проверить, существует ли свойство в объекте."
+    },
+    {
+      "type": "text",
+      "content": "В JavaScript для этого есть несколько способов:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "оператор <code>in</code>;",
+        "<code>Object.hasOwn()</code>;",
+        "<code>hasOwnProperty()</code>."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Оператор `in`"
+    },
+    {
+      "type": "text",
+      "content": "Оператор <code>in</code> проверяет, существует ли указанное свойство в объекте."
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "\"property\" in object"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>true</code> — если свойство существует;",
+        "<code>false</code> — если свойства нет."
+      ]
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconsole.log(\"name\" in user);\nconsole.log(\"city\" in user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "true\nfalse"
+    },
+    {
+      "type": "heading",
+      "content": "Почему не проверить через `undefined`?"
+    },
+    {
+      "type": "text",
+      "content": "Иногда можно встретить такой код:"
+    },
+    {
+      "type": "code",
+      "content": "if (user.age !== undefined) {\n    console.log(\"Свойство существует\");\n}"
+    },
+    {
+      "type": "text",
+      "content": "Такой способ может привести к ошибке."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    age: undefined\n};\n\nconsole.log(user.age !== undefined);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "false"
+    },
+    {
+      "type": "text",
+      "content": "Хотя свойство <code>age</code> существует."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому для проверки существования свойства рекомендуется использовать оператор <code>in</code>."
+    },
+    {
+      "type": "heading",
+      "content": "Object.hasOwn()"
+    },
+    {
+      "type": "text",
+      "content": "<code>Object.hasOwn()</code> проверяет, принадлежит ли свойство непосредственно объекту."
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "Object.hasOwn(object, \"property\");"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nconsole.log(Object.hasOwn(user, \"name\"));\nconsole.log(Object.hasOwn(user, \"age\"));"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "true\nfalse"
+    },
+    {
+      "type": "text",
+      "content": "Это современный способ проверки существования собственного свойства объекта."
+    },
+    {
+      "type": "heading",
+      "content": "hasOwnProperty()"
+    },
+    {
+      "type": "text",
+      "content": "До появления <code>Object.hasOwn()</code> использовали метод <code>hasOwnProperty()</code>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nconsole.log(user.hasOwnProperty(\"name\"));"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "true"
+    },
+    {
+      "type": "text",
+      "content": "Сегодня чаще рекомендуется использовать <code>Object.hasOwn()</code>, однако <code>hasOwnProperty()</code> по-прежнему часто встречается в существующем коде."
+    },
+    {
+      "type": "heading",
+      "content": "В чем разница между `in` и `Object.hasOwn()`?"
+    },
+    {
+      "type": "text",
+      "content": "<code>in</code> проверяет, существует ли свойство в объекте."
+    },
+    {
+      "type": "text",
+      "content": "<code>Object.hasOwn()</code> проверяет, является ли это свойство собственным свойством объекта."
+    },
+    {
+      "type": "text",
+      "content": "Разница станет понятнее после изучения темы <strong>«Прототипы»</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Пока достаточно запомнить:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "для обычной проверки существования свойства подходит <code>in</code>;",
+        "<code>Object.hasOwn()</code> используют, когда нужно проверить только собственные свойства объекта."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Для проверки существования свойства используется оператор <code>in</code>.",
+        "Не рекомендуется проверять существование свойства через сравнение с <code>undefined</code>.",
+        "<code>Object.hasOwn()</code> — современный способ проверки собственных свойств объекта.",
+        "<code>hasOwnProperty()</code> — более старый способ, который часто встречается в существующем коде.",
+        "Различия между <code>in</code> и <code>Object.hasOwn()</code> полностью раскрываются после изучения прототипов."
+      ]
+    }
+  ]
+}

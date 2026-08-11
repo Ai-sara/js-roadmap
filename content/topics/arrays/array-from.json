@@ -1,0 +1,123 @@
+{
+  "id": "array-from",
+  "parentId": "arrays",
+  "title": "Array.from()",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Array.from()</strong> — это статический метод класса <strong>Array</strong>, который создает <strong>новый массив</strong> из массивоподобного или итерируемого объекта."
+    },
+    {
+      "type": "list",
+      "items": [
+        "преобразовать строку в массив;",
+        "преобразовать <strong>Set</strong> в массив;",
+        "преобразовать <strong>Map</strong> в массив;",
+        "преобразовать другие итерируемые объекты в обычный массив."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "Array.from(iterable);\nArray.from(iterable, mapFn);"
+    },
+    {
+      "type": "heading",
+      "content": "iterable"
+    },
+    {
+      "type": "text",
+      "content": "Объект, из которого необходимо создать массив."
+    },
+    {
+      "type": "heading",
+      "content": "mapFn"
+    },
+    {
+      "type": "text",
+      "content": "Необязательная функция, которая применяется к каждому элементу во время создания массива."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает Array.from()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод последовательно получает элементы из переданного объекта. Каждый элемент помещается в новый массив. После обработки возвращается новый массив. Исходный объект при этом не изменяется."
+    },
+    {
+      "type": "heading",
+      "content": "Преобразование строки в массив"
+    },
+    {
+      "type": "code",
+      "content": "const text = \"JavaScript\";\n\nconst result = Array.from(text);\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[\"J\", \"a\", \"v\", \"a\", \"S\", \"c\", \"r\", \"i\", \"p\", \"t\"]"
+    },
+    {
+      "type": "heading",
+      "content": "Использование mapFn"
+    },
+    {
+      "type": "text",
+      "content": "Во время создания массива можно сразу изменить элементы."
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n  1,\n  2,\n  3\n];\n\nconst result = Array.from(numbers, (number) => {\n  return number * 2;\n});\n\nconsole.log(result);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[2, 4, 6]"
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает Array.from()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод всегда возвращает <strong>новый массив</strong>. Исходный объект при этом не изменяется."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать Array.from()?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "преобразовать строку в массив;",
+        "преобразовать итерируемый объект в массив;",
+        "сразу преобразовать элементы при создании массива."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Array.from()</strong> — статический метод класса <strong>Array</strong>.",
+        "Вызывается как <strong>Array.from()</strong>, а не <strong>array.from()</strong>.",
+        "Метод всегда возвращает новый массив.",
+        "Исходный объект не изменяется.",
+        "Во время создания массива можно сразу преобразовать элементы с помощью <strong>mapFn</strong>."
+      ]
+    }
+  ]
+}

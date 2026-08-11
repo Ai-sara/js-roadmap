@@ -1,0 +1,206 @@
+{
+  "id": "nested-objects",
+  "parentId": "object",
+  "title": "Вложенные объекты",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое вложенный объект?"
+    },
+    {
+      "type": "text",
+      "content": "Значением свойства объекта может быть не только примитивное значение, но и другой объект."
+    },
+    {
+      "type": "text",
+      "content": "Такой объект называется <strong>вложенным объектом</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    address: {\n        city: \"London\",\n        country: \"UK\"\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "В этом примере свойство <code>address</code> содержит другой объект."
+    },
+    {
+      "type": "heading",
+      "content": "Доступ к свойствам вложенного объекта"
+    },
+    {
+      "type": "text",
+      "content": "Для доступа к свойствам вложенного объекта используется обычная точечная запись."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "console.log(user.address.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "London"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript сначала получает объект <code>address</code>, а затем обращается к его свойству <code>city</code>."
+    },
+    {
+      "type": "heading",
+      "content": "Несколько уровней вложенности"
+    },
+    {
+      "type": "text",
+      "content": "Объекты могут содержать другие объекты без ограничений по уровню вложенности."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    address: {\n        city: {\n            name: \"London\",\n            zipCode: \"SW1A\"\n        }\n    }\n};\n\nconsole.log(user.address.city.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "London"
+    },
+    {
+      "type": "text",
+      "content": "Каждая точка означает переход к следующему объекту."
+    },
+    {
+      "type": "heading",
+      "content": "Изменение вложенных свойств"
+    },
+    {
+      "type": "text",
+      "content": "Вложенные свойства изменяются так же, как и обычные."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    address: {\n        city: \"London\"\n    }\n};\n\nuser.address.city = \"Paris\";\n\nconsole.log(user.address.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Paris"
+    },
+    {
+      "type": "heading",
+      "content": "Добавление нового свойства"
+    },
+    {
+      "type": "text",
+      "content": "Можно добавить новое свойство во вложенный объект."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    address: {\n        city: \"London\"\n    }\n};\n\nuser.address.country = \"UK\";\n\nconsole.log(user.address);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    city: \"London\",\n    country: \"UK\"\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Удаление свойства"
+    },
+    {
+      "type": "text",
+      "content": "Удаление работает так же, как и для обычных объектов."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    address: {\n        city: \"London\",\n        country: \"UK\"\n    }\n};\n\ndelete user.address.country;\n\nconsole.log(user.address);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    city: \"London\"\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Почему используют вложенные объекты?"
+    },
+    {
+      "type": "text",
+      "content": "Вложенные объекты позволяют объединять связанные данные."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "text",
+      "content": "Вместо:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    city: \"London\",\n    country: \"UK\",\n    street: \"Baker Street\"\n};"
+    },
+    {
+      "type": "text",
+      "content": "можно сгруппировать данные по смыслу:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    address: {\n        city: \"London\",\n        country: \"UK\",\n        street: \"Baker Street\"\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "Так объект становится более понятным и удобным для работы."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Значением свойства объекта может быть другой объект.",
+        "Такой объект называется вложенным.",
+        "Для доступа к вложенным свойствам используют несколько точек подряд.",
+        "Вложенные свойства можно изменять, добавлять и удалять так же, как и обычные.",
+        "Вложенные объекты помогают логически группировать связанные данные."
+      ]
+    }
+  ]
+}

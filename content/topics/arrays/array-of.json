@@ -1,0 +1,118 @@
+{
+  "id": "array-of",
+  "parentId": "arrays",
+  "title": "Array.of()",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "<strong>Array.of()</strong> — это статический метод класса <strong>Array</strong>, который создает новый массив из переданных значений."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "Array.of(element1);\n\nArray.of(element1, element2, ...);"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает Array.of()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод получает любое количество значений. Каждое переданное значение помещается в новый массив. После этого возвращается новый массив."
+    },
+    {
+      "type": "heading",
+      "content": "Создание массива"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = Array.of(\n  1,\n  2,\n  3,\n  4\n);\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[1, 2, 3, 4]"
+    },
+    {
+      "type": "heading",
+      "content": "Одно значение"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = Array.of(5);\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[5]"
+    },
+    {
+      "type": "heading",
+      "content": "Чем отличается от конструктора Array()?"
+    },
+    {
+      "type": "text",
+      "content": "Рассмотрим пример."
+    },
+    {
+      "type": "code",
+      "content": "const array1 = Array(5);\nconst array2 = Array.of(5);\n\nconsole.log(array1);\nconsole.log(array2);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[empty × 5]\n[5]"
+    },
+    {
+      "type": "heading",
+      "content": "Почему так происходит?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Array(5)</strong> создает массив длиной <strong>5</strong>, а не массив с элементом <strong>5</strong>.\n\nВ то время как:\n\n<strong>Array.of(5)</strong>\n\nвсегда создает массив, содержащий переданные значения."
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает Array.of()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод всегда возвращает <strong>новый массив</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать Array.of()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод используют, когда необходимо создать массив из переданных значений и избежать особенностей конструктора <strong>Array()</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Array.of()</strong> — статический метод класса <strong>Array</strong>.",
+        "Вызывается как <strong>Array.of()</strong>, а не <strong>array.of()</strong>.",
+        "Метод всегда возвращает новый массив.",
+        "Все переданные значения становятся элементами массива.",
+        "В отличие от <strong>Array()</strong>, вызов <strong>Array.of(5)</strong> создаст массив <strong>[5]</strong>, а не массив длиной <strong>5</strong>."
+      ]
+    }
+  ]
+}

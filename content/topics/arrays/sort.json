@@ -1,0 +1,341 @@
+{
+  "id": "sort",
+  "parentId": "array-ordering",
+  "title": "sort()",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Метод sort() используется для сортировки элементов массива.\n\nПосле выполнения метода элементы массива располагаются в определенном порядке.\n\nПо умолчанию строки сортируются в лексикографическом (словарном) порядке."
+    },
+    {
+      "type": "text",
+      "content": "Пример:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Orange\",\n    \"Apple\",\n    \"Banana\"\n];\n\nfruits.sort();\n\nconsole.log(fruits);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Apple\", \"Banana\", \"Orange\"]"
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "text",
+      "content": "Без функции сравнения:"
+    },
+    {
+      "type": "code",
+      "content": "array.sort();"
+    },
+    {
+      "type": "text",
+      "content": "С функцией сравнения:"
+    },
+    {
+      "type": "code",
+      "content": "array.sort((a, b) => {\n    // правило сравнения\n});"
+    },
+    {
+      "type": "text",
+      "content": "или"
+    },
+    {
+      "type": "code",
+      "content": "array.sort(function (a, b) {\n    // правило сравнения\n});"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает sort()?"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Изменяет исходный массив"
+    },
+    {
+      "type": "text",
+      "content": "В отличие от многих методов массива (map(), filter()), метод sort() <strong>не создает новый массив</strong>.\n\nОн изменяет существующий массив."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    5,\n    1,\n    10,\n    3\n];\n\nnumbers.sort();\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "После вызова sort() массив numbers уже содержит элементы в новом порядке."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Что возвращает sort()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод возвращает <strong>тот же самый массив</strong>, который был отсортирован."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому можно записать результат в переменную:"
+    },
+    {
+      "type": "code",
+      "content": "const sortedNumbers = numbers.sort();"
+    },
+    {
+      "type": "text",
+      "content": "Однако новый массив при этом <strong>не создается</strong>.\n\nПеременные numbers и sortedNumbers будут ссылаться на один и тот же массив."
+    },
+    {
+      "type": "text",
+      "content": "Если необходимо сохранить исходный массив без изменений, сначала создают его копию.\n\nНапример:"
+    },
+    {
+      "type": "code",
+      "content": "const sortedNumbers = [...numbers].sort();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Почему числа сортируются неправильно?"
+    },
+    {
+      "type": "text",
+      "content": "По умолчанию JavaScript сравнивает элементы как строки."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    20,\n    3,\n    100,\n    5\n];\n\nnumbers.sort();\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "result",
+      "content": "[1, 100, 20, 3, 5]"
+    },
+    {
+      "type": "text",
+      "content": "Это происходит потому, что во время сортировки числа временно сравниваются как строки:"
+    },
+    {
+      "type": "code",
+      "content": "\"1\"\n\"20\"\n\"3\"\n\"100\"\n\"5\""
+    },
+    {
+      "type": "text",
+      "content": "Поэтому для чисел обычно используют функцию сравнения."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Функция сравнения (compareFn)"
+    },
+    {
+      "type": "text",
+      "content": "Функция сравнения определяет порядок расположения элементов.\n\nВо время сортировки JavaScript постоянно передает в нее два элемента массива."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "array.sort((a, b) => {\n\n});"
+    },
+    {
+      "type": "text",
+      "content": "Здесь:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "a — первый сравниваемый элемент;",
+        "b — второй сравниваемый элемент."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "JavaScript сам определяет, какие элементы сравнивать и сколько раз вызвать callback.\n\nПрограммист лишь задает правило сравнения."
+    },
+    {
+      "type": "text",
+      "content": "Функция сравнения должна вернуть число."
+    },
+    {
+      "type": "text",
+      "content": "Если результат меньше нуля:"
+    },
+    {
+      "type": "code",
+      "content": "return -1;"
+    },
+    {
+      "type": "text",
+      "content": "или"
+    },
+    {
+      "type": "code",
+      "content": "return a - b;"
+    },
+    {
+      "type": "text",
+      "content": "то элемент a будет расположен <strong>перед</strong> элементом b."
+    },
+    {
+      "type": "text",
+      "content": "Если результат больше нуля:"
+    },
+    {
+      "type": "code",
+      "content": "return 1;"
+    },
+    {
+      "type": "text",
+      "content": "или"
+    },
+    {
+      "type": "code",
+      "content": "return b - a;"
+    },
+    {
+      "type": "text",
+      "content": "то элемент a будет расположен <strong>после</strong> элемента b."
+    },
+    {
+      "type": "text",
+      "content": "Если результат равен нулю:"
+    },
+    {
+      "type": "code",
+      "content": "return 0;"
+    },
+    {
+      "type": "text",
+      "content": "то элементы считаются равными и их относительный порядок менять не требуется."
+    },
+    {
+      "type": "heading",
+      "content": "Использование"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Сортировка чисел по возрастанию"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    5,\n    1,\n    10,\n    3\n];\n\nnumbers.sort((a, b) => a - b);\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "result",
+      "content": "[1, 3, 5, 10]"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Сортировка чисел по убыванию"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    5,\n    1,\n    10,\n    3\n];\n\nnumbers.sort((a, b) => b - a);\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "result",
+      "content": "[10, 5, 3, 1]"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Сортировка строк"
+    },
+    {
+      "type": "text",
+      "content": "Для большинства строк дополнительная функция сравнения не требуется."
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Orange\",\n    \"Apple\",\n    \"Banana\"\n];\n\nfruits.sort();\n\nconsole.log(fruits);"
+    },
+    {
+      "type": "result",
+      "content": "[\"Apple\", \"Banana\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "Если требуется учитывать правила определенного языка, используют localeCompare()."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "fruits.sort((a, b) => a.localeCompare(b));"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Сортировка объектов"
+    },
+    {
+      "type": "text",
+      "content": "Для объектов необходимо самостоятельно указать свойство, по которому будет выполняться сравнение."
+    },
+    {
+      "type": "text",
+      "content": "По возрасту:"
+    },
+    {
+      "type": "code",
+      "content": "const users = [\n    {\n        name: \"Alex\",\n        age: 25\n    },\n    {\n        name: \"Bob\",\n        age: 18\n    },\n    {\n        name: \"John\",\n        age: 30\n    }\n];\n\nusers.sort((a, b) => a.age - b.age);"
+    },
+    {
+      "type": "text",
+      "content": "По имени:"
+    },
+    {
+      "type": "code",
+      "content": "users.sort((a, b) => a.name.localeCompare(b.name));"
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать sort()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод sort() используют, когда необходимо:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "отсортировать числа;",
+        "отсортировать строки;",
+        "отсортировать объекты по определенному свойству;",
+        "изменить порядок элементов массива."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Если исходный массив необходимо сохранить, перед сортировкой создают его копию."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "sort() сортирует элементы массива.",
+        "Метод изменяет исходный массив.",
+        "Метод возвращает тот же самый массив.",
+        "По умолчанию элементы сравниваются как строки.",
+        "Для чисел и объектов обычно используют функцию сравнения.",
+        "Для сортировки по возрастанию используют (a, b) => a - b.",
+        "Для сортировки по убыванию используют (a, b) => b - a.",
+        "Для сортировки строк по правилам языка используют localeCompare()."
+      ]
+    }
+  ]
+}

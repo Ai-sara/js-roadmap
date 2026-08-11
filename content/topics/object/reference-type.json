@@ -1,0 +1,339 @@
+{
+  "id": "reference-type",
+  "parentId": "object",
+  "title": "Ссылочный тип данных (Reference Type)",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое ссылочный тип данных?"
+    },
+    {
+      "type": "text",
+      "content": "Объекты относятся к <strong>ссылочным типам данных</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Это означает, что переменная хранит <strong>не сам объект</strong>, а <strong>ссылку на него</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};"
+    },
+    {
+      "type": "text",
+      "content": "После создания объекта происходит два действия:"
+    },
+    {
+      "type": "scheme",
+      "content": [
+        "JavaScript создает объект в памяти компьютера",
+        "В переменную user записывается ссылка на этот объект"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что такое ссылка?"
+    },
+    {
+      "type": "text",
+      "content": "Ссылка — это специальное внутреннее значение JavaScript, которое указывает, где находится объект в памяти."
+    },
+    {
+      "type": "text",
+      "content": "Можно представить ссылку как <strong>условный адрес</strong> объекта."
+    },
+    {
+      "type": "scheme",
+      "content": "user\n│\n▼\nссылка → Объект"
+    },
+    {
+      "type": "text",
+      "content": "Важно понимать:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "это <strong>не настоящее значение ссылки</strong>;",
+        "JavaScript не позволяет увидеть или получить реальные адреса памяти;",
+        "ссылка — это внутреннее значение JavaScript, которое используется для поиска объекта в памяти."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Такое представление используется только для понимания принципа работы."
+    },
+    {
+      "type": "heading",
+      "content": "Почему объект не хранится прямо в переменной?"
+    },
+    {
+      "type": "text",
+      "content": "Примитивные значения обычно небольшие."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "let age = 25;"
+    },
+    {
+      "type": "text",
+      "content": "Число <code>25</code> можно хранить прямо в переменной."
+    },
+    {
+      "type": "text",
+      "content": "Но объект может быть очень большим."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    address: {\n        city: \"London\"\n    },\n    skills: [\n        \"HTML\",\n        \"CSS\",\n        \"JavaScript\"\n    ]\n};"
+    },
+    {
+      "type": "text",
+      "content": "Объект может содержать:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "сотни свойств;",
+        "вложенные объекты;",
+        "массивы;",
+        "функции."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Если бы JavaScript копировал весь объект при каждом присваивании:"
+    },
+    {
+      "type": "code",
+      "content": "const user2 = user1;"
+    },
+    {
+      "type": "text",
+      "content": "ему пришлось бы создавать полную копию объекта."
+    },
+    {
+      "type": "text",
+      "content": "Для больших объектов это было бы медленно и потребовало бы больше памяти."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому JavaScript копирует только ссылку."
+    },
+    {
+      "type": "heading",
+      "content": "Что происходит при присваивании объекта?"
+    },
+    {
+      "type": "code",
+      "content": "const user1 = {\n    name: \"Alex\"\n};\n\nconst user2 = user1;"
+    },
+    {
+      "type": "text",
+      "content": "Многие думают, что создается второй объект."
+    },
+    {
+      "type": "text",
+      "content": "Это неверно."
+    },
+    {
+      "type": "text",
+      "content": "После выполнения:"
+    },
+    {
+      "type": "code",
+      "content": "const user2 = user1;"
+    },
+    {
+      "type": "text",
+      "content": "новый объект <strong>не создается</strong>."
+    },
+    {
+      "type": "text",
+      "content": "JavaScript копирует только ссылку."
+    },
+    {
+      "type": "text",
+      "content": "После этого <strong>обе переменные содержат свои собственные ссылки</strong>, но они указывают <strong>на один и тот же объект</strong>."
+    },
+    {
+      "type": "text",
+      "content": "То есть переменная <code>user2</code>, так же как и <code>user1</code>, хранит <strong>не объект</strong>, а ссылку на него."
+    },
+    {
+      "type": "heading",
+      "content": "Почему изменение видно через обе переменные?"
+    },
+    {
+      "type": "code",
+      "content": "const user1 = {\n    name: \"Alex\"\n};\n\nconst user2 = user1;\n\nuser2.name = \"Bob\";\n\nconsole.log(user1.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Bob"
+    },
+    {
+      "type": "text",
+      "content": "Это происходит потому, что обе переменные ссылаются на один и тот же объект."
+    },
+    {
+      "type": "text",
+      "content": "Когда выполняется:"
+    },
+    {
+      "type": "code",
+      "content": "user2.name = \"Bob\";"
+    },
+    {
+      "type": "scheme",
+      "content": [
+        "берет ссылку из переменной user2",
+        "по этой ссылке находит объект в памяти",
+        "изменяет свойство name"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Переменная <code>user1</code> хранит ссылку на этот же объект."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому через нее тоже видно изменение."
+    },
+    {
+      "type": "heading",
+      "content": "Сравнение объектов"
+    },
+    {
+      "type": "text",
+      "content": "При сравнении объектов JavaScript сравнивает <strong>не содержимое объектов</strong>, а <strong>их ссылки</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user1 = {\n    name: \"Alex\"\n};\n\nconst user2 = user1;\n\nconsole.log(user1 === user2);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "true"
+    },
+    {
+      "type": "text",
+      "content": "Обе переменные содержат ссылки на один и тот же объект."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Теперь другой пример"
+    },
+    {
+      "type": "code",
+      "content": "const user1 = {\n    name: \"Alex\"\n};\n\nconst user2 = {\n    name: \"Alex\"\n};\n\nconsole.log(user1 === user2);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "false"
+    },
+    {
+      "type": "text",
+      "content": "Несмотря на одинаковое содержимое, JavaScript создал два разных объекта."
+    },
+    {
+      "type": "text",
+      "content": "Каждый объект получил собственную ссылку."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому ссылки разные."
+    },
+    {
+      "type": "text",
+      "content": "Следовательно:"
+    },
+    {
+      "type": "code",
+      "content": "user1 === user2"
+    },
+    {
+      "type": "text",
+      "content": "вернет:"
+    },
+    {
+      "type": "code",
+      "content": "false"
+    },
+    {
+      "type": "heading",
+      "content": "То же самое с массивами"
+    },
+    {
+      "type": "text",
+      "content": "Массивы тоже являются объектами."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому:"
+    },
+    {
+      "type": "code",
+      "content": "[] === []"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "false"
+    },
+    {
+      "type": "text",
+      "content": "Каждый литерал массива создает новый объект."
+    },
+    {
+      "type": "text",
+      "content": "Это правило действует для <strong>всех ссылочных типов данных</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Объекты относятся к ссылочным типам данных.",
+        "Переменная хранит не объект, а ссылку на него.",
+        "Сам объект находится в памяти компьютера.",
+        "Ссылка — это внутреннее значение JavaScript, которое позволяет найти объект в памяти.",
+        "JavaScript не позволяет увидеть реальные адреса памяти.",
+        "При присваивании объекта копируется ссылка, а не объект.",
+        "После присваивания обе переменные содержат ссылки на один и тот же объект.",
+        "Изменение объекта через одну переменную будет видно через все остальные ссылки.",
+        "При сравнении объектов JavaScript сравнивает ссылки, а не содержимое объектов.",
+        "Даже одинаковые по содержимому объекты не равны друг другу, если это разные объекты."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "deep-copy",
+  "parentId": "object",
+  "title": "Глубокое копирование объектов (Deep Copy)",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое глубокое копирование?"
+    },
+    {
+      "type": "text",
+      "content": "В предыдущей теме мы узнали, что Spread (`...`) и `Object.assign()` создают <strong>поверхностную копию (Shallow Copy)</strong>."
+    },
+    {
+      "type": "text",
+      "content": "При таком копировании вложенные объекты и массивы не копируются — копируются только ссылки на них."
+    },
+    {
+      "type": "text",
+      "content": "Иногда этого недостаточно."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user1 = {\n    name: \"Alex\",\n    address: {\n        city: \"London\"\n    }\n};\n\nconst user2 = {\n    ...user1\n};\n\nuser2.address.city = \"Paris\";\n\nconsole.log(user1.address.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Paris"
+    },
+    {
+      "type": "text",
+      "content": "Изменился и исходный объект, потому что вложенный объект <code>address</code> остался общим."
+    },
+    {
+      "type": "text",
+      "content": "Если необходимо создать полностью независимую копию объекта вместе со всеми вложенными объектами и массивами, используют <strong>глубокое копирование (Deep Copy)</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "structuredClone()"
+    },
+    {
+      "type": "text",
+      "content": "Современный способ глубокого копирования — `structuredClone()`."
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "const copy = structuredClone(object);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user1 = {\n    name: \"Alex\",\n    address: {\n        city: \"London\"\n    }\n};\n\nconst user2 = structuredClone(user1);\n\nuser2.address.city = \"Paris\";\n\nconsole.log(user1.address.city);\nconsole.log(user2.address.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "London\nParis"
+    },
+    {
+      "type": "text",
+      "content": "Теперь изменение копии не влияет на исходный объект."
+    },
+    {
+      "type": "heading",
+      "content": "Почему это работает?"
+    },
+    {
+      "type": "text",
+      "content": "`structuredClone()` создает:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "новый объект;",
+        "новые копии всех вложенных объектов;",
+        "новые копии всех вложенных массивов."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "В результате исходный объект и его копия становятся полностью независимыми."
+    },
+    {
+      "type": "heading",
+      "content": "JSON.parse(JSON.stringify())"
+    },
+    {
+      "type": "text",
+      "content": "До появления `structuredClone()` часто использовали такой способ:"
+    },
+    {
+      "type": "code",
+      "content": "const copy = JSON.parse(JSON.stringify(object));"
+    },
+    {
+      "type": "text",
+      "content": "Он тоже создает глубокую копию, но имеет ограничения."
+    },
+    {
+      "type": "text",
+      "content": "Например, такой способ не сохраняет:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "функции;",
+        "`Date`;",
+        "`Map`;",
+        "`Set`;",
+        "`undefined`;",
+        "`Infinity`;",
+        "`NaN`;",
+        "некоторые другие специальные типы данных."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Поэтому сегодня рекомендуется использовать `structuredClone()`, если он поддерживается средой выполнения."
+    },
+    {
+      "type": "heading",
+      "content": "Что использовать?"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Способ",
+        "Когда использовать"
+      ],
+      "rows": [
+        [
+          "Spread (`...`)",
+          "Если объект содержит только примитивные значения или поверхностной копии достаточно."
+        ],
+        [
+          "Object.assign()",
+          "Альтернатива Spread для поверхностного копирования."
+        ],
+        [
+          "structuredClone()",
+          "Если нужна полная независимая копия объекта вместе со всеми вложенными объектами и массивами."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Глубокое копирование создает новые копии всех вложенных объектов и массивов.",
+        "После глубокого копирования исходный объект и его копия полностью независимы.",
+        "Современный способ глубокого копирования — `structuredClone()`.",
+        "`JSON.parse(JSON.stringify())` тоже создает глубокую копию, но имеет ограничения.",
+        "Для большинства современных проектов рекомендуется использовать `structuredClone()`."
+      ]
+    }
+  ]
+}

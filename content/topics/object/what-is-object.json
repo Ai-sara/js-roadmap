@@ -1,0 +1,208 @@
+{
+  "id": "what-is-object",
+  "parentId": "object",
+  "title": "Objects (Объекты)",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое объект?"
+    },
+    {
+      "type": "text",
+      "content": "Объект — это структура данных, которая хранит значения в виде пар:"
+    },
+    {
+      "type": "text",
+      "content": "<strong>ключ → значение</strong>"
+    },
+    {
+      "type": "text",
+      "content": "Каждое значение внутри объекта называется <strong>свойством</strong>."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Здесь"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>name</strong> — ключ (имя свойства);",
+        "<strong>&quot;Alex&quot;</strong> — значение свойства;",
+        "<strong>age</strong> — ключ;",
+        "<strong>25</strong> — значение."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Зачем нужны объекты?"
+    },
+    {
+      "type": "text",
+      "content": "Объекты используются для хранения связанных данных."
+    },
+    {
+      "type": "text",
+      "content": "Например, вместо отдельных переменных:"
+    },
+    {
+      "type": "code",
+      "content": "const name = \"Alex\";\nconst age = 25;\nconst city = \"London\";"
+    },
+    {
+      "type": "text",
+      "content": "можно объединить данные:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"London\"\n};\n"
+    },
+    {
+      "type": "text",
+      "content": "Теперь все данные одного пользователя находятся внутри одного объекта."
+    },
+    {
+      "type": "heading",
+      "content": "Создание объекта"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Object Literal"
+    },
+    {
+      "type": "text",
+      "content": "Самый распространенный способ создания объекта:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n"
+    },
+    {
+      "type": "text",
+      "content": "Объект создается с помощью фигурных скобок:"
+    },
+    {
+      "type": "code",
+      "content": "{}\n"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пустой объект"
+    },
+    {
+      "type": "text",
+      "content": "Можно создать объект без свойств:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {};\n"
+    },
+    {
+      "type": "text",
+      "content": "Позже в него можно добавить свойства."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Object Constructor"
+    },
+    {
+      "type": "text",
+      "content": "Можно создать объект через <strong>new Object()</strong>:"
+    },
+    {
+      "type": "code",
+      "content": "const user = new Object();\n\n"
+    },
+    {
+      "type": "note",
+      "content": "Но такой способ используется редко."
+    },
+    {
+      "type": "text",
+      "content": "Обычно используют:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {};\n\n"
+    },
+    {
+      "type": "heading",
+      "content": "Структура объекта"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    isStudent: true\n};\n"
+    },
+    {
+      "type": "text",
+      "content": "Объект состоит из:"
+    },
+    {
+      "type": "scheme",
+      "content": "object\n│\n├── property (свойство)\n│      │\n│      ├── key\n│      │\n│      └── value\n│\n├── property\n│\n└── property\n"
+    },
+    {
+      "type": "heading",
+      "content": "Какие значения может хранить объект?"
+    },
+    {
+      "type": "text",
+      "content": "Свойства объекта могут хранить любые типы данных:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    isStudent: true,\n    address: null\n};\n\n"
+    },
+    {
+      "type": "text",
+      "content": "Также объект может хранить:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "массивы;",
+        "функции;",
+        "другие объекты."
+      ]
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n\n    skills: [\n        \"HTML\",\n        \"CSS\",\n        \"JavaScript\"\n    ],\n\n    sayHello: function () {\n        console.log(\"Hello\");\n    }\n};\n"
+    },
+    {
+      "type": "text",
+      "content": "Функция внутри объекта называется <strong>методом</strong>."
+    },
+    {
+      "type": "note",
+      "content": "Подробнее методы будут рассмотрены отдельно."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Объект хранит данные в формате <strong>ключ: значение</strong>.",
+        "Значения внутри объекта называются свойствами.",
+        "Объекты используются для объединения связанных данных.",
+        "Объекты создаются чаще всего через <strong>{}</strong>.",
+        "Свойства объекта могут хранить любые типы данных.",
+        "Функция внутри объекта называется методом."
+      ]
+    }
+  ]
+}

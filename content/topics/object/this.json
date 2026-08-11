@@ -1,0 +1,268 @@
+{
+  "id": "this",
+  "parentId": "object",
+  "title": "Ключевое слово `this`",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое `this`?"
+    },
+    {
+      "type": "text",
+      "content": "`this` — это специальное ключевое слово JavaScript."
+    },
+    {
+      "type": "text",
+      "content": "Оно позволяет получить объект, в контексте которого была вызвана функция."
+    },
+    {
+      "type": "text",
+      "content": "Само по себе `this` не ссылается на какой-либо конкретный объект."
+    },
+    {
+      "type": "text",
+      "content": "Его значение определяется <strong>во время вызова функции</strong>, а не во время ее создания."
+    },
+    {
+      "type": "heading",
+      "content": "`this` в методе объекта"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Рассмотрим пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n\n    greet() {\n        console.log(this.name);\n    }\n};\n\nuser.greet();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex"
+    },
+    {
+      "type": "text",
+      "content": "Когда выполняется:"
+    },
+    {
+      "type": "code",
+      "content": "user.greet();"
+    },
+    {
+      "type": "text",
+      "content": "метод вызывается через объект `user`."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому внутри метода:"
+    },
+    {
+      "type": "code",
+      "content": "this"
+    },
+    {
+      "type": "text",
+      "content": "ссылается на объект `user`."
+    },
+    {
+      "type": "text",
+      "content": "Следовательно:"
+    },
+    {
+      "type": "code",
+      "content": "this.name"
+    },
+    {
+      "type": "text",
+      "content": "равносильно:"
+    },
+    {
+      "type": "code",
+      "content": "user.name"
+    },
+    {
+      "type": "heading",
+      "content": "Почему не использовать имя объекта?"
+    },
+    {
+      "type": "text",
+      "content": "Можно написать так:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n\n    greet() {\n        console.log(user.name);\n    }\n};"
+    },
+    {
+      "type": "text",
+      "content": "Такой код работает, но он ненадежен."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "let user = {\n    name: \"Alex\",\n\n    greet() {\n        console.log(user.name);\n    }\n};\n\nconst admin = user;\n\nuser = null;\n\nadmin.greet();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "TypeError"
+    },
+    {
+      "type": "text",
+      "content": "Переменная `admin` по-прежнему хранит объект."
+    },
+    {
+      "type": "text",
+      "content": "Но внутри метода используется переменная `user`, которая уже содержит `null`."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому метод перестает работать."
+    },
+    {
+      "type": "text",
+      "content": "Использование `this` решает эту проблему."
+    },
+    {
+      "type": "code",
+      "content": "let user = {\n    name: \"Alex\",\n\n    greet() {\n        console.log(this.name);\n    }\n};\n\nconst admin = user;\n\nuser = null;\n\nadmin.greet();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex"
+    },
+    {
+      "type": "text",
+      "content": "Метод обращается не к переменной `user`, а к объекту, через который он был вызван."
+    },
+    {
+      "type": "heading",
+      "content": "Один метод для разных объектов"
+    },
+    {
+      "type": "text",
+      "content": "Один и тот же метод можно использовать в разных объектах."
+    },
+    {
+      "type": "code",
+      "content": "function greet() {\n    console.log(this.name);\n}\n\nconst user = {\n    name: \"Alex\",\n    greet\n};\n\nconst admin = {\n    name: \"Bob\",\n    greet\n};\n\nuser.greet();\nadmin.greet();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex\nBob"
+    },
+    {
+      "type": "text",
+      "content": "Значение `this` зависит от того, через какой объект был вызван метод."
+    },
+    {
+      "type": "heading",
+      "content": "Вызов функции без объекта"
+    },
+    {
+      "type": "text",
+      "content": "Ключевое слово `this` можно использовать в любой функции, а не только в методах объекта."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "function greet() {\n    console.log(this);\n}\n\ngreet();"
+    },
+    {
+      "type": "text",
+      "content": "Если функция вызывается <strong>без объекта</strong>, то значение `this` зависит от режима работы JavaScript."
+    },
+    {
+      "type": "text",
+      "content": "В <strong>строгом режиме (`\"use strict\"`)</strong>:"
+    },
+    {
+      "type": "code",
+      "content": "\"use strict\";\n\nfunction greet() {\n    console.log(this);\n}\n\ngreet();"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "text",
+      "content": "Именно поэтому попытка обратиться к свойству:"
+    },
+    {
+      "type": "code",
+      "content": "\"use strict\";\n\nfunction greet() {\n    console.log(this.name);\n}\n\ngreet();"
+    },
+    {
+      "type": "text",
+      "content": "приведет к ошибке, так как `undefined` не имеет свойств."
+    },
+    {
+      "type": "note",
+      "content": "В дальнейшем мы подробно рассмотрим, как ведет себя `this` в обычных функциях, стрелочных функциях и при использовании `call()`, `apply()` и `bind()`."
+    },
+    {
+      "type": "heading",
+      "content": "Главное правило"
+    },
+    {
+      "type": "text",
+      "content": "Если функция вызывается как метод объекта:"
+    },
+    {
+      "type": "code",
+      "content": "object.method();"
+    },
+    {
+      "type": "text",
+      "content": "то внутри этой функции:"
+    },
+    {
+      "type": "code",
+      "content": "this === object"
+    },
+    {
+      "type": "text",
+      "content": "Именно это правило используется чаще всего при работе с объектами."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "`this` — специальное ключевое слово JavaScript.",
+        "`this` не хранит постоянную ссылку на объект.",
+        "Значение `this` определяется во время вызова функции.",
+        "Если функция вызывается как метод объекта (`object.method()`), то `this` ссылается на этот объект.",
+        "Использование `this` делает методы независимыми от имени переменной, в которой хранится объект.",
+        "Если функция вызывается без объекта, то в строгом режиме значение `this` равно `undefined`.",
+        "Позже будут рассмотрены особенности работы `this` в обычных функциях, стрелочных функциях, а также методы `call()`, `apply()` и `bind()`."
+      ]
+    }
+  ]
+}

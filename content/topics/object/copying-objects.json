@@ -1,0 +1,260 @@
+{
+  "id": "copying-objects",
+  "parentId": "object",
+  "title": "Копирование объектов",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Копирование ссылки"
+    },
+    {
+      "type": "text",
+      "content": "При обычном присваивании объекта:"
+    },
+    {
+      "type": "code",
+      "content": "const user2 = user1;"
+    },
+    {
+      "type": "text",
+      "content": "новый объект не создается."
+    },
+    {
+      "type": "text",
+      "content": "Копируется только ссылка, поэтому обе переменные продолжают ссылаться на один и тот же объект."
+    },
+    {
+      "type": "text",
+      "content": "Подробнее о том, почему это происходит, см. тему <strong>«Ссылочный тип данных (Reference Type)»</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Но во многих случаях нужен новый независимый объект."
+    },
+    {
+      "type": "text",
+      "content": "Например, если необходимо изменить данные, не затрагивая исходный объект."
+    },
+    {
+      "type": "text",
+      "content": "В этом случае обычного присваивания недостаточно."
+    },
+    {
+      "type": "text",
+      "content": "Необходимо создать копию объекта."
+    },
+    {
+      "type": "text",
+      "content": "После копирования существуют уже два разных объекта."
+    },
+    {
+      "type": "text",
+      "content": "Изменение одного объекта больше не влияет на другой."
+    },
+    {
+      "type": "heading",
+      "content": "Как создать копию объекта?"
+    },
+    {
+      "type": "text",
+      "content": "Чтобы создать независимый объект, необходимо явно создать его копию."
+    },
+    {
+      "type": "text",
+      "content": "Самый распространенный способ — <strong>Spread (`...`)</strong>."
+    },
+    {
+      "type": "code",
+      "content": "const user1 = {\n    name: \"Alex\",\n    age: 25\n};\n\nconst user2 = {\n    ...user1\n};"
+    },
+    {
+      "type": "text",
+      "content": "Теперь <code>user2</code> содержит копию объекта <code>user1</code>."
+    },
+    {
+      "type": "text",
+      "content": "Изменим его:"
+    },
+    {
+      "type": "code",
+      "content": "user2.name = \"Bob\";\n\nconsole.log(user1.name);\nconsole.log(user2.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex\nBob"
+    },
+    {
+      "type": "text",
+      "content": "Изменение <code>user2</code> больше не влияет на <code>user1</code>, потому что это уже два разных объекта."
+    },
+    {
+      "type": "heading",
+      "content": "Object.assign()"
+    },
+    {
+      "type": "text",
+      "content": "Еще один способ создать копию объекта:"
+    },
+    {
+      "type": "code",
+      "content": "const user2 = Object.assign({}, user1);"
+    },
+    {
+      "type": "text",
+      "content": "Здесь:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>{}</code> — новый пустой объект;",
+        "<code>Object.assign()</code> копирует свойства объекта <code>user1</code> в этот объект."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Результат такой же, как и при использовании Spread."
+    },
+    {
+      "type": "heading",
+      "content": "Spread или Object.assign()?"
+    },
+    {
+      "type": "text",
+      "content": "Оба способа создают одинаковый результат."
+    },
+    {
+      "type": "text",
+      "content": "В современном JavaScript чаще используют Spread."
+    },
+    {
+      "type": "code",
+      "content": "const copy = {\n    ...user\n};"
+    },
+    {
+      "type": "text",
+      "content": "Он короче и легче читается."
+    },
+    {
+      "type": "heading",
+      "content": "Поверхностное копирование"
+    },
+    {
+      "type": "text",
+      "content": "Spread и <code>Object.assign()</code> создают <strong>поверхностную копию (Shallow Copy)</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Это означает:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "свойства верхнего уровня копируются;",
+        "вложенные объекты и массивы не создаются заново — копируются только ссылки на них."
+      ]
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user1 = {\n    name: \"Alex\",\n    address: {\n        city: \"London\"\n    }\n};\n\nconst user2 = {\n    ...user1\n};"
+    },
+    {
+      "type": "text",
+      "content": "Изменим вложенный объект:"
+    },
+    {
+      "type": "code",
+      "content": "user2.address.city = \"Paris\";\n\nconsole.log(user1.address.city);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Paris"
+    },
+    {
+      "type": "text",
+      "content": "Почему?"
+    },
+    {
+      "type": "text",
+      "content": "Потому что был создан новый объект <code>user2</code>, но свойство <code>address</code> содержит ссылку на тот же самый вложенный объект."
+    },
+    {
+      "type": "heading",
+      "content": "Что копируется при Spread?"
+    },
+    {
+      "type": "code",
+      "content": "const user2 = {\n    ...user1\n};"
+    },
+    {
+      "type": "text",
+      "content": "При поверхностном копировании:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "примитивные значения копируются полностью;",
+        "для вложенных объектов и массивов копируются только ссылки."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Поэтому вложенные объекты и массивы остаются общими."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать поверхностное копирование?"
+    },
+    {
+      "type": "text",
+      "content": "Поверхностное копирование подходит, если объект содержит только примитивные значения."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    isAdmin: false\n};"
+    },
+    {
+      "type": "text",
+      "content": "Такой объект можно безопасно копировать через Spread или <code>Object.assign()</code>."
+    },
+    {
+      "type": "text",
+      "content": "Если объект содержит вложенные объекты или массивы, изменения во вложенных данных будут общими для обеих копий."
+    },
+    {
+      "type": "text",
+      "content": "В этом случае может потребоваться глубокое копирование."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>const user2 = user1</code> не создает копию объекта — копируется только ссылка.",
+        "Для создания копии объекта можно использовать Spread (<code>...</code>).",
+        "Еще один способ копирования — <code>Object.assign()</code>.",
+        "Spread и <code>Object.assign()</code> создают поверхностную копию.",
+        "При поверхностном копировании вложенные объекты и массивы не создаются заново — копируются только ссылки на них.",
+        "Для объектов с вложенными структурами может потребоваться глубокое копирование."
+      ]
+    }
+  ]
+}

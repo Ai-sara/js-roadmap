@@ -1,0 +1,94 @@
+{
+  "id": "length",
+  "parentId": "arrays",
+  "title": "Свойство length",
+  "difficulty": 1.5,
+  "blocks": [
+    { "type": "heading_xl", "content": "Что такое length?" },
+    { "type": "text", "content": "У каждого массива есть специальное свойство <code>length</code>." },
+    { "type": "text", "content": "Оно показывает <strong>длину массива</strong>." },
+    { "type": "text", "content": "Синтаксис:" },
+    { "type": "code", "content": "array.length" },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits.length);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "3" },
+    { "type": "text", "content": "В массиве три элемента, поэтому length равно 3." },
+
+    { "type": "heading_xl", "content": "Как вычисляется length?" },
+    { "type": "text", "content": "Многие думают, что length — это количество элементов массива." },
+    { "type": "text", "content": "Это верно в большинстве случаев, но не всегда." },
+    { "type": "text", "content": "На самом деле length всегда равно:" },
+    { "type": "note", "content": "📌 <strong>индекс последнего элемента + 1</strong>" },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];" },
+    {
+      "type": "table",
+      "headers": ["Индекс", "Значение"],
+      "rows": [
+        ["0", "\"Apple\""],
+        ["1", "\"Banana\""],
+        ["2", "\"Orange\""]
+      ]
+    },
+    { "type": "text", "content": "Последний индекс равен 2." },
+    { "type": "text", "content": "Следовательно:" },
+    { "type": "code", "content": "length = 2 + 1 = 3" },
+
+    { "type": "heading_xl", "content": "Почему не количество элементов?" },
+    { "type": "text", "content": "Рассмотрим пример:" },
+    { "type": "code", "content": "const fruits = [];\n\nfruits[5] = \"Orange\";\n\nconsole.log(fruits);\nconsole.log(fruits.length);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[ <5 empty items>, \"Orange\" ]\n\n6" },
+    { "type": "text", "content": "Многие ожидают увидеть:" },
+    { "type": "code", "content": "1" },
+    { "type": "text", "content": "Но JavaScript показывает:" },
+    { "type": "code", "content": "6" },
+    { "type": "text", "content": "Почему?" },
+    { "type": "text", "content": "Потому что последний индекс массива равен 5." },
+    { "type": "text", "content": "Следовательно:" },
+    { "type": "code", "content": "length = 5 + 1 = 6" },
+
+    { "type": "heading_xl", "content": "Пустые элементы массива" },
+    { "type": "text", "content": "В предыдущем примере между индексами 0 и 4 нет элементов." },
+    { "type": "text", "content": "Такие позиции называют <strong>пустыми элементами (empty slots)</strong>." },
+    { "type": "scheme", "content": "Индекс:\n\n0   1   2   3   4   5\n│   │   │   │   │   │\n□   □   □   □   □   Orange" },
+    { "type": "text", "content": "Несмотря на это, length все равно становится равным 6." },
+
+    { "type": "heading_xl", "content": "Можно изменить length" },
+    { "type": "text", "content": "Свойство length не только показывает длину массива." },
+    { "type": "text", "content": "Его можно изменять." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nfruits.length = 2;\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\"\n]" },
+    { "type": "text", "content": "JavaScript автоматически удалил все элементы после нового значения length." },
+
+    { "type": "heading", "content": "Увеличение length" },
+    { "type": "text", "content": "Если увеличить length:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\"\n];\n\nfruits.length = 5;\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\",\n    <3 empty items>\n]" },
+    { "type": "text", "content": "Новые элементы не создаются." },
+    { "type": "text", "content": "JavaScript просто увеличивает длину массива, оставляя пустые позиции." },
+
+    { "type": "heading_xl", "content": "Получение последнего элемента" },
+    { "type": "text", "content": "Так как length всегда на единицу больше последнего индекса, последний элемент можно получить так:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits[fruits.length - 1]);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Orange" },
+    { "type": "text", "content": "Этот способ часто используется на практике." },
+
+    { "type": "heading_xl", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "У каждого массива есть свойство length.",
+      "В большинстве случаев length совпадает с количеством элементов.",
+      "На самом деле length всегда равен <strong>индексу последнего элемента + 1</strong>.",
+      "Если записать элемент с большим индексом, length автоматически увеличится.",
+      "length можно изменять вручную.",
+      "Уменьшение length удаляет элементы массива.",
+      "Увеличение length создает пустые позиции (empty slots).",
+      "Последний элемент массива можно получить через array[array.length - 1]."
+    ]}
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "includes",
+  "parentId": "array-search",
+  "title": "Метод includes()",
+  "difficulty": 2,
+  "blocks": [
+    { "type": "heading", "content": "Что делает includes()?" },
+    { "type": "text", "content": "Метод includes() проверяет, содержит ли массив указанное значение." },
+    { "type": "text", "content": "Если значение найдено, метод возвращает:" },
+    { "type": "code", "content": "true" },
+    { "type": "text", "content": "Если значение отсутствует:" },
+    { "type": "code", "content": "false" },
+
+    { "type": "heading", "content": "Синтаксис" },
+    { "type": "code", "content": "array.includes(value)" },
+    { "type": "text", "content": "где:" },
+    { "type": "list", "items": [
+      "array — массив;",
+      "value — значение, которое необходимо найти."
+    ] },
+
+    { "type": "heading", "content": "Пример" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits.includes(\"Banana\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "true" },
+    { "type": "text", "content": "Значение \"Banana\" присутствует в массиве.\n\nПоэтому метод вернул true." },
+
+    { "type": "text", "content": "Если значение отсутствует:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits.includes(\"Kiwi\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "false" },
+
+    { "type": "heading", "content": "Что возвращает includes()?" },
+    { "type": "text", "content": "Метод никогда не возвращает сам элемент.\n\nОн возвращает только логическое значение." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconst result = fruits.includes(\"Orange\");\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "true" },
+    { "type": "text", "content": "Переменная result содержит значение типа boolean." },
+
+    { "type": "heading", "content": "Проверяется строгое равенство" },
+    { "type": "text", "content": "При поиске используется строгое сравнение (===)." },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconsole.log(numbers.includes(\"20\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "false" },
+    { "type": "text", "content": "Почему?\n\nПотому что:" },
+    { "type": "code", "content": "20 === \"20\"" },
+    { "type": "text", "content": "дает:" },
+    { "type": "code", "content": "false" },
+    { "type": "text", "content": "Число и строка — разные типы данных." },
+
+    { "type": "heading", "content": "Поиск объектов" },
+    { "type": "text", "content": "При поиске объектов сравнивается <strong>не содержимое объектов</strong>, а их ссылки." },
+    { "type": "code", "content": "const user = {\n    name: \"Alex\"\n};\n\nconst users = [\n    user\n];\n\nconsole.log(users.includes(user));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "true" },
+    { "type": "text", "content": "Используется одна и та же ссылка на объект." },
+    { "type": "text", "content": "Теперь другой пример:" },
+    { "type": "code", "content": "const users = [\n    {\n        name: \"Alex\"\n    }\n];\n\nconsole.log(\n    users.includes({\n        name: \"Alex\"\n    })\n);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "false" },
+    { "type": "text", "content": "Несмотря на одинаковое содержимое, это два разных объекта.\n\nСледовательно, они содержат разные ссылки.\n\nИменно поэтому includes() возвращает false." },
+
+    { "type": "heading", "content": "Когда использовать includes()?" },
+    { "type": "text", "content": "Метод удобно использовать, когда необходимо только узнать, существует ли элемент в массиве." },
+    { "type": "list", "items": [
+      "проверить наличие пользователя;",
+      "проверить наличие товара;",
+      "проверить наличие ошибки;",
+      "проверить наличие определенного значения."
+    ] },
+    { "type": "text", "content": "Если нужен сам элемент или его индекс, используют другие методы массива, которые будут рассмотрены далее." },
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "includes() проверяет наличие элемента в массиве.",
+      "Метод возвращает только true или false.",
+      "Поиск выполняется с использованием строгого сравнения.",
+      "Для объектов сравниваются ссылки, а не содержимое.",
+      "Если нужен найденный элемент или его индекс, используют другие методы поиска."
+    ] }
+  ]
+}

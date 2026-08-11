@@ -1,0 +1,232 @@
+{
+  "id": "object-destructuring",
+  "parentId": "object",
+  "title": "Деструктуризация объекта",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое деструктуризация?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Деструктуризация объекта</strong> — это способ получить значения свойств объекта и сразу записать их в отдельные переменные."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Без деструктуризации"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconst name = user.name;\nconst age = user.age;"
+    },
+    {
+      "type": "heading_sm",
+      "content": "С деструктуризацией"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconst { name, age } = user;"
+    },
+    {
+      "type": "text",
+      "content": "Теперь переменные <code>name</code> и <code>age</code> содержат значения соответствующих свойств."
+    },
+    {
+      "type": "code",
+      "content": "console.log(name);\nconsole.log(age);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex\n25"
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "text",
+      "content": "Для деструктуризации объекта используются фигурные скобки:"
+    },
+    {
+      "type": "code",
+      "content": "const { property1, property2 } = object;"
+    },
+    {
+      "type": "text",
+      "content": "Название переменной по умолчанию должно совпадать с названием свойства."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconst { name, age } = user;"
+    },
+    {
+      "type": "text",
+      "content": "<code>name</code> получает значение <code>user.name</code>, а <code>age</code> — значение <code>user.age</code>."
+    },
+    {
+      "type": "heading",
+      "content": "Можно получить только нужные свойства"
+    },
+    {
+      "type": "text",
+      "content": "Необязательно извлекать все свойства объекта."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25,\n    city: \"Almaty\"\n};\n\nconst { name } = user;\n\nconsole.log(name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex"
+    },
+    {
+      "type": "text",
+      "content": "Остальные свойства объекта при этом не изменяются."
+    },
+    {
+      "type": "heading",
+      "content": "Переименование переменной"
+    },
+    {
+      "type": "text",
+      "content": "Если нужно назвать переменную иначе, используется двоеточие:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconst { name: userName, age: userAge } = user;\n\nconsole.log(userName);\nconsole.log(userAge);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex\n25"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Здесь"
+    },
+    {
+      "type": "code",
+      "content": "name: userName"
+    },
+    {
+      "type": "text",
+      "content": "означает: взять свойство <code>name</code>, но записать его значение в переменную <code>userName</code>."
+    },
+    {
+      "type": "heading",
+      "content": "Значение по умолчанию"
+    },
+    {
+      "type": "text",
+      "content": "Если свойства нет, можно указать значение по умолчанию:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nconst { name, age = 18 } = user;\n\nconsole.log(name);\nconsole.log(age);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex\n18"
+    },
+    {
+      "type": "text",
+      "content": "Если свойство существует, значение по умолчанию не используется:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconst { age = 18 } = user;\n\nconsole.log(age);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "25"
+    },
+    {
+      "type": "heading",
+      "content": "Вложенная деструктуризация"
+    },
+    {
+      "type": "text",
+      "content": "Можно сразу получить свойства из вложенного объекта."
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    address: {\n        city: \"Almaty\",\n        country: \"Kazakhstan\"\n    }\n};\n\nconst {\n    address: { city, country }\n} = user;\n\nconsole.log(city);\nconsole.log(country);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Almaty\nKazakhstan"
+    },
+    {
+      "type": "heading",
+      "content": "Деструктуризация уже существующих переменных"
+    },
+    {
+      "type": "text",
+      "content": "Если переменные уже объявлены, можно выполнить деструктуризацию через присваивание:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nlet name;\nlet age;\n\n({ name, age } = user);"
+    },
+    {
+      "type": "text",
+      "content": "Скобки вокруг выражения нужны, чтобы JavaScript не воспринимал <code>{}</code> как отдельный блок кода."
+    },
+    {
+      "type": "heading",
+      "content": "Деструктуризация в параметрах функции"
+    },
+    {
+      "type": "text",
+      "content": "Деструктуризацию можно использовать прямо в параметрах функции."
+    },
+    {
+      "type": "code",
+      "content": "function showUser({ name, age }) {\n    console.log(name);\n    console.log(age);\n}\n\nconst user = {\n    name: \"Alex\",\n    age: 25\n};\n\nshowUser(user);"
+    },
+    {
+      "type": "text",
+      "content": "Функция сразу получает нужные свойства объекта в отдельных переменных."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Деструктуризация объекта позволяет извлекать свойства объекта в переменные.",
+        "Используются фигурные скобки <code>{}</code>.",
+        "По умолчанию имя переменной совпадает с именем свойства.",
+        "Свойство можно переименовать с помощью <code>property: variable</code>.",
+        "Можно задавать значения по умолчанию.",
+        "Можно деструктурировать вложенные объекты.",
+        "Деструктуризацию можно использовать при присваивании и в параметрах функций."
+      ]
+    }
+  ]
+}

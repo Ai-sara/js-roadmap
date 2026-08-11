@@ -1,0 +1,204 @@
+{
+  "id": "join-split",
+  "parentId": "arrays",
+  "title": "join() и split()",
+  "difficulty": 1.5,
+  "blocks": [
+    { "type": "text", "content": "Методы join() и split() часто используются вместе, так как выполняют противоположные задачи." },
+    { "type": "list", "items": [
+      "join() преобразует массив в строку.",
+      "split() преобразует строку в массив."
+    ]},
+
+    { "type": "heading", "content": "Что такое join()?" },
+    { "type": "text", "content": "Метод join() объединяет все элементы массива в одну строку." },
+    { "type": "text", "content": "Между элементами можно указать любой разделитель." },
+
+    { "type": "heading", "content": "Синтаксис" },
+    { "type": "code", "content": "array.join();\n\narray.join(separator);" },
+
+    { "type": "heading_sm", "content": "separator" },
+    { "type": "text", "content": "Разделитель, который будет вставлен между элементами массива." },
+    { "type": "text", "content": "Это необязательный параметр." },
+    { "type": "text", "content": "Если разделитель не указан, используется запятая:" },
+    { "type": "code", "content": "," },
+
+    { "type": "heading", "content": "Как работает join()?" },
+    { "type": "text", "content": "Метод последовательно берет каждый элемент массива и объединяет их в одну строку." },
+    { "type": "text", "content": "Между элементами вставляется указанный разделитель." },
+    { "type": "text", "content": "После объединения метод возвращает полученную строку." },
+    { "type": "text", "content": "Исходный массив при этом <strong>не изменяется</strong>." },
+
+    { "type": "heading", "content": "Разделитель по умолчанию" },
+    { "type": "text", "content": "Если параметр separator не указан, JavaScript автоматически использует запятую (\",\") как разделитель." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconst result = fruits.join();\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple,Banana,Orange" },
+    { "type": "text", "content": "Этот код полностью эквивалентен следующему:" },
+    { "type": "code", "content": "const result = fruits.join(\",\");" },
+    { "type": "text", "content": "Результат будет таким же:" },
+    { "type": "code", "content": "Apple,Banana,Orange" },
+
+    { "type": "heading", "content": "Пользовательский разделитель" },
+    { "type": "text", "content": "В качестве разделителя можно указать любую строку." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconst result = fruits.join(\" - \");\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple - Banana - Orange" },
+    { "type": "text", "content": "Можно использовать и другие разделители:" },
+    { "type": "code", "content": "fruits.join(\" \");" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple Banana Orange" },
+    { "type": "code", "content": "fruits.join(\"/\");" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple/Banana/Orange" },
+    { "type": "code", "content": "fruits.join(\"\");" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "AppleBananaOrange" },
+    { "type": "text", "content": "Пустая строка (\"\") означает, что между элементами массива не будет вставлен никакой разделитель." },
+
+    { "type": "heading", "content": "Что возвращает join()?" },
+    { "type": "text", "content": "Метод всегда возвращает <strong>строку</strong>." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst result = numbers.join();\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "\"1,2,3\"" },
+    { "type": "text", "content": "Несмотря на то, что массив содержит числа, после выполнения join() результатом становится строка." },
+
+    { "type": "heading", "content": "Если массив содержит один элемент" },
+    { "type": "text", "content": "Если массив содержит только один элемент, join() вернет строку, состоящую из этого элемента." },
+    { "type": "text", "content": "Разделитель использоваться не будет." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\"\n];\n\nconst result = fruits.join(\" - \");\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple" },
+
+    { "type": "heading", "content": "Если массив пустой" },
+    { "type": "text", "content": "Если массив пустой, join() вернет пустую строку." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [];\n\nconst result = fruits.join();\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "\"\"" },
+
+    { "type": "heading", "content": "Если массив содержит null или undefined" },
+    { "type": "text", "content": "Элементы null и undefined преобразуются в пустую строку." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const values = [\n    \"A\",\n    null,\n    \"B\",\n    undefined,\n    \"C\"\n];\n\nconst result = values.join(\"-\");\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "A--B--C" },
+
+    { "type": "heading", "content": "Когда использовать join()?" },
+    { "type": "text", "content": "Метод join() используют, когда необходимо:" },
+    { "type": "list", "items": [
+      "преобразовать массив в строку;",
+      "вывести элементы массива через определенный разделитель;",
+      "сформировать текст из элементов массива."
+    ]},
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const words = [\n    \"JavaScript\",\n    \"is\",\n    \"awesome\"\n];\n\nconst sentence = words.join(\" \");\n\nconsole.log(sentence);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "JavaScript is awesome" },
+
+    { "type": "heading", "content": "Что такое split()?" },
+    { "type": "text", "content": "Метод split() преобразует строку в массив." },
+    { "type": "text", "content": "Разбиение строки происходит по указанному разделителю." },
+
+    { "type": "heading", "content": "Синтаксис" },
+    { "type": "code", "content": "string.split();\n\nstring.split(separator);\n\nstring.split(separator, limit);" },
+
+    { "type": "heading_sm", "content": "separator" },
+    { "type": "text", "content": "Строка, по которой будет выполнено разделение." },
+
+    { "type": "heading_sm", "content": "limit" },
+    { "type": "text", "content": "Максимальное количество элементов, которое попадет в новый массив." },
+    { "type": "text", "content": "Этот параметр необязательный." },
+
+    { "type": "heading", "content": "Как работает split()?" },
+    { "type": "text", "content": "Метод ищет в строке указанный разделитель." },
+    { "type": "text", "content": "Каждый раз, когда разделитель встречается, строка разбивается на части." },
+    { "type": "text", "content": "Полученные части помещаются в новый массив." },
+    { "type": "text", "content": "Исходная строка при этом не изменяется." },
+
+    { "type": "heading", "content": "Разделение строки" },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const text = \"Apple,Banana,Orange\";\n\nconst result = text.split(\",\");\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\"Apple\", \"Banana\", \"Orange\"]" },
+
+    { "type": "heading", "content": "Использование другого разделителя" },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const text = \"Apple - Banana - Orange\";\n\nconst result = text.split(\" - \");\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\"Apple\", \"Banana\", \"Orange\"]" },
+
+    { "type": "heading", "content": "Разделение по пробелу" },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const text = \"JavaScript is awesome\";\n\nconst result = text.split(\" \");\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\"JavaScript\", \"is\", \"awesome\"]" },
+
+    { "type": "heading", "content": "Что возвращает split()?" },
+    { "type": "text", "content": "Метод всегда возвращает <strong>новый массив</strong>." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const text = \"HTML,CSS,JavaScript\";\n\nconst technologies = text.split(\",\");\n\nconsole.log(technologies);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\"HTML\", \"CSS\", \"JavaScript\"]" },
+    { "type": "text", "content": "Исходная строка при этом остается без изменений." },
+
+    { "type": "heading", "content": "Если разделитель не указан" },
+    { "type": "text", "content": "Если параметр separator не указан, строка <strong>не будет разделена</strong>." },
+    { "type": "text", "content": "Весь текст станет единственным элементом нового массива." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const text = \"Apple,Banana,Orange\";\n\nconst result = text.split();\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\"Apple,Banana,Orange\"]" },
+
+    { "type": "heading", "content": "Если указать пустую строку" },
+    { "type": "text", "content": "Если в качестве разделителя указать пустую строку (\"\"), строка будет разделена на отдельные символы." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const text = \"JavaScript\";\n\nconst result = text.split(\"\");\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\"J\", \"a\", \"v\", \"a\", \"S\", \"c\", \"r\", \"i\", \"p\", \"t\"]" },
+
+    { "type": "heading", "content": "Использование limit" },
+    { "type": "text", "content": "Параметр limit ограничивает количество элементов в новом массиве." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const text = \"Apple,Banana,Orange,Kiwi\";\n\nconst result = text.split(\",\", 2);\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[\"Apple\", \"Banana\"]" },
+    { "type": "text", "content": "После получения двух элементов разделение прекращается." },
+
+    { "type": "heading", "content": "Когда использовать split()?" },
+    { "type": "text", "content": "Метод split() используют, когда необходимо:" },
+    { "type": "list", "items": [
+      "преобразовать строку в массив;",
+      "разделить текст по определенному разделителю;",
+      "получить отдельные слова, символы или части строки."
+    ]},
+
+    { "type": "heading", "content": "Главное отличие join() и split()" },
+    {
+      "type": "table",
+      "headers": ["join()", "split()"],
+      "rows": [
+        ["Преобразует массив в строку", "Преобразует строку в массив"],
+        ["Работает с массивом", "Работает со строкой"],
+        ["Возвращает строку", "Возвращает новый массив"]
+      ]
+    },
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "join() преобразует массив в строку.",
+      "split() преобразует строку в массив.",
+      "join() не изменяет исходный массив.",
+      "split() не изменяет исходную строку.",
+      "Если join() вызвать без параметров, разделителем по умолчанию будет запятая.",
+      "join(\"\") объединяет элементы без разделителя.",
+      "Если split() вызвать без параметров, вся строка станет одним элементом массива.",
+      "split(\"\") разбивает строку на отдельные символы.",
+      "split(separator, limit) позволяет ограничить количество элементов в результате."
+    ]}
+  ]
+}

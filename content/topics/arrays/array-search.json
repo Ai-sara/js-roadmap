@@ -1,0 +1,18 @@
+{
+  "id": "array-search",
+  "parentId": "arrays",
+  "title": "Поиск элементов в массиве",
+  "difficulty": 2,
+  "children": [
+    "search-introduction",
+    "includes",
+    "index-of",
+    "last-index-of",
+    "find",
+    "find-last",
+    "find-index",
+    "find-last-index",
+    "some-every",
+    "search-methods-comparison"
+  ]
+}

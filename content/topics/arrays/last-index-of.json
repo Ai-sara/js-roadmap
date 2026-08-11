@@ -1,0 +1,97 @@
+{
+  "id": "last-index-of",
+  "parentId": "array-search",
+  "title": "Метод lastIndexOf()",
+  "difficulty": 2,
+  "blocks": [
+    { "type": "heading", "content": "Что делает lastIndexOf()?" },
+    { "type": "text", "content": "Метод lastIndexOf() ищет указанное значение в массиве и возвращает <strong>индекс последнего найденного элемента</strong>." },
+    { "type": "text", "content": "Если элемент не найден, метод возвращает:" },
+    { "type": "code", "content": "-1" },
+
+    { "type": "heading", "content": "Синтаксис" },
+    { "type": "code", "content": "array.lastIndexOf(value)" },
+    { "type": "text", "content": "где:" },
+    { "type": "list", "items": [
+      "array — массив;",
+      "value — значение, которое необходимо найти."
+    ] },
+
+    { "type": "heading", "content": "Пример" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\",\n    \"Banana\"\n];\n\nconsole.log(fruits.lastIndexOf(\"Banana\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "3" },
+    { "type": "text", "content": "Несмотря на то что \"Banana\" встречается два раза, метод вернул индекс <strong>последнего</strong> найденного элемента." },
+
+    { "type": "heading", "content": "Если элемент встречается один раз" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits.lastIndexOf(\"Orange\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "2" },
+
+    { "type": "heading", "content": "Если элемент отсутствует" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(fruits.lastIndexOf(\"Kiwi\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "-1" },
+    { "type": "text", "content": "Значение -1 означает, что элемент не найден." },
+
+    { "type": "heading", "content": "Как работает поиск?" },
+    { "type": "text", "content": "Важно понимать, что lastIndexOf() <strong>возвращает индекс последнего найденного элемента</strong>, но это <strong>не означает</strong>, что массив перебирается с конца." },
+    { "type": "text", "content": "Для нас главное запомнить следующее:" },
+    { "type": "list", "items": [
+      "если одинаковых элементов несколько, будет возвращен индекс последнего из них;",
+      "если элемент один — вернется его индекс;",
+      "если элемента нет — вернется -1."
+    ] },
+
+    { "type": "heading", "content": "Проверяется строгое равенство" },
+    { "type": "text", "content": "Как и includes() и indexOf(), метод использует строгое сравнение (===)." },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconsole.log(numbers.lastIndexOf(\"20\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "-1" },
+    { "type": "text", "content": "Строка \"20\" не равна числу 20." },
+
+    { "type": "heading", "content": "Поиск объектов" },
+    { "type": "text", "content": "Для объектов сравниваются ссылки." },
+    { "type": "code", "content": "const user = {\n    name: \"Alex\"\n};\n\nconst users = [\n    user,\n    user\n];\n\nconsole.log(users.lastIndexOf(user));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "1" },
+    { "type": "text", "content": "Используется одна и та же ссылка на объект." },
+    { "type": "text", "content": "Теперь другой пример:" },
+    { "type": "code", "content": "const users = [\n    {\n        name: \"Alex\"\n    }\n];\n\nconsole.log(\n    users.lastIndexOf({\n        name: \"Alex\"\n    })\n);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "-1" },
+    { "type": "text", "content": "Несмотря на одинаковое содержимое объектов, ссылки у них разные." },
+
+    { "type": "heading", "content": "indexOf() или lastIndexOf()?" },
+    { "type": "text", "content": "Оба метода возвращают индекс элемента.\n\nРазница заключается в том, какой именно индекс будет найден." },
+    {
+      "type": "table",
+      "headers": ["Метод", "Что возвращает"],
+      "rows": [
+        ["indexOf()", "Индекс первого найденного элемента"],
+        ["lastIndexOf()", "Индекс последнего найденного элемента"]
+      ]
+    },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\",\n    \"Banana\"\n];\n\nconsole.log(fruits.indexOf(\"Banana\"));\n\nconsole.log(fruits.lastIndexOf(\"Banana\"));" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "1\n3" },
+
+    { "type": "heading", "content": "Когда использовать lastIndexOf()?" },
+    { "type": "text", "content": "Метод удобно использовать, когда необходимо найти <strong>последнее</strong> вхождение элемента в массиве." },
+    { "type": "list", "items": [
+      "найти последнее повторение значения;",
+      "определить индекс последнего совпадения;",
+      "удалить последнее совпадение элемента."
+    ] },
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "lastIndexOf() ищет значение в массиве.",
+      "Метод возвращает индекс последнего найденного элемента.",
+      "Если элемент отсутствует, возвращается -1.",
+      "Поиск выполняется с использованием строгого сравнения (===).",
+      "Для объектов сравниваются ссылки, а не содержимое.",
+      "Главное отличие от indexOf() заключается в том, что lastIndexOf() возвращает последнее совпадение, а indexOf() — первое."
+    ] }
+  ]
+}

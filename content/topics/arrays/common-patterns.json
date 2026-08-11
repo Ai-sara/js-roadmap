@@ -1,0 +1,271 @@
+{
+  "id": "common-patterns",
+  "parentId": "arrays",
+  "title": "Common Patterns (Часто используемые шаблоны)",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое Common Patterns?"
+    },
+    {
+      "type": "text",
+      "content": "Common Patterns — это наиболее распространенные способы решения задач при работе с массивами."
+    },
+    {
+      "type": "text",
+      "content": "Обычно они строятся с использованием уже знакомых методов массива."
+    },
+    {
+      "type": "heading",
+      "content": "Получить новый массив"
+    },
+    {
+      "type": "text",
+      "content": "Используйте:"
+    },
+    {
+      "type": "code",
+      "content": "map()"
+    },
+    {
+      "type": "text",
+      "content": "Пример:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3\n];\n\nconst result = numbers.map((number) => {\n    return number * 2;\n});"
+    },
+    {
+      "type": "heading",
+      "content": "Отфильтровать элементы"
+    },
+    {
+      "type": "text",
+      "content": "Используйте:"
+    },
+    {
+      "type": "code",
+      "content": "filter()"
+    },
+    {
+      "type": "text",
+      "content": "Пример:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4\n];\n\nconst result = numbers.filter((number) => {\n    return number % 2 === 0;\n});"
+    },
+    {
+      "type": "heading",
+      "content": "Найти один элемент"
+    },
+    {
+      "type": "text",
+      "content": "Используйте:"
+    },
+    {
+      "type": "code",
+      "content": "find()"
+    },
+    {
+      "type": "text",
+      "content": "или"
+    },
+    {
+      "type": "code",
+      "content": "findLast()"
+    },
+    {
+      "type": "text",
+      "content": "если поиск должен выполняться с конца массива."
+    },
+    {
+      "type": "heading",
+      "content": "Проверить наличие элемента"
+    },
+    {
+      "type": "text",
+      "content": "Если известно значение:"
+    },
+    {
+      "type": "code",
+      "content": "includes()"
+    },
+    {
+      "type": "text",
+      "content": "Если необходимо проверить условие:"
+    },
+    {
+      "type": "code",
+      "content": "some()"
+    },
+    {
+      "type": "heading",
+      "content": "Проверить все элементы"
+    },
+    {
+      "type": "text",
+      "content": "Используйте:"
+    },
+    {
+      "type": "code",
+      "content": "every()"
+    },
+    {
+      "type": "heading",
+      "content": "Получить одно итоговое значение"
+    },
+    {
+      "type": "text",
+      "content": "Используйте:"
+    },
+    {
+      "type": "code",
+      "content": "reduce()"
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "сумма;",
+        "произведение;",
+        "количество элементов;",
+        "объект;",
+        "строка."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Отсортировать массив"
+    },
+    {
+      "type": "text",
+      "content": "Если можно изменить массив:"
+    },
+    {
+      "type": "code",
+      "content": "sort()"
+    },
+    {
+      "type": "text",
+      "content": "Если изменять массив нельзя:"
+    },
+    {
+      "type": "code",
+      "content": "toSorted()"
+    },
+    {
+      "type": "heading",
+      "content": "Развернуть массив"
+    },
+    {
+      "type": "text",
+      "content": "Если можно изменить массив:"
+    },
+    {
+      "type": "code",
+      "content": "reverse()"
+    },
+    {
+      "type": "text",
+      "content": "Если изменять массив нельзя:"
+    },
+    {
+      "type": "code",
+      "content": "toReversed()"
+    },
+    {
+      "type": "heading",
+      "content": "Объединить массивы"
+    },
+    {
+      "type": "text",
+      "content": "Используйте:"
+    },
+    {
+      "type": "code",
+      "content": "concat()"
+    },
+    {
+      "type": "text",
+      "content": "или"
+    },
+    {
+      "type": "code",
+      "content": "Spread (...)"
+    },
+    {
+      "type": "heading",
+      "content": "Получить часть массива"
+    },
+    {
+      "type": "text",
+      "content": "Используйте:"
+    },
+    {
+      "type": "code",
+      "content": "slice()"
+    },
+    {
+      "type": "heading",
+      "content": "Изменить массив"
+    },
+    {
+      "type": "text",
+      "content": "Если можно изменить исходный массив:"
+    },
+    {
+      "type": "code",
+      "content": "splice()"
+    },
+    {
+      "type": "text",
+      "content": "Если изменять исходный массив нельзя:"
+    },
+    {
+      "type": "code",
+      "content": "toSpliced()"
+    },
+    {
+      "type": "heading",
+      "content": "Преобразовать массив в строку"
+    },
+    {
+      "type": "text",
+      "content": "Если нужен свой разделитель:"
+    },
+    {
+      "type": "code",
+      "content": "join()"
+    },
+    {
+      "type": "text",
+      "content": "Если подходит разделитель по умолчанию:"
+    },
+    {
+      "type": "code",
+      "content": "toString()"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Для преобразования массива обычно используют map().",
+        "Для фильтрации используют filter().",
+        "Для поиска используют find() и findLast().",
+        "Для проверки используют includes(), some() и every().",
+        "Для получения одного значения используют reduce().",
+        "Для сортировки используют sort() или toSorted().",
+        "Для изменения массива используют splice(), а если исходный массив менять нельзя — toSpliced().",
+        "Выбор метода зависит от поставленной задачи."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "computed-properties",
+  "parentId": "object",
+  "title": "Вычисляемые свойства (Computed Properties)",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое вычисляемые свойства?"
+    },
+    {
+      "type": "text",
+      "content": "Обычно имя свойства указывается сразу при создании объекта."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};"
+    },
+    {
+      "type": "text",
+      "content": "Но иногда имя свойства известно только во время выполнения программы."
+    },
+    {
+      "type": "text",
+      "content": "В этом случае используют <strong>вычисляемые свойства (Computed Properties)</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "text",
+      "content": "Для вычисляемого свойства имя записывается в квадратных скобках."
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "const object = {\n    [выражение]: значение\n};"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript сначала вычисляет выражение внутри `[]`, а затем использует полученный результат как имя свойства."
+    },
+    {
+      "type": "heading",
+      "content": "Использование переменной"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const property = \"name\";\n\nconst user = {\n    [property]: \"Alex\"\n};\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript сначала получает значение переменной:"
+    },
+    {
+      "type": "code",
+      "content": "property → \"name\""
+    },
+    {
+      "type": "text",
+      "content": "После этого создает объект:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};"
+    },
+    {
+      "type": "heading",
+      "content": "Использование выражения"
+    },
+    {
+      "type": "text",
+      "content": "В квадратных скобках может находиться любое выражение, которое возвращает значение."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    [\"first\" + \"Name\"]: \"Alex\"\n};\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    firstName: \"Alex\"\n}"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Еще пример"
+    },
+    {
+      "type": "code",
+      "content": "const index = 1;\n\nconst user = {\n    [\"user\" + index]: \"Alex\"\n};\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    user1: \"Alex\"\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Зачем нужны вычисляемые свойства?"
+    },
+    {
+      "type": "text",
+      "content": "Они используются, когда имя свойства заранее неизвестно."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const field = prompt(\"Введите название свойства:\");\n\nconst user = {\n    [field]: \"Alex\"\n};"
+    },
+    {
+      "type": "text",
+      "content": "Если пользователь введет:"
+    },
+    {
+      "type": "code",
+      "content": "name"
+    },
+    {
+      "type": "text",
+      "content": "то получится объект:"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Если введет:"
+    },
+    {
+      "type": "code",
+      "content": "age"
+    },
+    {
+      "type": "text",
+      "content": "то получится:"
+    },
+    {
+      "type": "code",
+      "content": "{\n    age: \"Alex\"\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Когда квадратные скобки не нужны?"
+    },
+    {
+      "type": "text",
+      "content": "Если имя свойства известно заранее, используют обычную запись."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};"
+    },
+    {
+      "type": "text",
+      "content": "Такой вариант проще и читается легче."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Вычисляемые свойства позволяют вычислить имя свойства во время создания объекта.",
+        "Для этого используются квадратные скобки.",
+        "Внутри `[]` может находиться переменная или любое выражение, которое возвращает значение.",
+        "Если имя свойства известно заранее, вычисляемые свойства использовать не нужно."
+      ]
+    }
+  ]
+}

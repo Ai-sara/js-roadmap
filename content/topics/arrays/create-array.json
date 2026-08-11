@@ -1,0 +1,89 @@
+{
+  "id": "create-array",
+  "parentId": "arrays",
+  "title": "Создание массива",
+  "difficulty": 1,
+  "blocks": [
+    { "type": "heading", "content": "Создание массива с помощью литерала" },
+    { "type": "text", "content": "Самый простой и самый распространенный способ создать массив — использовать квадратные скобки." },
+    { "type": "text", "content": "Синтаксис:" },
+    { "type": "code", "content": "const array = [];" },
+    { "type": "text", "content": "Пример:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];" },
+    { "type": "text", "content": "Внутри квадратных скобок элементы разделяются запятыми." },
+
+    { "type": "heading", "content": "Пустой массив" },
+    { "type": "text", "content": "Массив может не содержать ни одного элемента." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [];\n\nconsole.log(fruits);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[]" },
+    { "type": "text", "content": "Позже в такой массив можно добавить элементы." },
+
+    { "type": "heading", "content": "Массив из одного элемента" },
+    { "type": "text", "content": "Массив может содержать только один элемент." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\"\n];" },
+    { "type": "text", "content": "Такой массив полностью корректен." },
+
+    { "type": "heading", "content": "Массив из разных типов данных" },
+    { "type": "text", "content": "JavaScript не требует, чтобы все элементы были одного типа." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const data = [\n    \"Alex\",\n    25,\n    true,\n    null,\n    {\n        city: \"London\"\n    }\n];" },
+    { "type": "text", "content": "Хотя это возможно, на практике чаще в одном массиве хранят однотипные данные." },
+    { "type": "text", "content": "Например:" },
+    { "type": "list", "items": [
+      "список пользователей;",
+      "список товаров;",
+      "список чисел."
+    ] },
+    { "type": "text", "content": "Так код становится более понятным." },
+
+    { "type": "heading", "content": "Создание массива через Array()" },
+    { "type": "text", "content": "Кроме литерала существует конструктор Array." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const fruits = new Array(\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n);" },
+    { "type": "text", "content": "Результат будет таким же:" },
+    { "type": "code", "content": "[\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n]" },
+
+    { "type": "heading", "content": "Особенность Array()" },
+    { "type": "text", "content": "Если передать одно число:" },
+    { "type": "code", "content": "const numbers = new Array(5);\n\nconsole.log(numbers);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[ <5 empty items> ]" },
+    { "type": "text", "content": "Многие ожидают увидеть:" },
+    { "type": "code", "content": "[5]" },
+    { "type": "text", "content": "Но JavaScript создает массив длиной <strong>5</strong>, в котором пока нет элементов." },
+    { "type": "text", "content": "Именно из-за этой особенности Array() может вести себя неожиданно." },
+
+    { "type": "text", "content": "Если нужно создать массив, содержащий число 5, необходимо передать его как обычный элемент." },
+    { "type": "text", "content": "Например:" },
+    { "type": "code", "content": "const numbers = [5];" },
+    { "type": "text", "content": "или:" },
+    { "type": "code", "content": "const numbers = new Array(5,);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "[5]" },
+    { "type": "text", "content": "Запятая после числа показывает JavaScript, что это список элементов, а не создание массива заданной длины." },
+    { "type": "text", "content": "Однако такой способ используется редко." },
+
+    { "type": "heading", "content": "Какой способ использовать?" },
+    { "type": "text", "content": "В современном JavaScript почти всегда используют литерал массива." },
+    { "type": "code", "content": "const fruits = [];" },
+    { "type": "text", "content": "Он:" },
+    { "type": "list", "items": [
+      "короче;",
+      "легче читается;",
+      "не имеет неоднозначного поведения при передаче одного числа."
+    ] },
+
+    { "type": "heading_xl", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "Самый распространенный способ создания массива — литерал [].",
+      "Массив может быть пустым или содержать любое количество элементов.",
+      "В одном массиве могут находиться значения разных типов данных.",
+      "Массив можно создать через new Array().",
+      "При вызове new Array(5) создается массив длиной 5, а не массив с элементом 5.",
+      "В современном JavaScript рекомендуется использовать литерал массива []."
+    ] }
+  ]
+}

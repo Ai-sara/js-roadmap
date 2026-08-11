@@ -1,0 +1,167 @@
+{
+  "id": "object-from-entries",
+  "parentId": "object",
+  "title": "Object.fromEntries()",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое <strong>Object.fromEntries()</strong>?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Object.fromEntries()</strong> — это статический метод класса <strong>Object</strong>, который создает новый объект из массива пар вида <strong>[ключ, значение]</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Этот метод является противоположностью <strong>Object.entries()</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "Object.fromEntries(iterable);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "iterable"
+    },
+    {
+      "type": "text",
+      "content": "Итерируемый объект, содержащий пары:"
+    },
+    {
+      "type": "code",
+      "content": "[\n    [ключ1, значение1],\n    [ключ2, значение2],\n    ...\n]"
+    },
+    {
+      "type": "text",
+      "content": "Чаще всего используется массив массивов."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает <strong>Object.fromEntries()</strong>?"
+    },
+    {
+      "type": "text",
+      "content": "Метод последовательно получает пары <strong>[ключ, значение]</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Каждый ключ становится именем свойства объекта, а соответствующее значение — значением этого свойства."
+    },
+    {
+      "type": "text",
+      "content": "После обработки всех пар метод возвращает новый объект."
+    },
+    {
+      "type": "heading",
+      "content": "Создание объекта"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const entries = [\n    [\"name\", \"Alex\"],\n    [\"age\", 25],\n    [\"city\", \"Almaty\"]\n];\n\nconst user = Object.fromEntries(entries);\n\nconsole.log(user);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\",\n    age: 25,\n    city: \"Almaty\"\n}"
+    },
+    {
+      "type": "text",
+      "content": "Каждая пара из массива превратилась в свойство объекта."
+    },
+    {
+      "type": "heading",
+      "content": "Обратная операция для <strong>Object.entries()</strong>"
+    },
+    {
+      "type": "text",
+      "content": "Сначала можно преобразовать объект в массив пар с помощью <strong>Object.entries()</strong>:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconst entries = Object.entries(user);\n\nconsole.log(entries);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "[\n    [\"name\", \"Alex\"],\n    [\"age\", 25]\n]"
+    },
+    {
+      "type": "text",
+      "content": "Теперь этот массив пар можно снова преобразовать в объект:"
+    },
+    {
+      "type": "code",
+      "content": "const newUser = Object.fromEntries(entries);\n\nconsole.log(newUser);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\",\n    age: 25\n}"
+    },
+    {
+      "type": "scheme",
+      "content": "Object\n│\n├── Object.entries()\n│       ↓\n│   [key, value]\n│       ↓\n└── Object.fromEntries()\n        ↓\n      Object"
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает <strong>Object.fromEntries()</strong>?"
+    },
+    {
+      "type": "text",
+      "content": "Метод всегда возвращает <strong>новый объект</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив пар при этом не изменяется."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать?"
+    },
+    {
+      "type": "text",
+      "content": "Метод используют, когда необходимо:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "преобразовать массив пар в объект;",
+        "восстановить объект после <strong>Object.entries()</strong>;",
+        "создать объект из обработанного массива пар."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Object.fromEntries()</strong> — статический метод класса <strong>Object</strong>.",
+        "Вызывается как <strong>Object.fromEntries()</strong>, а не <strong>object.fromEntries()</strong>.",
+        "Метод создает объект из массива пар <strong>[ключ, значение]</strong>.",
+        "Метод является противоположностью <strong>Object.entries()</strong>.",
+        "Метод всегда возвращает новый объект.",
+        "Исходный массив при этом не изменяется."
+      ]
+    }
+  ]
+}

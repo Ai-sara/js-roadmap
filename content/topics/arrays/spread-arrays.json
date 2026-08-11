@@ -1,0 +1,342 @@
+{
+  "id": "spread-arrays",
+  "parentId": "arrays",
+  "title": "Spread-оператор с массивами",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое Spread-оператор?"
+    },
+    {
+      "type": "text",
+      "content": "<strong>Spread-оператор</strong> (`...`) позволяет развернуть элементы массива в отдельные значения."
+    },
+    {
+      "type": "text",
+      "content": "Он записывается с помощью трёх точек:"
+    },
+    {
+      "type": "code",
+      "content": "..."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\"Apple\", \"Banana\", \"Orange\"];\n\nconsole.log(...fruits);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "Apple Banana Orange"
+    },
+    {
+      "type": "text",
+      "content": "То есть массив:"
+    },
+    {
+      "type": "code",
+      "content": "[\"Apple\", \"Banana\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "условно превращается в:"
+    },
+    {
+      "type": "code",
+      "content": "\"Apple\", \"Banana\", \"Orange\""
+    },
+    {
+      "type": "heading",
+      "content": "Копирование массива"
+    },
+    {
+      "type": "text",
+      "content": "Spread-оператор можно использовать для создания нового массива на основе существующего:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\"Apple\", \"Banana\", \"Orange\"];\n\nconst copy = [...fruits];\n\nconsole.log(copy);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[\"Apple\", \"Banana\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "При этом создаётся новый массив:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(fruits === copy);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "false"
+    },
+    {
+      "type": "heading",
+      "content": "Объединение массивов"
+    },
+    {
+      "type": "text",
+      "content": "Spread-оператор позволяет объединять несколько массивов:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\"Apple\", \"Banana\"];\nconst vegetables = [\"Carrot\", \"Potato\"];\n\nconst food = [...fruits, ...vegetables];\n\nconsole.log(food);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[\"Apple\", \"Banana\", \"Carrot\", \"Potato\"]"
+    },
+    {
+      "type": "text",
+      "content": "Можно одновременно добавлять обычные значения:"
+    },
+    {
+      "type": "code",
+      "content": "const food = [\n    \"Bread\",\n    ...fruits,\n    \"Milk\",\n    ...vegetables\n];"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[\"Bread\", \"Apple\", \"Banana\", \"Milk\", \"Carrot\", \"Potato\"]"
+    },
+    {
+      "type": "heading",
+      "content": "Добавление элементов без изменения исходного массива"
+    },
+    {
+      "type": "text",
+      "content": "Spread часто используют, когда нужно получить новый массив с дополнительными элементами:"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\"Apple\", \"Banana\"];\n\nconst newFruits = [\n    ...fruits,\n    \"Orange\"\n];\n\nconsole.log(newFruits);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[\"Apple\", \"Banana\", \"Orange\"]"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив не изменяется:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(fruits);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[\"Apple\", \"Banana\"]"
+    },
+    {
+      "type": "heading",
+      "content": "Передача элементов массива в функцию"
+    },
+    {
+      "type": "text",
+      "content": "Spread-оператор позволяет передать элементы массива как отдельные аргументы функции."
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [10, 20, 30];\n\nconsole.log(Math.max(...numbers));"
+    },
+    {
+      "type": "text",
+      "content": "Здесь:"
+    },
+    {
+      "type": "code",
+      "content": "Math.max(...numbers);"
+    },
+    {
+      "type": "text",
+      "content": "эквивалентно:"
+    },
+    {
+      "type": "code",
+      "content": "Math.max(10, 20, 30);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "30"
+    },
+    {
+      "type": "heading",
+      "content": "Spread и вложенные массивы"
+    },
+    {
+      "type": "text",
+      "content": "Spread копирует только элементы верхнего уровня."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    [1, 2],\n    [3, 4]\n];\n\nconst copy = [...numbers];"
+    },
+    {
+      "type": "text",
+      "content": "Внешний массив новый:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(numbers === copy);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "false"
+    },
+    {
+      "type": "text",
+      "content": "Но вложенные массивы остаются теми же объектами:"
+    },
+    {
+      "type": "code",
+      "content": "console.log(numbers[0] === copy[0]);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "true"
+    },
+    {
+      "type": "text",
+      "content": "Поэтому spread создаёт <strong>поверхностную копию (shallow copy)</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Spread не изменяет исходный массив"
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [1, 2, 3];\n\nconst newNumbers = [...numbers, 4];\n\nconsole.log(numbers);\nconsole.log(newNumbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[1, 2, 3]\n[1, 2, 3, 4]"
+    },
+    {
+      "type": "text",
+      "content": "Это удобно, когда нужно получить изменённую версию массива, сохранив исходный."
+    },
+    {
+      "type": "heading",
+      "content": "Spread и Rest — это один и тот же оператор"
+    },
+    {
+      "type": "text",
+      "content": "И Spread, и Rest записываются одинаково:"
+    },
+    {
+      "type": "code",
+      "content": "..."
+    },
+    {
+      "type": "text",
+      "content": "Но их назначение зависит от места использования."
+    },
+    {
+      "type": "heading",
+      "content": "Spread"
+    },
+    {
+      "type": "text",
+      "content": "Разворачивает существующее значение:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [1, 2, 3];\n\nconst result = [...numbers];"
+    },
+    {
+      "type": "heading",
+      "content": "Rest"
+    },
+    {
+      "type": "text",
+      "content": "Собирает несколько значений в массив:"
+    },
+    {
+      "type": "code",
+      "content": "const [first, ...rest] = numbers;"
+    },
+    {
+      "type": "text",
+      "content": "Здесь `...rest` собирает оставшиеся элементы."
+    },
+    {
+      "type": "text",
+      "content": "Подробнее Rest-оператор рассматривается в отдельной теме."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Spread-оператор записывается как `...`.",
+        "В массивах он разворачивает элементы массива в отдельные значения.",
+        "`[...array]` создаёт новый массив.",
+        "Spread можно использовать для объединения массивов.",
+        "Spread позволяет добавить элементы в новый массив без изменения исходного.",
+        "`...array` можно использовать для передачи элементов массива отдельными аргументами функции.",
+        "Spread создаёт только поверхностную копию массива.",
+        "Вложенные массивы при таком копировании остаются теми же объектами.",
+        "Spread и Rest используют одинаковый синтаксис `...`, но выполняют разные задачи."
+      ]
+    }
+  ]
+}

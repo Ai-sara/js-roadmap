@@ -1,0 +1,173 @@
+{
+  "id": "find-index",
+  "parentId": "array-search",
+  "title": "Метод findIndex()",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Метод findIndex() ищет первый элемент массива, который удовлетворяет указанному условию. Если такой элемент найден, метод возвращает его индекс. Если подходящий элемент отсутствует, метод возвращает -1."
+    },
+    {
+      "type": "heading",
+      "content": "Чем отличается от find()?"
+    },
+    {
+      "type": "text",
+      "content": "Методы find() и findIndex() работают почти одинаково. Оба метода перебирают элементы массива по порядку, используют callback-функцию и прекращают поиск после первого найденного совпадения."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Метод",
+        "Что возвращает"
+      ],
+      "rows": [
+        [
+          "find()",
+          "Первый найденный элемент"
+        ],
+        [
+          "findIndex()",
+          "Индекс первого найденного элемента"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "array.findIndex(callback)"
+    },
+    {
+      "type": "list",
+      "items": [
+        "array — массив;",
+        "callback — функция, задающая условие поиска."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const numbers = [\n    10,\n    25,\n    80,\n    150,\n    200\n];\n\nconst index = numbers.findIndex((number) => {\n    return number > 100;\n});\n\nconsole.log(index);"
+    },
+    {
+      "type": "result",
+      "content": "3"
+    },
+    {
+      "type": "text",
+      "content": "Метод не возвращает число 150. Он возвращает индекс найденного элемента."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает findIndex()?"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript перебирает элементы массива по одному. Для каждого элемента вызывается callback-функция."
+    },
+    {
+      "type": "text",
+      "content": "Если callback возвращает true, поиск сразу прекращается. Метод возвращает индекс текущего элемента."
+    },
+    {
+      "type": "text",
+      "content": "Если callback возвращает false, JavaScript продолжает поиск."
+    },
+    {
+      "type": "heading",
+      "content": "Если подходящего элемента нет"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconst index = numbers.findIndex((number) => {\n    return number > 100;\n});\n\nconsole.log(index);"
+    },
+    {
+      "type": "result",
+      "content": "-1"
+    },
+    {
+      "type": "text",
+      "content": "Значение -1 означает, что подходящий элемент не найден."
+    },
+    {
+      "type": "heading",
+      "content": "Поиск объектов"
+    },
+    {
+      "type": "text",
+      "content": "Очень часто findIndex() используют при работе с массивами объектов."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const users = [\n    {\n        id: 1,\n        name: \"Alex\"\n    },\n    {\n        id: 2,\n        name: \"Bob\"\n    },\n    {\n        id: 3,\n        name: \"Kate\"\n    }\n];\n\nconst index = users.findIndex((user) => {\n    return user.id === 2;\n});\n\nconsole.log(index);"
+    },
+    {
+      "type": "result",
+      "content": "1"
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать findIndex()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод удобно использовать, когда нужен не сам элемент, а его положение в массиве."
+    },
+    {
+      "type": "list",
+      "items": [
+        "заменить найденный элемент;",
+        "удалить найденный элемент по индексу;",
+        "узнать, на какой позиции находится элемент."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "find() или findIndex()?"
+    },
+    {
+      "type": "text",
+      "content": "Если нужен сам элемент:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const user = users.find((user) => {\n    return user.id === 2;\n});"
+    },
+    {
+      "type": "text",
+      "content": "Если нужен его индекс:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const index = users.findIndex((user) => {\n    return user.id === 2;\n});"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "findIndex() ищет элемент по условию.",
+        "Условие задается с помощью callback-функции.",
+        "Поиск прекращается после первого найденного совпадения.",
+        "Метод возвращает индекс найденного элемента.",
+        "Если подходящий элемент отсутствует, возвращается -1.",
+        "Главное отличие от find() — find() возвращает элемент, а findIndex() возвращает его индекс."
+      ]
+    }
+  ]
+}

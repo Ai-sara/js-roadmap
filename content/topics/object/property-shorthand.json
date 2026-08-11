@@ -1,0 +1,172 @@
+{
+  "id": "property-shorthand",
+  "parentId": "object",
+  "title": "Краткая запись свойств (Property Shorthand)",
+  "difficulty": 1,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое краткая запись свойств?"
+    },
+    {
+      "type": "text",
+      "content": "При создании объекта часто возникает ситуация, когда имя переменной совпадает с именем свойства."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const name = \"Alex\";\nconst age = 25;\n\nconst user = {\n    name: name,\n    age: age\n};"
+    },
+    {
+      "type": "text",
+      "content": "Такой код работает, но его можно записать короче."
+    },
+    {
+      "type": "heading",
+      "content": "Краткая запись"
+    },
+    {
+      "type": "text",
+      "content": "Если имя свойства совпадает с именем переменной, можно указать только имя переменной."
+    },
+    {
+      "type": "code",
+      "content": "const name = \"Alex\";\nconst age = 25;\n\nconst user = {\n    name,\n    age\n};"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "{\n    name: \"Alex\",\n    age: 25\n}"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript автоматически понимает, что:"
+    },
+    {
+      "type": "code",
+      "content": "name"
+    },
+    {
+      "type": "text",
+      "content": "означает:"
+    },
+    {
+      "type": "code",
+      "content": "name: name"
+    },
+    {
+      "type": "text",
+      "content": "А:"
+    },
+    {
+      "type": "code",
+      "content": "age"
+    },
+    {
+      "type": "text",
+      "content": "означает:"
+    },
+    {
+      "type": "code",
+      "content": "age: age"
+    },
+    {
+      "type": "heading",
+      "content": "Когда можно использовать?"
+    },
+    {
+      "type": "text",
+      "content": "Только если:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "существует переменная;",
+        "имя свойства должно совпадать с именем этой переменной."
+      ]
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const city = \"London\";\n\nconst user = {\n    city\n};"
+    },
+    {
+      "type": "text",
+      "content": "Получится:"
+    },
+    {
+      "type": "code",
+      "content": "{\n    city: \"London\"\n}"
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать нельзя?"
+    },
+    {
+      "type": "text",
+      "content": "Если имя свойства отличается от имени переменной, необходимо использовать обычную запись."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Например"
+    },
+    {
+      "type": "code",
+      "content": "const city = \"London\";\n\nconst user = {\n    userCity: city\n};"
+    },
+    {
+      "type": "text",
+      "content": "Записать так нельзя:"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    userCity\n};"
+    },
+    {
+      "type": "text",
+      "content": "Потому что JavaScript будет искать переменную с именем <code>userCity</code>."
+    },
+    {
+      "type": "text",
+      "content": "Если такой переменной нет, возникнет ошибка."
+    },
+    {
+      "type": "heading",
+      "content": "Почему используют краткую запись?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "делает код короче;",
+        "уменьшает количество повторений;",
+        "часто используется в современном JavaScript."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Особенно часто она встречается при создании объектов из уже существующих переменных."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Если имя свойства совпадает с именем переменной, можно использовать краткую запись.",
+        "<code>name</code> — это сокращение для <code>name: name</code>.",
+        "Краткая запись работает только при совпадении имени свойства и переменной.",
+        "Если имена различаются, необходимо использовать обычную запись <code>ключ: значение</code>."
+      ]
+    }
+  ]
+}

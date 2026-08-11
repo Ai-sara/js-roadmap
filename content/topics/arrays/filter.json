@@ -1,0 +1,168 @@
+{
+  "id": "filter",
+  "parentId": "array-transformation",
+  "title": "filter()",
+  "difficulty": 2,
+  "blocks": [
+    {
+      "type": "text",
+      "content": "Метод filter() создаёт новый массив, содержащий только те элементы, которые удовлетворяют указанному условию.\n\nИсходный массив при этом не изменяется."
+    },
+    {
+      "type": "heading",
+      "content": "Почему появился filter()?"
+    },
+    {
+      "type": "text",
+      "content": "Предположим, необходимо получить из массива только положительные числа.\n\nБез filter() пришлось бы самостоятельно перебирать массив, проверять каждый элемент и добавлять подходящие элементы в новый массив."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "code": "const numbers = [\n    -5,\n    10,\n    -8,\n    20,\n    15\n];\n\nconst result = [];\n\nfor (const number of numbers) {\n    if (number > 0) {\n        result.push(number);\n    }\n}\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[10, 20, 15]"
+    },
+    {
+      "type": "text",
+      "content": "Такой код работает, но приходится самостоятельно писать всю логику отбора элементов. Метод filter() позволяет выполнить такую задачу проще."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "code": "array.filter(callback);"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "term": "array",
+          "description": "исходный массив."
+        },
+        {
+          "term": "callback",
+          "description": "функция, которая определяет, должен ли текущий элемент попасть в новый массив."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "code": "const numbers = [\n    -5,\n    10,\n    -8,\n    20,\n    15\n];\n\nconst result = numbers.filter((number) => {\n    return number > 0;\n});\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[10, 20, 15]"
+    },
+    {
+      "type": "heading",
+      "content": "Как работает filter()?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "JavaScript создаёт новый пустой массив.",
+        "По очереди перебирает каждый элемент исходного массива.",
+        "Для каждого элемента вызывает callback-функцию.",
+        "Если результат callback преобразуется к true, текущий элемент добавляется в новый массив.",
+        "Если результат callback преобразуется к false, элемент пропускается.",
+        "После обработки всех элементов filter() возвращает новый массив."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Например, при условии number > 0 отрицательные числа будут пропущены, а положительные попадут в новый массив."
+    },
+    {
+      "type": "heading",
+      "content": "Исходный массив не изменяется"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "code": "const numbers = [\n    -5,\n    10,\n    -8,\n    20\n];\n\nconst result = numbers.filter((number) => {\n    return number > 0;\n});\n\nconsole.log(numbers);\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[-5, 10, -8, 20]\n[10, 20]"
+    },
+    {
+      "type": "text",
+      "content": "filter() создаёт новый массив, поэтому исходный массив numbers остаётся без изменений."
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает callback в filter()?"
+    },
+    {
+      "type": "text",
+      "content": "Callback должен вернуть значение, которое JavaScript может преобразовать к true или false.\n\nЕсли результат преобразуется к true, элемент попадает в новый массив. Если результат преобразуется к false, элемент пропускается."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "code": "return number > 0;\n\nreturn user.age >= 18;"
+    },
+    {
+      "type": "text",
+      "content": "Чаще всего callback возвращает результат сравнения или другое условие."
+    },
+    {
+      "type": "heading",
+      "content": "Если callback ничего не возвращает"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "code": "const numbers = [1, 2, 3];\n\nconst result = numbers.filter((number) => {\n    console.log(number);\n});\n\nconsole.log(result);"
+    },
+    {
+      "type": "result",
+      "content": "[]"
+    },
+    {
+      "type": "text",
+      "content": "Если callback не использует return, он возвращает undefined. Значение undefined преобразуется к false, поэтому ни один элемент не попадает в новый массив."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать filter()?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "получить только положительные числа;",
+        "получить только совершеннолетних пользователей;",
+        "оставить только товары со скидкой;",
+        "получить только выполненные задачи;",
+        "отобрать элементы, соответствующие определённому условию."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "filter() создаёт новый массив.",
+        "Исходный массив не изменяется.",
+        "Callback вызывается для каждого элемента массива.",
+        "Если результат callback преобразуется к true, элемент попадает в новый массив.",
+        "Если результат callback преобразуется к false, элемент пропускается.",
+        "После обработки всех элементов filter() возвращает новый массив.",
+        "Если callback ничего не возвращает, он возвращает undefined, поэтому элемент не попадает в новый массив."
+      ]
+    }
+  ]
+}

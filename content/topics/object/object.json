@@ -1,0 +1,26 @@
+{
+  "id": "object",
+  "parentId": null,
+  "title": "Objects (Объекты)",
+  "difficulty": 2,
+  "children": [
+    "what-is-object",
+    "object-properties-access",
+    "object-destructuring",
+    "object-properties-modification",
+    "check-property-existence",
+    "nested-objects",
+    "optional-chaining",
+    "computed-properties",
+    "property-shorthand",
+    "object-methods",
+    "getters-setters",
+    "reference-type",
+    "copying-objects",
+    "deep-copy",
+    "this",
+    "object-iteration",
+    "object-from-entries",
+    "object-property-restrictions"
+  ]
+}

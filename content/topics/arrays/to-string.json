@@ -1,0 +1,65 @@
+{
+  "id": "to-string",
+  "parentId": "arrays",
+  "title": "toString()",
+  "difficulty": 1,
+  "blocks": [
+    { "type": "heading", "content": "Что такое toString()?" },
+    { "type": "text", "content": "Метод toString() преобразует массив в строку." },
+    { "type": "text", "content": "Элементы массива объединяются через запятую." },
+    { "type": "text", "content": "Исходный массив при этом <strong>не изменяется</strong>." },
+
+    { "type": "heading", "content": "Синтаксис" },
+    { "type": "code", "content": "array.toString();" },
+
+    { "type": "heading", "content": "Как работает toString()?" },
+    { "type": "text", "content": "Метод последовательно преобразует каждый элемент массива в строку." },
+    { "type": "text", "content": "После этого все элементы объединяются через символ <strong>,</strong> (запятая)." },
+    { "type": "text", "content": "Полученная строка возвращается как результат." },
+
+    { "type": "heading", "content": "Пример" },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconst result = fruits.toString();\n\nconsole.log(result);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple,Banana,Orange" },
+
+    { "type": "heading", "content": "Если массив содержит числа" },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconsole.log(\n    numbers.toString()\n);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "10,20,30" },
+
+    { "type": "heading", "content": "Если массив пустой" },
+    { "type": "code", "content": "const numbers = [];\n\nconsole.log(\n    numbers.toString()\n);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "\"\"" },
+    { "type": "text", "content": "Будет возвращена пустая строка." },
+
+    { "type": "heading", "content": "Чем отличается от join()?" },
+    { "type": "text", "content": "toString() всегда использует <strong>запятую</strong> в качестве разделителя." },
+    { "type": "text", "content": "Изменить разделитель нельзя." },
+    { "type": "code", "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconsole.log(\n    fruits.toString()\n);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple,Banana,Orange" },
+    { "type": "text", "content": "Метод join() позволяет самостоятельно выбрать разделитель." },
+    { "type": "code", "content": "console.log(\n    fruits.join(\" | \")\n);" },
+    { "type": "text", "content": "Результат:" },
+    { "type": "code", "content": "Apple | Banana | Orange" },
+    { "type": "text", "content": "Если нужен собственный разделитель, следует использовать join()." },
+
+    { "type": "heading", "content": "Что возвращает toString()?" },
+    { "type": "text", "content": "Метод всегда возвращает строку." },
+
+    { "type": "heading", "content": "Когда использовать?" },
+    { "type": "text", "content": "Метод используют, когда необходимо быстро преобразовать массив в строку с разделителем по умолчанию." },
+    { "type": "text", "content": "Если требуется другой разделитель, рекомендуется использовать join()." },
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "toString() не изменяет исходный массив.",
+      "Метод преобразует массив в строку.",
+      "Разделителем всегда является запятая ,.",
+      "Изменить разделитель нельзя.",
+      "Метод всегда возвращает строку.",
+      "Если нужен другой разделитель, используйте join()."
+    ]}
+  ]
+}

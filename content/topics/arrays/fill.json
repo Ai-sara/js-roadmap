@@ -1,0 +1,162 @@
+{
+  "id": "fill",
+  "parentId": "arrays",
+  "title": "fill()",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое fill()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод fill() заполняет элементы массива указанным значением."
+    },
+    {
+      "type": "text",
+      "content": "В отличие от многих других методов, fill() <strong>изменяет исходный массив</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.fill(value);\n\narray.fill(value, start);\n\narray.fill(value, start, end);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "value"
+    },
+    {
+      "type": "text",
+      "content": "Значение, которым будут заполнены элементы массива."
+    },
+    {
+      "type": "heading_sm",
+      "content": "start"
+    },
+    {
+      "type": "text",
+      "content": "Индекс, с которого начинается заполнение."
+    },
+    {
+      "type": "text",
+      "content": "По умолчанию:"
+    },
+    {
+      "type": "code",
+      "content": "0"
+    },
+    {
+      "type": "heading_sm",
+      "content": "end"
+    },
+    {
+      "type": "text",
+      "content": "Индекс, до которого выполняется заполнение."
+    },
+    {
+      "type": "text",
+      "content": "Элемент с этим индексом <strong>не изменяется</strong>."
+    },
+    {
+      "type": "text",
+      "content": "По умолчанию используется длина массива."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает fill()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод последовательно проходит по массиву."
+    },
+    {
+      "type": "text",
+      "content": "Начиная с индекса start и заканчивая индексом end (не включая его), каждый элемент заменяется указанным значением."
+    },
+    {
+      "type": "text",
+      "content": "После завершения работы метод возвращает измененный массив."
+    },
+    {
+      "type": "heading",
+      "content": "Заполнение всего массива"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4\n];\n\nnumbers.fill(0);\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[0, 0, 0, 0]"
+    },
+    {
+      "type": "heading",
+      "content": "Заполнение части массива"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4,\n    5\n];\n\nnumbers.fill(0, 1, 4);\n\nconsole.log(numbers);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "code",
+      "content": "[1, 0, 0, 0, 5]"
+    },
+    {
+      "type": "text",
+      "content": "Изменены элементы с индексами:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Элемент с индексом 4 не изменился."
+    },
+    {
+      "type": "heading",
+      "content": "Что возвращает fill()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод возвращает <strong>тот же самый массив</strong>, который был изменен."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать fill()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод используют, когда необходимо быстро заполнить массив одинаковыми значениями или заменить группу элементов одним значением."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "fill() изменяет исходный массив.",
+        "Метод возвращает тот же самый массив.",
+        "Можно заполнить весь массив или только его часть.",
+        "Элемент с индексом end не изменяется.",
+        "Чаще всего fill() используют для быстрого заполнения массива одинаковыми значениями."
+      ]
+    }
+  ]
+}

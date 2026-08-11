@@ -1,0 +1,1048 @@
+{
+  "id": "reduce",
+  "parentId": "array-transformation",
+  "title": "reduce()",
+  "difficulty": 3,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое reduce()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод reduce() используется для последовательной обработки элементов массива и получения <strong>одного итогового значения</strong>."
+    },
+    {
+      "type": "text",
+      "content": "В отличие от большинства методов массива:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "map() возвращает новый массив;",
+        "filter() возвращает новый массив;",
+        "sort() изменяет массив;"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "reduce() всегда возвращает <strong>одно итоговое значение</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Это значение может быть любого типа данных."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "число;",
+        "строка;",
+        "массив;",
+        "объект;",
+        "boolean;",
+        "любой другой тип данных."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Когда используют reduce()?"
+    },
+    {
+      "type": "text",
+      "content": "reduce() используют, когда необходимо получить один итоговый результат после обработки всех элементов массива."
+    },
+    {
+      "type": "text",
+      "content": "Например:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "посчитать сумму всех чисел;",
+        "найти произведение чисел;",
+        "найти максимальное или минимальное значение;",
+        "объединить строки;",
+        "подсчитать количество элементов;",
+        "преобразовать массив в объект;",
+        "выполнить любую другую последовательную обработку массива."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Синтаксис"
+    },
+    {
+      "type": "code",
+      "content": "array.reduce(callback);\n\narray.reduce(callback, initialValue);\n\nЧаще всего используют второй вариант:\n\narray.reduce((accumulator, currentValue) => {\n\n\n\n}, initialValue);\n\nили\n\narray.reduce(function (accumulator, currentValue) {\n\n\n\n}, initialValue);"
+    },
+    {
+      "type": "heading",
+      "content": "Параметры reduce()"
+    },
+    {
+      "type": "text",
+      "content": "Метод принимает два параметра:"
+    },
+    {
+      "type": "code",
+      "content": "array.reduce(callback, initialValue);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "callback"
+    },
+    {
+      "type": "text",
+      "content": "Функция, которая будет вызвана для каждого элемента массива."
+    },
+    {
+      "type": "text",
+      "content": "Именно внутри нее выполняется вся обработка элементов."
+    },
+    {
+      "type": "heading_sm",
+      "content": "initialValue"
+    },
+    {
+      "type": "text",
+      "content": "Начальное значение аккумулятора."
+    },
+    {
+      "type": "text",
+      "content": "Оно используется как первое значение переменной accumulator."
+    },
+    {
+      "type": "text",
+      "content": "Этот параметр необязательный, однако в большинстве случаев его рекомендуется указывать."
+    },
+    {
+      "type": "text",
+      "content": "Работа reduce() без initialValue будет рассмотрена далее."
+    },
+    {
+      "type": "heading",
+      "content": "Параметры callback"
+    },
+    {
+      "type": "text",
+      "content": "Во время работы reduce() JavaScript автоматически передает в callback четыре значения."
+    },
+    {
+      "type": "code",
+      "content": "array.reduce((\n    accumulator,\n    currentValue,\n    currentIndex,\n    array\n) => {\n\n\n\n}, initialValue);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "accumulator"
+    },
+    {
+      "type": "text",
+      "content": "Переменная, в которой хранится текущий результат вычислений."
+    },
+    {
+      "type": "text",
+      "content": "После обработки каждого элемента значение accumulator обновляется."
+    },
+    {
+      "type": "text",
+      "content": "Именно оно в конечном итоге станет результатом работы метода reduce()."
+    },
+    {
+      "type": "heading_sm",
+      "content": "currentValue"
+    },
+    {
+      "type": "text",
+      "content": "Текущий элемент массива, который обрабатывается на данной итерации."
+    },
+    {
+      "type": "heading_sm",
+      "content": "currentIndex"
+    },
+    {
+      "type": "text",
+      "content": "Индекс текущего элемента массива."
+    },
+    {
+      "type": "text",
+      "content": "Этот параметр используется значительно реже."
+    },
+    {
+      "type": "heading_sm",
+      "content": "array"
+    },
+    {
+      "type": "text",
+      "content": "Ссылка на исходный массив."
+    },
+    {
+      "type": "text",
+      "content": "Этот параметр также используется достаточно редко."
+    },
+    {
+      "type": "text",
+      "content": "На практике чаще всего используют только первые два параметра:"
+    },
+    {
+      "type": "code",
+      "content": "array.reduce((accumulator, currentValue) => {\n\n\n\n}, initialValue);"
+    },
+    {
+      "type": "text",
+      "content": "Именно они участвуют практически во всех задачах с использованием reduce()."
+    },
+    {
+      "type": "heading",
+      "content": "Общий алгоритм работы"
+    },
+    {
+      "type": "text",
+      "content": "Работу reduce() можно представить следующим алгоритмом:"
+    },
+    {
+      "type": "scheme",
+      "content": [
+        "Создается переменная accumulator.",
+        "В нее записывается initialValue.",
+        "JavaScript берет первый элемент массива.",
+        "Вызывается callback.",
+        "callback возвращает новое значение.",
+        "Возвращенное значение записывается в accumulator.",
+        "JavaScript переходит к следующему элементу массива.",
+        "Шаги 4–7 повторяются для всех элементов массива.",
+        "После обработки последнего элемента метод возвращает итоговое значение accumulator."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Именно поэтому метод называется <strong>reduce</strong> — он постепенно \"сводит\" (уменьшает) множество элементов массива к одному итоговому значению."
+    },
+    {
+      "type": "heading",
+      "content": "Как работает reduce()?"
+    },
+    {
+      "type": "text",
+      "content": "Рассмотрим пример."
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4\n];\n\nconst sum = numbers.reduce((accumulator, currentValue) => {\n    return accumulator + currentValue;\n}, 0);\n\nconsole.log(sum);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\n10"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Начало работы"
+    },
+    {
+      "type": "text",
+      "content": "Перед началом обработки JavaScript создает переменную accumulator."
+    },
+    {
+      "type": "text",
+      "content": "Так как было указано:"
+    },
+    {
+      "type": "text",
+      "content": "0"
+    },
+    {
+      "type": "text",
+      "content": "то первоначально:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 0"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Первая итерация"
+    },
+    {
+      "type": "text",
+      "content": "Текущий элемент:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 1"
+    },
+    {
+      "type": "text",
+      "content": "Выполняется callback:"
+    },
+    {
+      "type": "code",
+      "content": "return accumulator + currentValue;"
+    },
+    {
+      "type": "text",
+      "content": "Получаем:"
+    },
+    {
+      "type": "text",
+      "content": "0 + 1"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "text",
+      "content": "1"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 1"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Вторая итерация"
+    },
+    {
+      "type": "text",
+      "content": "Текущий элемент:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 2"
+    },
+    {
+      "type": "text",
+      "content": "Выполняется:"
+    },
+    {
+      "type": "text",
+      "content": "1 + 2"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "text",
+      "content": "3"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 3"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Третья итерация"
+    },
+    {
+      "type": "text",
+      "content": "Текущий элемент:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 3"
+    },
+    {
+      "type": "text",
+      "content": "Выполняется:"
+    },
+    {
+      "type": "text",
+      "content": "3 + 3"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "text",
+      "content": "6"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 6"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Четвертая итерация"
+    },
+    {
+      "type": "text",
+      "content": "Текущий элемент:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 4"
+    },
+    {
+      "type": "text",
+      "content": "Выполняется:"
+    },
+    {
+      "type": "text",
+      "content": "6 + 4"
+    },
+    {
+      "type": "text",
+      "content": "Результат:"
+    },
+    {
+      "type": "text",
+      "content": "10"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 10"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Завершение работы"
+    },
+    {
+      "type": "text",
+      "content": "После обработки последнего элемента массив заканчивается."
+    },
+    {
+      "type": "text",
+      "content": "Метод возвращает текущее значение accumulator."
+    },
+    {
+      "type": "text",
+      "content": "Именно поэтому:"
+    },
+    {
+      "type": "code",
+      "content": "const sum = numbers.reduce(...);"
+    },
+    {
+      "type": "text",
+      "content": "в переменную sum записывается:"
+    },
+    {
+      "type": "text",
+      "content": "10"
+    },
+    {
+      "type": "heading",
+      "content": "Что важно понять"
+    },
+    {
+      "type": "text",
+      "content": "Во время работы reduce() значение accumulator постоянно изменяется."
+    },
+    {
+      "type": "text",
+      "content": "После каждой итерации callback возвращает новое значение, которое становится новым значением accumulator."
+    },
+    {
+      "type": "text",
+      "content": "Именно это значение будет использоваться на следующей итерации."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому можно сказать, что accumulator — это <strong>накопленный результат всех предыдущих вычислений</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Схема работы"
+    },
+    {
+      "type": "scheme",
+      "content": [
+        "Начало",
+        "accumulator = 0",
+        "0 + 1 = 1",
+        "1 + 2 = 3",
+        "3 + 3 = 6",
+        "6 + 4 = 10",
+        "Возвращается 10"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Работа без initialValue"
+    },
+    {
+      "type": "text",
+      "content": "Параметр initialValue является необязательным."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому метод можно вызвать так:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4\n];\n\nconst sum = numbers.reduce((accumulator, currentValue) => {\n    return accumulator + currentValue;\n});\n\nconsole.log(sum);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\n10"
+    },
+    {
+      "type": "text",
+      "content": "Несмотря на отсутствие initialValue, код работает правильно."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Что происходит?"
+    },
+    {
+      "type": "text",
+      "content": "Если initialValue не указан, JavaScript использует <strong>первый элемент массива</strong> как начальное значение accumulator."
+    },
+    {
+      "type": "text",
+      "content": "То есть перед началом работы:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 1"
+    },
+    {
+      "type": "text",
+      "content": "При этом первый элемент массива <strong>не передается в callback</strong>, так как он уже используется в качестве начального значения аккумулятора."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Как будут выглядеть итерации?"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив:"
+    },
+    {
+      "type": "text",
+      "content": "[1, 2, 3, 4]"
+    },
+    {
+      "type": "text",
+      "content": "Перед началом работы:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 1"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Первая итерация:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 2"
+    },
+    {
+      "type": "text",
+      "content": "1 + 2"
+    },
+    {
+      "type": "text",
+      "content": "Получаем:"
+    },
+    {
+      "type": "text",
+      "content": "3"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 3"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Вторая итерация:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 3"
+    },
+    {
+      "type": "text",
+      "content": "3 + 3"
+    },
+    {
+      "type": "text",
+      "content": "Получаем:"
+    },
+    {
+      "type": "text",
+      "content": "6"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 6"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Третья итерация:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 4"
+    },
+    {
+      "type": "text",
+      "content": "6 + 4"
+    },
+    {
+      "type": "text",
+      "content": "Получаем:"
+    },
+    {
+      "type": "text",
+      "content": "10"
+    },
+    {
+      "type": "text",
+      "content": "После завершения работы метод возвращает:"
+    },
+    {
+      "type": "text",
+      "content": "10"
+    },
+    {
+      "type": "heading",
+      "content": "Главное отличие"
+    },
+    {
+      "type": "text",
+      "content": "С initialValue:"
+    },
+    {
+      "type": "code",
+      "content": "numbers.reduce(callback, 0);"
+    },
+    {
+      "type": "text",
+      "content": "Первая итерация начинается с:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 0\n\ncurrentValue = 1"
+    },
+    {
+      "type": "text",
+      "content": "Без initialValue:"
+    },
+    {
+      "type": "code",
+      "content": "numbers.reduce(callback);"
+    },
+    {
+      "type": "text",
+      "content": "Первая итерация начинается с:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 1\n\ncurrentValue = 2"
+    },
+    {
+      "type": "text",
+      "content": "То есть первый элемент массива становится начальным значением аккумулятора."
+    },
+    {
+      "type": "heading",
+      "content": "Почему рекомендуется всегда указывать initialValue?"
+    },
+    {
+      "type": "text",
+      "content": "Если всегда указывать начальное значение:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "код становится более понятным;",
+        "поведение reduce() всегда одинаковое;",
+        "уменьшается вероятность ошибок."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Поэтому на практике initialValue обычно указывают даже тогда, когда без него код тоже работает."
+    },
+    {
+      "type": "heading",
+      "content": "Работа без initialValue"
+    },
+    {
+      "type": "text",
+      "content": "Параметр initialValue является необязательным."
+    },
+    {
+      "type": "text",
+      "content": "Поэтому метод можно вызвать так:"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4\n];\n\nconst sum = numbers.reduce((accumulator, currentValue) => {\n    return accumulator + currentValue;\n});\n\nconsole.log(sum);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\n10"
+    },
+    {
+      "type": "text",
+      "content": "Несмотря на отсутствие initialValue, код работает правильно."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Что происходит?"
+    },
+    {
+      "type": "text",
+      "content": "Если initialValue не указан, JavaScript использует <strong>первый элемент массива</strong> как начальное значение accumulator."
+    },
+    {
+      "type": "text",
+      "content": "То есть перед началом работы:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 1"
+    },
+    {
+      "type": "text",
+      "content": "При этом первый элемент массива <strong>не передается в callback</strong>, так как он уже используется в качестве начального значения аккумулятора."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Как будут выглядеть итерации?"
+    },
+    {
+      "type": "text",
+      "content": "Исходный массив:"
+    },
+    {
+      "type": "text",
+      "content": "[1, 2, 3, 4]"
+    },
+    {
+      "type": "text",
+      "content": "Перед началом работы:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 1"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Первая итерация:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 2"
+    },
+    {
+      "type": "text",
+      "content": "1 + 2"
+    },
+    {
+      "type": "text",
+      "content": "Получаем:"
+    },
+    {
+      "type": "text",
+      "content": "3"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 3"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Вторая итерация:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 3"
+    },
+    {
+      "type": "text",
+      "content": "3 + 3"
+    },
+    {
+      "type": "text",
+      "content": "Получаем:"
+    },
+    {
+      "type": "text",
+      "content": "6"
+    },
+    {
+      "type": "text",
+      "content": "Теперь:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 6"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Третья итерация:"
+    },
+    {
+      "type": "code",
+      "content": "currentValue = 4"
+    },
+    {
+      "type": "text",
+      "content": "6 + 4"
+    },
+    {
+      "type": "text",
+      "content": "Получаем:"
+    },
+    {
+      "type": "text",
+      "content": "10"
+    },
+    {
+      "type": "text",
+      "content": "После завершения работы метод возвращает:"
+    },
+    {
+      "type": "text",
+      "content": "10"
+    },
+    {
+      "type": "heading",
+      "content": "Главное отличие"
+    },
+    {
+      "type": "text",
+      "content": "С initialValue:"
+    },
+    {
+      "type": "code",
+      "content": "numbers.reduce(callback, 0);"
+    },
+    {
+      "type": "text",
+      "content": "Первая итерация начинается с:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 0\n\ncurrentValue = 1"
+    },
+    {
+      "type": "text",
+      "content": "Без initialValue:"
+    },
+    {
+      "type": "code",
+      "content": "numbers.reduce(callback);"
+    },
+    {
+      "type": "text",
+      "content": "Первая итерация начинается с:"
+    },
+    {
+      "type": "code",
+      "content": "accumulator = 1\n\ncurrentValue = 2"
+    },
+    {
+      "type": "text",
+      "content": "То есть первый элемент массива становится начальным значением аккумулятора."
+    },
+    {
+      "type": "heading",
+      "content": "Почему рекомендуется всегда указывать initialValue?"
+    },
+    {
+      "type": "text",
+      "content": "Если всегда указывать начальное значение:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "код становится более понятным;",
+        "поведение reduce() всегда одинаковое;",
+        "уменьшается вероятность ошибок."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Поэтому на практике initialValue обычно указывают даже тогда, когда без него код тоже работает."
+    },
+    {
+      "type": "heading",
+      "content": "Примеры использования"
+    },
+    {
+      "type": "text",
+      "content": "Одно из главных преимуществ reduce() заключается в том, что он может вернуть <strong>значение любого типа данных</strong>."
+    },
+    {
+      "type": "text",
+      "content": "Ниже рассмотрены наиболее распространенные варианты использования."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Сумма элементов массива"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    1,\n    2,\n    3,\n    4\n];\n\nconst sum = numbers.reduce((accumulator, currentValue) => {\n    return accumulator + currentValue;\n}, 0);\n\nconsole.log(sum);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\n10"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Произведение элементов массива"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    2,\n    3,\n    4\n];\n\nconst product = numbers.reduce((accumulator, currentValue) => {\n    return accumulator * currentValue;\n}, 1);\n\nconsole.log(product);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\n24"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Объединение строк"
+    },
+    {
+      "type": "code",
+      "content": "const words = [\n    \"Hello\",\n    \"World\"\n];\n\nconst text = words.reduce((accumulator, currentValue) => {\n    return accumulator + \" \" + currentValue;\n});\n\nconsole.log(text);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\nHello World"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Поиск максимального числа"
+    },
+    {
+      "type": "code",
+      "content": "const numbers = [\n    5,\n    12,\n    8,\n    20,\n    7\n];\n\nconst max = numbers.reduce((accumulator, currentValue) => {\n    if (currentValue > accumulator) {\n        return currentValue;\n    }\n\n    return accumulator;\n});\n\nconsole.log(max);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\n20"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Подсчет количества элементов"
+    },
+    {
+      "type": "code",
+      "content": "const fruits = [\n    \"Apple\",\n    \"Banana\",\n    \"Orange\"\n];\n\nconst count = fruits.reduce((accumulator) => {\n    return accumulator + 1;\n}, 0);\n\nconsole.log(count);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\n3"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Преобразование массива в объект"
+    },
+    {
+      "type": "code",
+      "content": "const users = [\n    {\n        id: 1,\n        name: \"Alex\"\n    },\n    {\n        id: 2,\n        name: \"Bob\"\n    }\n];\n\nconst usersById = users.reduce((accumulator, currentValue) => {\n    accumulator[currentValue.id] = currentValue;\n\n    return accumulator;\n}, {});\n\nconsole.log(usersById);"
+    },
+    {
+      "type": "text",
+      "content": "Результат:\n\n{\n    1: {\n        id: 1,\n        name: \"Alex\"\n    },\n    2: {\n        id: 2,\n        name: \"Bob\"\n    }\n}"
+    },
+    {
+      "type": "text",
+      "content": "В этом примере reduce() вернул объект, а не число или строку."
+    },
+    {
+      "type": "text",
+      "content": "Это показывает, что итоговое значение может быть любого типа данных."
+    },
+    {
+      "type": "heading",
+      "content": "Когда использовать reduce()?"
+    },
+    {
+      "type": "text",
+      "content": "Метод reduce() используют тогда, когда необходимо получить <strong>одно итоговое значение</strong> после обработки всех элементов массива."
+    },
+    {
+      "type": "text",
+      "content": "Например, если необходимо:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "посчитать сумму элементов;",
+        "найти произведение элементов;",
+        "найти максимальное или минимальное значение;",
+        "объединить строки;",
+        "подсчитать количество элементов;",
+        "преобразовать массив в объект;",
+        "выполнить любую другую последовательную обработку массива с накоплением результата."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Если необходимо получить новый массив, обычно используют:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "map();",
+        "filter();",
+        "другие методы массива."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "reduce() выбирают именно тогда, когда итогом работы должно стать <strong>одно значение</strong>, а не новый массив."
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "reduce() последовательно обрабатывает все элементы массива.",
+        "Метод всегда возвращает одно итоговое значение.",
+        "Итоговое значение может быть любого типа данных.",
+        "Callback получает четыре параметра:\n  - accumulator;\n  - currentValue;\n  - currentIndex;\n  - array.",
+        "На практике чаще всего используют только accumulator и currentValue.",
+        "initialValue задает начальное значение аккумулятора.",
+        "Если initialValue не указан, первым значением accumulator становится первый элемент массива.",
+        "Если вызвать reduce() для пустого массива без initialValue, возникнет ошибка.",
+        "Чтобы избежать ошибок и сделать код более понятным, рекомендуется всегда указывать initialValue."
+      ]
+    }
+  ]
+
+}

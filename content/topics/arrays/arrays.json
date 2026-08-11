@@ -1,0 +1,33 @@
+{
+  "id": "arrays",
+  "parentId": null,
+  "title": "Массивы",
+  "difficulty": 2,
+  "children": [
+    "what-is-array",
+    "array-indexes",
+    "create-array",
+    "array-static-methods",
+    "length",
+    "change-elements",
+    "array-destructuring",
+    "add-remove-elements",
+    "array-iteration",
+    "array-search",
+    "array-transformation",
+    "array-ordering",
+    "slice-splice",
+    "concat",
+    "spread-arrays",
+    "flat-flatmap",
+    "join-split",
+    "to-string",
+    "keys-values-entries",
+    "to-sorted-to-reversed-to-spliced-with",
+    "fill",
+    "copy-within",
+    "common-patterns",
+    "method-comparison",
+    "performance"
+  ]
+}

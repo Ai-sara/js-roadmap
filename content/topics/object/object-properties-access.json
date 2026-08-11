@@ -1,0 +1,304 @@
+{
+  "id": "object-properties-access",
+  "parentId": "object",
+  "title": "Свойства объекта и доступ к ним",
+  "difficulty": 1.5,
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Что такое свойство объекта?"
+    },
+    {
+      "type": "text",
+      "content": "Свойство объекта — это пара:"
+    },
+    {
+      "type": "text",
+      "content": "ключ: значение"
+    },
+    {
+      "type": "text",
+      "content": "которая хранит данные внутри объекта."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Здесь"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>name</strong> — имя свойства (ключ);",
+        "<strong>\"Alex\"</strong> — значение свойства;",
+        "<strong>age</strong> — имя свойства;",
+        "<strong>25</strong> — значение свойства."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Доступ к свойствам объекта"
+    },
+    {
+      "type": "text",
+      "content": "В JavaScript есть два способа получить значение свойства:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "точечная запись (<code>.</code>)",
+        "квадратные скобки (<code>[]</code>)"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Точечная запись"
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "object.property"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconsole.log(user.name);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript находит свойство с ключом <strong>name</strong> и возвращает его значение."
+    },
+    {
+      "type": "heading",
+      "content": "Квадратные скобки"
+    },
+    {
+      "type": "text",
+      "content": "Синтаксис:"
+    },
+    {
+      "type": "code",
+      "content": "object[\"property\"]"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconsole.log(user[\"age\"]);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "25"
+    },
+    {
+      "type": "text",
+      "content": "В квадратных скобках имя свойства указывается как строка."
+    },
+    {
+      "type": "heading",
+      "content": "Разница между `.` и `[]`"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Точечная запись"
+    },
+    {
+      "type": "text",
+      "content": "Используется, когда имя свойства известно заранее."
+    },
+    {
+      "type": "code",
+      "content": "user.name"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Квадратные скобки"
+    },
+    {
+      "type": "text",
+      "content": "Используются, когда имя свойства хранится в переменной."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\",\n    age: 25\n};\n\nconst property = \"name\";\n\nconsole.log(user[property]);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "Alex"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript сначала получает значение переменной:"
+    },
+    {
+      "type": "code",
+      "content": "property → \"name\""
+    },
+    {
+      "type": "text",
+      "content": "После этого выполняется:"
+    },
+    {
+      "type": "code",
+      "content": "user[\"name\"]"
+    },
+    {
+      "type": "heading",
+      "content": "Почему нельзя использовать точку с переменной?"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const property = \"name\";\n\nconsole.log(user.property);"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript будет искать свойство с названием:"
+    },
+    {
+      "type": "code",
+      "content": "property"
+    },
+    {
+      "type": "text",
+      "content": "а не значение переменной:"
+    },
+    {
+      "type": "code",
+      "content": "name"
+    },
+    {
+      "type": "text",
+      "content": "То есть это:"
+    },
+    {
+      "type": "code",
+      "content": "user[\"property\"]"
+    },
+    {
+      "type": "text",
+      "content": "а не:"
+    },
+    {
+      "type": "code",
+      "content": "user[\"name\"]"
+    },
+    {
+      "type": "heading",
+      "content": "Свойства с необычными именами"
+    },
+    {
+      "type": "text",
+      "content": "Некоторые имена свойств нельзя записать через точку."
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    \"first-name\": \"Alex\",\n    \"user age\": 25\n};"
+    },
+    {
+      "type": "text",
+      "content": "Так нельзя:"
+    },
+    {
+      "type": "code",
+      "content": "user.first-name"
+    },
+    {
+      "type": "text",
+      "content": "JavaScript воспримет это как операцию вычитания."
+    },
+    {
+      "type": "text",
+      "content": "Нужно:"
+    },
+    {
+      "type": "code",
+      "content": "user[\"first-name\"];"
+    },
+    {
+      "type": "heading",
+      "content": "Доступ к отсутствующему свойству"
+    },
+    {
+      "type": "text",
+      "content": "Если свойства нет, JavaScript возвращает:"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Пример"
+    },
+    {
+      "type": "code",
+      "content": "const user = {\n    name: \"Alex\"\n};\n\nconsole.log(user.age);"
+    },
+    {
+      "type": "heading_sm",
+      "content": "Результат"
+    },
+    {
+      "type": "code",
+      "content": "undefined"
+    },
+    {
+      "type": "heading",
+      "content": "Что нужно помнить"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Свойства объекта имеют вид <strong>ключ: значение</strong>.",
+        "Через точку обращаются к известному имени свойства.",
+        "Через <code>[]</code> можно использовать переменные как имена свойств.",
+        "<code>object.property</code> ищет именно свойство с таким названием.",
+        "<code>object[property]</code> сначала вычисляет значение внутри скобок.",
+        "Несуществующее свойство возвращает <code>undefined</code>.",
+        "Для имен с пробелами или специальными символами нужно использовать <code>[]</code>."
+      ]
+    }
+  ]
+}

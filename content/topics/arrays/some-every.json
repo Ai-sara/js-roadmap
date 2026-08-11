@@ -1,0 +1,100 @@
+{
+  "id": "some-every",
+  "parentId": "array-search",
+  "title": "Методы some() и every()",
+  "difficulty": 2,
+  "blocks": [
+    { "type": "heading", "content": "Зачем нужны some() и every()?" },
+    { "type": "text", "content": "Иногда необходимо узнать не какой элемент найден, а выполняется ли некоторое условие." },
+    { "type": "text", "content": "Например:" },
+    { "type": "list", "items": [
+      "есть ли хотя бы один пользователь старше 18 лет;",
+      "все ли товары есть в наличии;",
+      "содержит ли массив отрицательные числа;",
+      "все ли оценки выше 50."
+    ] },
+    { "type": "text", "content": "Для таких задач используются методы some() и every()." },
+
+    { "type": "heading", "content": "Метод some()" },
+    { "type": "heading_sm", "content": "Что делает some()?" },
+    { "type": "text", "content": "Метод some() проверяет, существует ли <strong>хотя бы один элемент массива</strong>, удовлетворяющий указанному условию." },
+    { "type": "text", "content": "Если такой элемент найден, метод возвращает:" },
+    { "type": "code", "content": "true" },
+    { "type": "text", "content": "Если подходящих элементов нет:" },
+    { "type": "code", "content": "false" },
+
+    { "type": "heading_sm", "content": "Синтаксис" },
+    { "type": "code", "content": "array.some(callback)" },
+
+    { "type": "heading_sm", "content": "Пример" },
+    { "type": "code", "content": "const numbers = [\n    10,\n    25,\n    80,\n    150\n];\n\nconst result = numbers.some((number) => {\n    return number > 100;\n});\n\nconsole.log(result);\n\n// true" },
+    { "type": "text", "content": "Поскольку число 150 удовлетворяет условию, метод вернул true." },
+
+    { "type": "heading_sm", "content": "Если подходящих элементов нет" },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconst result = numbers.some((number) => {\n    return number > 100;\n});\n\nconsole.log(result);\n\n// false" },
+
+    { "type": "heading_sm", "content": "Когда прекращается поиск?" },
+    { "type": "text", "content": "Как только callback впервые возвращает true, дальнейший перебор массива прекращается." },
+    { "type": "text", "content": "Оставшиеся элементы уже не проверяются." },
+
+    { "type": "heading", "content": "Метод every()" },
+    { "type": "heading_sm", "content": "Что делает every()?" },
+    { "type": "text", "content": "Метод every() проверяет, удовлетворяют ли условию <strong>все элементы массива</strong>." },
+    { "type": "text", "content": "Если каждый элемент подходит, метод возвращает:" },
+    { "type": "code", "content": "true" },
+    { "type": "text", "content": "Если хотя бы один элемент не подходит:" },
+    { "type": "code", "content": "false" },
+
+    { "type": "heading_sm", "content": "Синтаксис" },
+    { "type": "code", "content": "array.every(callback)" },
+
+    { "type": "heading_sm", "content": "Пример" },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    30\n];\n\nconst result = numbers.every((number) => {\n    return number > 0;\n});\n\nconsole.log(result);\n\n// true" },
+    { "type": "text", "content": "Все элементы массива больше нуля." },
+
+    { "type": "heading_sm", "content": "Теперь другой пример." },
+    { "type": "code", "content": "const numbers = [\n    10,\n    -5,\n    30\n];\n\nconst result = numbers.every((number) => {\n    return number > 0;\n});\n\nconsole.log(result);\n\n// false" },
+    { "type": "text", "content": "Число -5 не удовлетворяет условию." },
+    { "type": "text", "content": "Поэтому метод сразу вернул false." },
+
+    { "type": "heading_sm", "content": "Когда прекращается проверка?" },
+    { "type": "text", "content": "Как только callback впервые возвращает false, дальнейший перебор массива прекращается." },
+    { "type": "text", "content": "Оставшиеся элементы уже не проверяются." },
+
+    { "type": "heading", "content": "some() или every()?" },
+    { "type": "text", "content": "Главное отличие заключается в количестве элементов, которые должны удовлетворять условию." },
+    {
+      "type": "table",
+      "headers": ["Метод", "Что проверяет", "Возвращает"],
+      "rows": [
+        ["some()", "Хотя бы один элемент подходит", "true или false"],
+        ["every()", "Все элементы подходят", "true или false"]
+      ]
+    },
+    { "type": "code", "content": "const numbers = [\n    10,\n    20,\n    -5\n];\n\nconsole.log(\n    numbers.some((number) => number < 0)\n);\n\nconsole.log(\n    numbers.every((number) => number > 0)\n);\n\n// true\n// false" },
+    { "type": "text", "content": "Первый метод нашел хотя бы один отрицательный элемент." },
+    { "type": "text", "content": "Второй метод обнаружил, что не все элементы положительные." },
+
+    { "type": "heading", "content": "Когда использовать?" },
+    { "type": "text", "content": "Используйте some(), если необходимо проверить:" },
+    { "type": "list", "items": [
+      "существует ли хотя бы один подходящий элемент;",
+      "содержит ли массив определенное значение по условию."
+    ] },
+    { "type": "text", "content": "Используйте every(), если необходимо проверить:" },
+    { "type": "list", "items": [
+      "подходят ли все элементы;",
+      "выполняется ли условие для всего массива."
+    ] },
+
+    { "type": "heading", "content": "Что нужно помнить" },
+    { "type": "list", "items": [
+      "some() проверяет, существует ли хотя бы один подходящий элемент.",
+      "every() проверяет, удовлетворяют ли условию все элементы массива.",
+      "Оба метода используют callback-функцию.",
+      "Оба метода возвращают только true или false.",
+      "some() прекращает перебор после первого true.",
+      "every() прекращает перебор после первого false."
+    ] }
+  ]
+}

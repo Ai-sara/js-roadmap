@@ -163,3 +163,24 @@ pre {
 .node-list a:hover {
   background: var(--note-bg);
 }
+
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+}
+.content-table th,
+.content-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.content-table th {
+  color: var(--ink-muted);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border);
+}
+.content-table tbody tr:hover {
+  background: var(--code-bg);
+}
